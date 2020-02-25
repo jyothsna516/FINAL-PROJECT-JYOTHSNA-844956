@@ -1,0 +1,15 @@
+.image{
+    background-image: url('D:\FINAL-PROJECT-Jyothsna-844956\EBUY-UI\src\assets\Images\bg.jpg');
+    
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+          
+        /* Preserve aspet ratio */
+        min-width: 100%;
+        min-height: 800px;
+      
+    
+    background-repeat: no-repeat;
+    background-size: cover; 
+  }

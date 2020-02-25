@@ -1,0 +1,26 @@
+<p>view-profile works!</p>
+<p>viewsellerprofile works!</p>
+<div class ="bg-img">
+    <div class="container">
+    <div class="card bg-light mb-3" >
+        <h5 class="card-header text-center">My Profile</h5>
+        <div class="card-body">
+            <form [formGroup]="viewsellerprofileForm" (ngSubmit)="onSubmit()">
+                
+                    <div class="form-group col-md-5 offset-4">
+                        <label>SellerID</label>
+                        <input type="number" formControlName="id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sid.errors }" />
+                        <div *ngIf="submitted && f.sid.errors" class="invalid-feedback">
+                        <div *ngIf="f.id.errors.required">Seller id is required</div> 
+                        </div>        
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary mr-1">View</button>
+                        <button class="btn btn-danger" type="reset" (click)="onReset()">Cancel</button>
+                    </div>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+
+<router-outlet></router-outlet>

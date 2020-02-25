@@ -1,0 +1,49 @@
+import { Component, OnInit } from '@angular/core';
+import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import { UserService } from '../services/user.service';
+@Component({
+  selector: 'app-register-seller',
+  templateUrl: './register-seller.component.html',
+  styleUrls: ['./register-seller.component.css']
+})
+export class RegisterSellerComponent implements OnInit {
+  SignupForm: FormGroup;
+  submitted = false;
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+      this.SignupForm = this.formBuilder.group({
+          sid: ['', Validators.required],
+          sname:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
+          companyname:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
+          spwd:['',[Validators.required,Validators.pattern('^[a-z]{7}[~!@#$%^&*()]$')]],
+          emailid: ['', [Validators.required, Validators.email]],
+          contact_number:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
+          postal_address:['',[Validators.required]],
+          GSTIN:['',[Validators.required]],
+          Website:['',[Validators.required]],
+          acceptTerms: [false, Validators.requiredTrue]
+      });
+  }
+
+  // convenience getter for easy access to form fields
+  get f() { return this.SignupForm.controls; }
+
+  onSubmit() {
+      this.submitted = true;
+       // display form values on success
+      if (this.SignupForm.valid) {
+          alert('SUCCESS!! :-)\n\n') 
+          console.log(JSON.stringify(this.SignupForm.value));
+      }
+  }
+
+  onReset() {
+      this.submitted = false;
+      this.SignupForm.reset();
+  }
+}
+
+ 
+

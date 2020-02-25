@@ -1,0 +1,48 @@
+<div class="image">
+
+<div class="container"> 
+    <div class="card bg-light mb-1" > 
+        <div class="bg2">
+        <!-- <form class = "form-horizontal" role = "form"> -->
+        <h5 class="card-header text-center">User Login</h5>
+         <div class="card-body">  
+    <!-- <div class="formgroup"><div class="form-group col-5"><h1>User Login</h1></div> -->
+    <div class="formgroup">
+        <div class="form-group col-5">
+        <label for="Uname">UserName</label>
+        <input type="text" [(ngModel)]="uname" class="form-control"><br>
+    </div></div>
+    <div class="form-group">
+        <div class="form-group col-5">
+        <label for="Pwd">Password</label>
+        <input type="text" [(ngModel)]="pwd" class="form-control">
+    </div></div>
+    <div class="form-group">    
+        <button (click)="Login()" class="btn btn-primary">Login</button>
+    </div>
+    <!-- <div class="form-group">
+        <a [routerLink]="['/register-buyer/register-buyer']" >SIGNUP Buyer</a>
+        </div>
+        <div class="form-group">
+            <a [routerLink]="['/register-seller/register-seller']" >SIGNUP Seller</a>
+            </div> -->
+             <!-- <div class="form-group">
+                <a [routerLink]="'register-buyer/register-buyer'" >SIGNUP Buyer</a>&nbsp;
+                <a [routerLink]="'register-seller/register-seller'" >SIGNUP Seller</a>
+                </div>  -->
+                <ul class="nav row nav-pills ">
+                    <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-outline-secondary bg-dark" href="register-buyer"  ><b>SignUp Buyer</b></a></li>
+                        <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-outline-secondary bg-dark" href="register-seller" ><b>SignUp Seller</b></a>
+                        </li>
+                        </ul>
+<div class="form-group">
+    <label class="text-error">{{errmsg}}</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<router-outlet></router-outlet>
