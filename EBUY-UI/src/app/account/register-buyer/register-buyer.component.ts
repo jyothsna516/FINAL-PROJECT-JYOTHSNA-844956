@@ -13,19 +13,17 @@ export class RegisterBuyerComponent implements OnInit {
   SignupForm: FormGroup;
     submitted = false;
     list:Buyer[];
-buyer:Buyer;
+    buyer:Buyer;
 
     constructor(private formBuilder: FormBuilder,private uservice:UserService) { }
-
     ngOnInit() {
         this.SignupForm = this.formBuilder.group({
-            bid: ['', Validators.required],
+            bid: ['',[Validators.required]],
             bname:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
-            pwd:['',[Validators.required,Validators]],
-            emailid: ['', [Validators.required, Validators.email]],
+            pwd:['',[Validators.required,Validators.pattern('^[a-z]{7}[~!@#$%^&*()]$')]],
+            emailid: ['', [Validators.required,Validators.email]],
             mobileno:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
-            createddatetime:['',[Validators.required]],
-            
+            createddatetime:['',[Validators.required]], 
             acceptTerms: [false, Validators.requiredTrue]
         });
     }
@@ -34,30 +32,27 @@ buyer:Buyer;
     get f() { return this.SignupForm.controls; }
 
     onSubmit() {
-
-        this.submitted = true;
-         // display form values on success
+        this.submitted = true;  
+        //this.buyer=new Buyer(); 
         if (this.SignupForm.valid) {
             this.buyer=new Buyer();
             this.buyer.BuyerId=this.SignupForm.value["bid"];
             this.buyer.Username=this.SignupForm.value["bname"];
             this.buyer.Password=this.SignupForm.value["pwd"];
-            this.buyer.Emailid=this.SignupForm.value["stock"];
+            this.buyer.Emailid=this.SignupForm.value["emailid"];
             this.buyer.Mobileno=this.SignupForm.value["mobileno"];
             this.buyer.Createddatetime=this.SignupForm.value["createddatetime"];
-            console.log(this.buyer);
+            // console.log(this.buyer);
             this.uservice.BuyerRegister(this.buyer).subscribe(res=>{
               console.log('buyer registered sucessfully')
             },err=>{
               console.log(err);
             })
             // alert('SUCCESS!! :-)\n\n') 
-            // console.log(JSON.stringify(this.SignupForm.value));
-        
-        
+            // console.log(JSON.stringify(this.SignupForm.value)); 
           }
-    }
 
+    }
     onReset() {
         this.submitted = false;
         this.SignupForm.reset();

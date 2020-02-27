@@ -120,3 +120,4 @@ D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.AdminService\bin\Debug\ne
 D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.AdminService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.AdminService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.AdminService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.AdminService\obj\Debug\netcoreapp3.1\Emart.AdminService.MvcApplicationPartsAssemblyInfo.cache

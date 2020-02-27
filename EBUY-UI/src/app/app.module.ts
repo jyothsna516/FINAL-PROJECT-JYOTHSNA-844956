@@ -34,6 +34,7 @@ import { HomeComponent } from './account/home/home.component';
 import { ContactComponent } from './account/contact/contact.component';
 import { UserService } from './Account/services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { EditprofileComponent } from './Buyer/editprofile/editprofile.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterBuyerComponent,
     HomeComponent,
     ContactComponent,
+    EditprofileComponent,
   
   ],
   imports: [

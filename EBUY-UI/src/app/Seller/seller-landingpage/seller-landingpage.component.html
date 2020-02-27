@@ -6,7 +6,7 @@
 
 <!-- </head>
 <body> -->
-
+<div class="image">
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light  bg-dark">
 
@@ -23,12 +23,13 @@
         <a class="nav-link btn-outline-primary" href="/seller/seller-landingpage" >SellerLandingPage</a>
             <!-- <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a> -->
 </li>
-<li class="col-sm-1 nav-item text-center">
-    <a class="nav-link btn-outline-primary" href="/seller/add-items" >Additems</a>
-        <!-- <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a> -->
+<li class="col-sm-1 nav-item text-center ">
+    <!-- <a class="nav-link btn-outline-primary" href="/seller/add-items" >Additems</a> -->
+        <a class="btn-outline-primary" [routerLink]="['/seller/add-items']" >AddItems</a>
 </li>
-<li class="col-sm-2 nav-item text-center">
-    <a class="nav-link btn-outline-primary" href="/seller/viewitems" >ViewItems</a>
+<li class="col-sm-2 nav-item text-center btn-outline-primary">
+    <a class="nav-link btn-outline-primary" [routerLink]="['/seller/view-items']" >viewItems</a>
+    <!-- <a class="nav-link btn-outline-primary" href="/seller/viewitems" >ViewItems</a> -->
         <!-- <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a> -->
 </li>
 <li class="col-sm-2 nav-item text-center">
@@ -56,6 +57,14 @@
     </ul>
 </div> </nav>
         </div> 
+        
+        <router-outlet></router-outlet>
+        </div>
+
+        <!-- <li class="col-sm-3 nav-item text-center">
+            <a class="nav-link btn-outline-secondary bg-dark" href="register-buyer"  ><b>SignUp Buyer</b></a></li> -->
+
+
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
