@@ -12,5 +12,8 @@ namespace EMart.SellerService.Repositories
         void Deleteitem(string id);
         void UpdateItem(Items obj);
         Items GetItem(string itemid);
+        List<Category> GetCategory();
+        List<SubCategory> GetSubCagegory(string Cid);
+
     }
 }

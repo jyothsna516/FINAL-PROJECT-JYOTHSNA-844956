@@ -50,7 +50,92 @@ namespace Emart.AdminService.Controllers
             }
 
         }
+        [HttpGet]
+        [Route("ViewCategory")]
+        public IActionResult ViewCategory()
+        {
+            try
+            {
+                // _repo.ViewCategory();
+                return Ok( _repo.ViewCategory());
+             //   return Ok();
+
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+
+        }
+        [HttpGet]
+        [Route("ViewSubCategory")]
+        public IActionResult ViewSubCategory()
+        {
+            try
+            {
+                // _repo.ViewCategory();
+                return Ok(_repo.ViewSubCategory());
+                //   return Ok();
+
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
     }
+        [HttpDelete]
+        [Route("DeleteCategory/{categoryId}")]
+        public IActionResult DeleteCategory(string categoryId)
+        {
+            try
+            {
+                // _repo.ViewCategory();
+                _repo.DeleteCategory(categoryId);
+                 return Ok();
+
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpDelete]
+        [Route("DeleteSubCategory/{SubCategoryId}")]
+        public IActionResult DeleteSubCategory(string SubCategoryId)
+        {
+            try
+            {
+                // _repo.ViewCategory();
+                _repo.DeleteCategory(SubCategoryId);
+                return Ok();
+
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpGet]
+        [Route("Getcategory")]
+        public IActionResult Getcategory()
+        {
+            try
+            {
+                return Ok(_repo.GetCategory());
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+
+    }
+
+
+
 }
+
+
+
 
     

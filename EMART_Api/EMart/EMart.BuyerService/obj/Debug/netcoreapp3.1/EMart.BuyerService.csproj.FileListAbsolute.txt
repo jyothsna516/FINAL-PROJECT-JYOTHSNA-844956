@@ -127,5 +127,7 @@ D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\EMart.BuyerService\bin\Debug\ne
 D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\EMart.BuyerService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DiagnosticAdapter.dll
 D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\EMart.BuyerService\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\EMart.BuyerService\bin\Debug\netcoreapp3.1\Ocelot.dll
-D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\EMart.BuyerService\obj\Debug\netcoreapp3.1\EMart.BuyerService.MvcApplicationPartsAssemblyInfo.cs
-D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\EMart.BuyerService\obj\Debug\netcoreapp3.1\EMart.BuyerService.MvcApplicationPartsAssemblyInfo.cache
+D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\EMart.BuyerService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\EMart.BuyerService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\EMart.BuyerService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\EMart.BuyerService\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll

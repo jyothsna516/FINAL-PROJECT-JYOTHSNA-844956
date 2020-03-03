@@ -1,0 +1,30 @@
+<p>viewsubcategory works!</p>
+<div class="container">
+    <div class="card bg-light mb-3" >
+        <h5 class="card-header text-center">View Item</h5>
+        <div class="bg2">
+        <div class="card-body">  
+<table class="table table-borderd"><tr>
+   <th>SubCategoryId</th>
+<th>SubCategoryName</th>
+<th>CategoryId</th>
+<th>BriefDetails</th>
+<th>Gst</th>
+
+</tr>
+<tr *ngFor="let item of list">
+<td>{{item.subcategoryId}}</td>
+<td>{{item.subcategoryName}}</td>
+<td>{{item.categoryId}}</td>
+<td>{{item.breifDetails}}</td>
+<td>{{item.gst}}</td>
+
+
+<td><button class="btn btn-primary" ng-click="showme=true" (click)="edit()">Edit</button></td>
+<td><button class="btn btn-primary" (click)="DeleteSubCategory(item.subCategoryId)">Delete</button></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>

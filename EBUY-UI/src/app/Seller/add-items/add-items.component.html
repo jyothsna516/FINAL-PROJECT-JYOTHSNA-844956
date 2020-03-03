@@ -12,8 +12,27 @@
                             <div *ngIf="f.itemid.errors.required">Item id is required</div> 
                             </div>        
                         </div>
+                        <div class="form-group col-md-5 offset-4">
+                            <label>CategoryName:</label>
+                            <select id="s1" formControlName="categoryid" (change)="onGetSubCategory()" class="form-control  input-line full-width" >
+                              <option *ngFor="let cat of categorylist" value="{{cat.categoryid}}">{{cat.categoryName}}</option>
+                              </select>
+                            <div *ngIf="submitted && f.categoryid.errors" class="invalid-feedback">
+                              <div *ngIf="f.categoryid.errors.required">categoryname is required</div>
+                            </div>
+                          </div>
+                          <div class="form-group col-md-5 offset-4">
+                            <label>SubcategoryName:</label>
+                            <select id="s2" formControlName="subcategoryid" class="form-control  input-line full-width" >
+                              <option *ngFor="let cat of subcategorylist" value="{{cat.subcategoryid}}">{{cat.subCategoryName}}</option>
+                              </select>
+                            <div *ngIf="submitted && f.subcategoryid.errors" class="invalid-feedback">
+                              <div *ngIf="f.subcategoryid.errors.required">Subcategoryname is required</div>
+                            </div>
+                          </div>
+
                     
-                    
+<!--                     
                         <div class="form-group col-md-5 offset-4">
                             <label for="CategoryID">CategoryID</label>
                             <input type="text" formControlName="categoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.categoryid.errors }" />
@@ -28,7 +47,7 @@
                             <div *ngIf="submitted && f.subcategoryid.errors" class="invalid-feedback">
                                 <div *ngIf="f.subcategoryid.errors.required">SubCategoryID is required</div>
                             </div>
-                        </div>
+                        </div> -->
         
                     <div class="form-group col-md-5 offset-4 ">
                         <label>Price</label>
@@ -43,8 +62,8 @@
                         <label>Item Name</label>
                         <input type="text" formControlName="itemname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.itemname.errors }" />
                         <div *ngIf="submitted && f.itemname.errors" class="invalid-feedback">
-                            <div *ngIf="f.mobileno.itemname.required"> Item Nameis required</div>
-                            <div *ngIf="f.mobileno.itemname.pattern">Item Name Must be Valid</div>
+                            <div *ngIf="f.itemname.errors.required"> Item Name is required</div>
+                            <div *ngIf="f.itemname.errors.pattern">Item Name Must be Valid</div>
                         </div>
                     </div>
                     
@@ -74,11 +93,11 @@
                     </div> 
 
 
-                    <div class="form-group form-check col-md-5 offset-5">
+                    <!-- <div class="form-group form-check col-md-5 offset-5">
                         <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
                         <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
                         <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
-                    </div>
+                    </div> -->
                 
                 <div class="text-center">
                     <button class="btn btn-primary mr-1">Add</button>

@@ -13,8 +13,24 @@ export class CategoryService {
   constructor(private http:HttpClient) { }
     public AddCategory(catg:Category):Observable<any>{
       return this.http.post<any>(this.url+'AddCategory',JSON.stringify(catg),Requestheaders);}
+      public ViewCategory():Observable<any>{
+        return this.http.get<any>(this.url+'ViewCategory',Requestheaders);}
+        public ViewSubCategory():Observable<any>{
+          return this.http.get<any>(this.url+'ViewSubCategory',Requestheaders);}
+         public DeleteCategory(categoryId:string):Observable<any>{
+        return this.http.delete<any>(this.url+'DeleteCategory/'+categoryId+Requestheaders);}   
+        public DeleteSubCategory(SubCategoryId:string):Observable<any>{
+          return this.http.delete<any>(this.url+'DeleteCategory/'+SubCategoryId+Requestheaders);}    
       public AddSubCategory(scatg:SubCategory):Observable<any>{
         return this.http.post<any>(this.url+'AddSubCategory',JSON.stringify(scatg),Requestheaders);}
+        public Getcategory():Observable<Category[]>
+  {
+    return this.http.get<Category[]>(this.url+'Getcategory',Requestheaders);
+
+  }
+        // public DeleteCategory(catg:Category):Observable<any>{
+        //   return this.http.post<any>(this.url+'AddSubCategory',JSON.stringify(catg),Requestheaders);}
+
 
     }
  

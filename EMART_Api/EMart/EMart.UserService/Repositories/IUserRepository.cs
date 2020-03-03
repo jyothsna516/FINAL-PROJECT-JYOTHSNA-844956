@@ -8,8 +8,8 @@ namespace EMart.UserService.Repositories
 {
     public interface IUserRepository
     {
-        bool BuyerLogin(string uname, string pwd);
-        bool SellerLogin(string uname, string pwd);
+       public string BuyerLogin(string uname, string pwd);
+       public string SellerLogin(string uname, string pwd);
         void BuyerRegister(Buyer buyer);
         void SellerRegister(Seller seller);
 

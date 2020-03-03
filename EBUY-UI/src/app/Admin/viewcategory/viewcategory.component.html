@@ -1,0 +1,32 @@
+<p>viewcategory works!</p>
+<div class="container">
+    <div class="card bg-light mb-3" >
+        <h5 class="card-header text-center">View Item</h5>
+        <div class="bg2">
+        <div class="card-body">  
+<table class="table table-border"><tr>
+<!--     <th>CategoryId</th> -->
+<th>CategoryName</th>
+<th>BriefDetails</th>
+
+</tr>
+<tr *ngFor="let item of list">
+
+
+
+
+<td>{{item.categoryName}}</td>
+<td>{{item.breifDetails}}</td>
+
+
+
+<td><button class="btn btn-primary" ng-click="showme=true" (click)="edit()">Edit</button></td>
+ <td><button class="btn btn-danger mr-1" (click)="DeleteCategory(item.categoryId)">Delete</button></td>
+               </tr>
+
+</table>
+</div>
+</div>
+</div>
+</div>
+

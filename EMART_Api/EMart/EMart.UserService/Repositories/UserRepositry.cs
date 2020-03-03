@@ -13,14 +13,15 @@ namespace EMart.UserService.Repositories
             _context = context;
                 
         }
-        public bool BuyerLogin(string uname, string pwd)
+        public  string  BuyerLogin(string uname, string pwd)
         {
-              var x=  _context.Buyer.Where(e =>e.Username == uname && e.Password == pwd).ToList();
-                if (x.Count!= 0) {
-                return true;
+            var x = _context.Buyer.SingleOrDefault(e => e.Username == uname && e.Password == pwd);
+                if (x!=null) {
+                return "true";
+                
             }
                 else {
-                return false;
+                return "false";
             }
              
             }
@@ -33,11 +34,11 @@ namespace EMart.UserService.Repositories
 
         }
 
-        public bool SellerLogin(string uname, string pwd)
+        public string SellerLogin(string uname, string pwd)
         {
-            var y = _context.Seller.Where(e => e.Username == uname && e.Password == pwd).ToList();
-            if (y.Count!= 0) { return true; }
-            else { return false; }
+            var y = _context.Seller.SingleOrDefault(e => e.Username == uname && e.Password == pwd);
+            if (y!= null) { return "true"; }
+            else { return "false"; }
         }
 
         public void SellerRegister(Seller seller)

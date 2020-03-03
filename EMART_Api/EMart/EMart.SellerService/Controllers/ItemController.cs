@@ -34,7 +34,7 @@ namespace EMart.SellerService.Controllers
 
         }
         [HttpDelete]
-        [Route("Delete/{id}")]
+        [Route("Delete/{itemid}")]
         public IActionResult DeleteItem(string itemid)
         {
             try
@@ -77,12 +77,12 @@ namespace EMart.SellerService.Controllers
             }
         }
         [HttpGet]
-        [Route("GetAll/{sid}")]
-        public IActionResult ViewItems(string sid)
+        [Route("GetAll/{SellerId}")]
+        public IActionResult ViewItems(string SellerId)
         {
             try
             {
-                return Ok( _repo.ViewItems(sid));
+                return Ok( _repo.ViewItems(SellerId));
                 
             }
             catch (Exception e)
@@ -90,6 +90,35 @@ namespace EMart.SellerService.Controllers
                 return NotFound(e.InnerException.Message);
             }
 
+        }
+        [HttpGet]
+        [Route("GetSubCategory/{Cid}")]
+        public IActionResult GetSubCategory(string Cid)
+        {
+            try
+            {
+                return Ok(_repo.GetSubCagegory(Cid));
+             //   return Ok();
+
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.InnerException.Message);
+            }
+        }
+        [HttpGet]
+        [Route("GetCategory")]
+        public IActionResult GetCategory()
+        {
+            try
+            {
+                return Ok(_repo.GetCategory());
+               
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
         }
 
     }

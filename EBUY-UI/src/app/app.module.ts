@@ -35,6 +35,8 @@ import { ContactComponent } from './account/contact/contact.component';
 import { UserService } from './Account/services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EditprofileComponent } from './Buyer/editprofile/editprofile.component';
+import { ViewcategoryComponent } from './Admin/viewcategory/viewcategory.component';
+import { ViewsubcategoryComponent } from './Admin/viewsubcategory/viewsubcategory.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { EditprofileComponent } from './Buyer/editprofile/editprofile.component'
     HomeComponent,
     ContactComponent,
     EditprofileComponent,
+    ViewcategoryComponent,
+    ViewsubcategoryComponent,
   
   ],
   imports: [

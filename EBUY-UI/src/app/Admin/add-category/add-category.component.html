@@ -6,27 +6,54 @@
         <div class="card-body">
             <div class="bg2">
             <form [formGroup]="AddCategoryForm" (ngSubmit)="onSubmit()">
-                       <div class="form-group col-md-3 offset-4">
-                        <label>CategoryID</label>
-                        <input type="text" formControlName="CategoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryId.errors }" />
-                        <div *ngIf="submitted && f.CategoryId.errors" class="invalid-feedback">
-                        <div *ngIf="f.CategoryId.errors.required">Category id is required</div> 
-                        </div>        
-                    </div>
-                    <div class="form-group col-md-5 offset-4">
+                <div class="form-group col-md-3 offset-4">
+                    <label>CategoryID</label>
+                    <input type="text" formControlName="CategoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryId.errors }" />
+                    <div *ngIf="submitted && f.CategoryId.errors" class="invalid-feedback">
+                    <div *ngIf="f.CategoryId.errors.required">Category id is required</div> 
+                    </div>        
+                </div>
+                <!-- <div class="form-group col-md-3 offset-4">
+                    <label>CategoryName</label>
+                    <input type="text" formControlName="CategoryName" class="form-control" [ngClass]="{ 'is-invalid':submitted && f.CategoryName.errors }" />
+                    <div *ngIf="submitted && f.CategoryName.errors" class="invalid-feedback">
+                    <div *ngIf="f.CategoryName.errors.required">Category id is required</div> 
+                    </div>        
+                </div> -->
+               <div class="form-group col-md-5 offset-4">
+                <label>CategoryName:</label>
+                <select formControlName="CategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryName.errors }">
+                    <option value=""></option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Grocery">Grocery</option>
+                </select>
+                <div *ngIf="submitted && f.CategoryName.errors" class="invalid-feedback">
+                    <div *ngIf="f.CategoryName.errors.required">categoryname is required</div>
+                </div>
+            </div>  
+            
+                    <!-- <div class="form-group col-md-5 offset-4">
                         <label>CategoryName</label>
-                        <input type="text" formControlName="CategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryName.errors }" />
+                        <div  [ngClass]="{'is-invalid': submitted && f.CategoryName.errors}">
+                        <select>
+                            <option value=""></option>
+                            <option  value="Electronics">Electronics</option>
+                            <option value="Fashion">Fashion</option>
+                            <option value="Furniture">Furniture</option>
+                        </select>
                         <div *ngIf="submitted && f.CategoryName.errors" class="invalid-feedback">
-                        <div *ngIf="f.CategoryName.errors.required">CategoryName  is required</div> 
-                        <!-- <div *ngIf="f.categoryname.errors.required.pattern">CategoryName must be valid</div>  -->
-                        </div>
-                    </div>
+                            <div *ngIf="f.CategoryName.errors.required">CategoryName  is required</div> 
+</div>
+                    
+                    </div></div> -->
                         <div class="form-group col-md-5 offset-4">
                             <label>BreifDetails</label>
-                            <input type="text" formControlName="BreifDetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.BreifDetails.errors }" />
+                            <textarea type="text" formControlName="BreifDetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.BreifDetails.errors }"></textarea>
                             <div *ngIf="submitted && f.BreifDetails.errors" class="invalid-feedback">
-                            <div *ngIf="f.BreifDetails.errors.required">BreifDetails id is required</div> 
-                             <div *ngIf="f.BreifDetails.errors.required.pattern">Breif Details must be valid</div> 
+                            <div *ngIf="f.BreifDetails.errors.required">BreifDetails is required</div> 
+                             <div *ngIf="f.BreifDetails.errors.pattern">Breif Details must be valid</div> 
                             </div>        
                         </div>
                         <div class="form-group form-check col-md-5 offset-5">

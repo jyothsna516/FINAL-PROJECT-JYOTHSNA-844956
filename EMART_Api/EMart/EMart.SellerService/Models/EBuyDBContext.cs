@@ -67,19 +67,16 @@ namespace EMart.SellerService.Models
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.Property(e => e.CategoryId)
-                    .HasColumnName("category_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.BreifDetails)
                     .IsRequired()
-                    .HasColumnName("breif_details")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.CategoryName)
                     .IsRequired()
-                    .HasColumnName("category_name")
                     .HasMaxLength(20)
                     .IsUnicode(false);
             });
@@ -285,26 +282,20 @@ namespace EMart.SellerService.Models
             modelBuilder.Entity<SubCategory>(entity =>
             {
                 entity.Property(e => e.SubcategoryId)
-                    .HasColumnName("subcategory_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.BreifDetails)
                     .IsRequired()
-                    .HasColumnName("breif_details")
                     .HasMaxLength(40)
                     .IsUnicode(false);
 
                 entity.Property(e => e.CategoryId)
-                    .HasColumnName("category_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Gst).HasColumnName("GST");
-
                 entity.Property(e => e.SubcategoryName)
                     .IsRequired()
-                    .HasColumnName("subcategory_name")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 

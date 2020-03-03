@@ -28,8 +28,9 @@ namespace EMart.SellerService.Repositories
 
         public Items GetItem(string itemid)
         {
-            return _context.Items.Find(itemid);
-            
+
+            return _context.Items.SingleOrDefault(e => e.SellerId == itemid);
+           
         }
 
         public void UpdateItem(Items obj)
@@ -40,8 +41,18 @@ namespace EMart.SellerService.Repositories
 
         public List<Items> ViewItems(string sid)
         {
-            return _context.Items.ToList();
+            return _context.Items.Where(e => e.SellerId == sid).ToList();
             
         }
+        public List<Category> GetCategory()
+        {
+            return _context.Category.ToList();
+        }
+
+        public List<SubCategory> GetSubCagegory(string Cid)
+        {
+            return _context.SubCategory.Where(c => c.CategoryId == Cid).ToList();
+        }
+
     }
 }

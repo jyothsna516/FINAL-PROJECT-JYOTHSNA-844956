@@ -1,39 +1,116 @@
-<p>view-items works!</p>
-<div class="container">
+<!-- <div class="container">
     <div class="card bg-light mb-3" >
-        <h5 class="card-header text-center">ViewItem</h5>
+        <h5 class="card-header text-center">Add Item</h5>
         <div class="bg2">
         <div class="card-body">
             <form [formGroup]="AddItemForm" (ngSubmit)="onSubmit()">  
                     <div class="form-group col-md-5 offset-4">
-                        <label>SellerID</label>
+                        <label>ItemID</label>
                         <input type="text" formControlName="itemid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.itemid.errors }" />
                         <div *ngIf="submitted && f.itemid.errors" class="invalid-feedback">
                         <div *ngIf="f.itemid.errors.required">Item id is required</div> 
                         </div>        
                     </div>
-                    <div class="text-center form-group">
-                        <!-- <button class="btn btn-primary mr-1"(click)="Add()">ADD</button> -->
-                        <button class="btn btn-primary mr-1">Search</button></div>
-                    
-                    </form>
+                
+                
+                    <div class="form-group col-md-5 offset-4">
+                        <label for="CategoryID">CategoryID</label>
+                        <input type="text" formControlName="categoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.categoryid.errors }" />
+                        <div *ngIf="submitted && f.categoryid.errors" class="invalid-feedback">
+                            <div *ngIf="f.categoryid.errors.required"> CategoryID is required</div>
+                        </div>
                     </div>
+                
+                    <div class="form-group col-md-5 offset-4">
+                        <label for="SubCategoryID">SubCategoryID</label>
+                        <input type="text" formControlName="subcategoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subcategoryid.errors }" />
+                        <div *ngIf="submitted && f.subcategoryid.errors" class="invalid-feedback">
+                            <div *ngIf="f.subcategoryid.errors.required">SubCategoryID is required</div>
+                        </div>
                     </div>
+    
+                <div class="form-group col-md-5 offset-4 ">
+                    <label>Price</label>
+                    <input type="number" formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
+                    <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                        <div *ngIf="f.price.errors.required">Price is required</div>
+                        <!-- <div *ngIf="f.price.errors.email">Email must be a valid email address</div> -->
+                    <!-- </div>
+                </div>
+                
+                <div class="form-group col-md-5 offset-4">
+                    <label>Item Name</label>
+                    <input type="text" formControlName="itemname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.itemname.errors }" />
+                    <div *ngIf="submitted && f.itemname.errors" class="invalid-feedback">
+                        <div *ngIf="f.mobileno.itemname.required"> Item Nameis required</div>
+                        <div *ngIf="f.mobileno.itemname.pattern">Item Name Must be Valid</div>
                     </div>
+                </div>
+                
+                <div class="form-group col-md-5 offset-4">
+                    <label>Description</label>
+                    <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+                    <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                        <div *ngIf="f.description.errors.required">Description is required</div>
+                        <div *ngIf="f.description.errors.pattern">Description Must be Valid Format</div>
+                    </div>
+                </div> 
+                <div class="form-group col-md-5 offset-4">
+                    <label>Stock Number</label>
+                    <input type="number" formControlName="stocknumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.stocknumber.errors }" />
+                    <div *ngIf="submitted && f.stocknumber.errors" class="invalid-feedback">
+                    <div *ngIf="f.stocknumber.errors.required">Stock Number is required</div> 
+                    </div>        
+                </div>
+
+                <div class="form-group col-md-5 offset-4">
+                    <label>Remarks</label>
+                    <input type="text" formControlName="remarks" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.remarks.errors }" />
+                    <div *ngIf="submitted && f.remarks.errors" class="invalid-feedback">
+                        <div *ngIf="f.remarks.errors.required">Remarks is required</div>
+                        <div *ngIf="f.remarks.errors.pattern">Remarks Must be Valid Format</div>
+                    </div> -->
+                <!-- </div>  --> 
+
+                <div class="container">
+                    <div class="card bg-light mb-3" >
+                        <h5 class="card-header text-center">View Item</h5>
+                        <div class="bg2">
+                        <div class="card-body">  
+    <table class="table table-border"><tr>
+        <th>ItemId</th>
+        <th>ItemName</th>
+        <th>Price</th>
+        <th>Description</th>
+      <th>Stock</th>
+      <th>Remarks</th>
+      <th>SellerId</th>
+    </tr>
+    <tr *ngFor="let item of items">
+       
+    
+    <td>{{item.itemId}}</td>
+        <!-- <td>{{item.categoryId}}</td>
+        <td>{{item.subcategoryId}}</td> -->
+        <td>{{item.categoryId}}</td>
+        <td>{{item.subcategoryId}}</td>
+       <td>{{ item.itemName}}</td>
+       <td>{{item.price}}</td>
+      <td>{{item.itemDescription}}</td> 
+        <td>{{item.stockNumber}}</td>
+        <td>{{item.remarks}}</td>
+      <td>{{item.sellerId}}</td>
+    
+        <!-- <td><button class="btn btn-primary" ng-click="showme=true" (click)="edit()">Edit</button></td> -->
+        <td><button class="btn btn-primary" (click)="Deleteitem(item.itemId)">Delete</button></td>
+    </tr>
+    </table>
 </div>
-                    <div class="container">
-                        <table class="table table-bordered">
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Stock</th>
-                            </tr>
-                            <tr *ngFor="let item of list">
-                                <td>{{item.itemid}}</td>
-                                <td>{{item.name}}</td>
-                                <td>{{item.price}}</td>
-                                <td>{{item.stock}}</td>
-                            </tr>
-                        </table>
-                    </div>
+</div>
+    </div>
+                </div>
+
+
+
+
+

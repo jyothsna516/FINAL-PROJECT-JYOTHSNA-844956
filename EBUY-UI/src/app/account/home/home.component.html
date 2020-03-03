@@ -17,7 +17,7 @@
                         </button>
                         <div class="dropdown-menu">
                             <a class="nav-link btn-outline-secondary"
-                           class="dropdown-item" href="registerbuyer">SignUpBuyer</a>
+                           class="dropdown-item" [routerLink]="['/register-buyer']">SignUpBuyer</a>
                           <a class="dropdown-item" href="register-seller">SignUpSeller</a>
                           
                         </div>
@@ -32,6 +32,7 @@
                     </li>
 
                 </ul>
+                <router-outlet></router-outlet>
                 <!--  <span class="navbar-text">
                   Navbar text with an inline element
                 </span> -->
@@ -40,6 +41,8 @@
                 
                 </nav>
 </div>
+
+
 
             
 
@@ -132,4 +135,5 @@
                 </div>
             </main>
         </div>
+        <router-outlet></router-outlet>
         

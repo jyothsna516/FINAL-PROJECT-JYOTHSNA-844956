@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
       this.route.navigateByUrl('buyer');
   }
   //else{this.route.navigateByUrl('register-buyer');}
-  if(this.uname=="sai"&&this.pwd=="155"&&this.sid=="S0001"){sessionStorage.setItem("un",this.uname),
+  if(this.uname=="sai"&&this.pwd=="155"){sessionStorage.setItem("un",this.uname),
     this.route.navigateByUrl('seller');
 }
 //else{this.route.navigateByUrl('register-seller');}

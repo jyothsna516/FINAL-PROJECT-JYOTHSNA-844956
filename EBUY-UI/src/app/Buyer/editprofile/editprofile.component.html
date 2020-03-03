@@ -1,1 +1,103 @@
 <p>editprofile works!</p>
+<div class ="image">
+    <div class="container">
+    <div class="card bg-light mb-3 "> 
+        <div class="bg2">
+        <!-- <form class = "form-horizontal" role = "form"> -->
+        <h5 class="card-header text-center">Signup-Buyer</h5>
+         <div class="card-body"> 
+            
+            <form [formGroup]=" EditProfileForm" (ngSubmit)="onSubmit()">
+
+                <div class="form-group col-md-5 offset-4">
+                    <label for="buyerid">Id</label>
+                    <input type="text" formControlName="Bid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Bid.errors }" />
+                    <div *ngIf="submitted && f.Bid.errors" class="invalid-feedback">
+                        <div *ngIf="f.Bid.errors.required">id is required</div>
+                      
+                    </div>
+                </div>
+                    <div class="form-group col-md-5 offset-4">
+                        <label for="username">Username</label>
+                        <input type="text" formControlName="Username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Username.errors }" />
+                        <div *ngIf="submitted && f.Username.errors" class="invalid-feedback">
+                            <div *ngIf="f.Username.errors.required">Username is required</div>
+                            <div *ngIf="f.Username.errors.pattern">Username must be valid</div>
+                        </div>
+                    </div>
+                
+                    <div class="form-group col-md-5 offset-4">
+                        <label for="password">Password</label>
+                        <input type="password" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" />
+                        <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                            <div *ngIf="f.Password.errors.required">Password is required</div>
+                            <div *ngIf="f.Password.errors.pattern">password must contain[a-z] any 1 special character should contain</div>
+                        </div>
+                    </div>
+    
+                <div class="form-group col-md-5 offset-4 ">
+                    <label>Email</label>
+                    <input type="text" formControlName="Emailid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Emailid.errors }" />
+                    <div *ngIf="submitted && f.Emailid.errors" class="invalid-feedback">
+                        <div *ngIf="f.Emailid.errors.required">Email is required</div>
+                        <div *ngIf="f.Emailid.errors.email">Email must be a valid email address</div>
+                    </div>
+                </div>
+                
+                <div class="form-group col-md-5 offset-4">
+                    <label>Mobile</label>
+                    <input type="text" formControlName="Mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Mobile.errors }" />
+                    <div *ngIf="submitted && f.Mobile.errors" class="invalid-feedback">
+                        <div *ngIf="f.Mobile.errors.required">Mobile no is required</div>
+                        <div *ngIf="f.Mobile.errors.pattern">Mobile no Must be Valid</div>
+                    </div>
+                </div>
+                
+                <div class="form-group col-md-5 offset-4">
+                    <label>DateTime</label>
+                    <input type="date" formControlName="Datetime" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Datetime.errors }" />
+                    <div *ngIf="submitted && f.Datetime.errors" class="invalid-feedback">
+                        <div *ngIf="f.Datetime.errors.required">Date is required</div>
+                        <div *ngIf="f.Datetime.errors.pattern">Date Must be Valid Format</div>
+                    </div>
+                </div>    
+                
+            
+                <div class="text-center">
+                    <button class="btn btn-success mr-1" type="search" (click)="onSearch()">Search</button>
+                      <button class="btn btn-primary mr-1" (click)="onSubmit()">Update</button>
+                      <button class="btn btn-danger" type="reset" (click)="onReset()">Reset</button>
+                  </div>
+            </form>
+            
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+          
+            
+    
+    
+    
+    <router-outlet></router-outlet>
+    

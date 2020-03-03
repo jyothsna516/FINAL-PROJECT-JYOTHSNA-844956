@@ -17,8 +17,8 @@ export class AddCategoryComponent implements OnInit {
 
   ngOnInit() {
       this.AddCategoryForm = this.formBuilder.group({
-          CategoryId: ['',[Validators.required]],
-          CategoryName: ['',[Validators.required]],
+        CategoryId:['',[Validators.required]],
+         CategoryName: ['',[Validators.required]],
           BreifDetails:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]], 
           acceptTerms: [false, Validators.requiredTrue]
       });
@@ -38,20 +38,28 @@ export class AddCategoryComponent implements OnInit {
   {
     
         this.catg=new Category();
-        this.catg.CategoryId=this.AddCategoryForm.value["CategoryId"];
-        this.catg.CategoryName=this.AddCategoryForm.value["CategoryName"];
-        this.catg.BreifDetails=this.AddCategoryForm.value["BreifDetails"];   
+        this.catg.categoryId=this.AddCategoryForm.value["CategoryId"];
+        this.catg.categoryName=this.AddCategoryForm.value["CategoryName"];
+        this.catg.breifDetails=this.AddCategoryForm.value["BreifDetails"];   
         // console.log(this.buyer);
         this.sservice.AddCategory(this.catg).subscribe(res=>{
           console.log('Added categories sucessfully')
         },err=>{
           console.log(err);
-        })
-         alert('SUCCESS!! :-)\n\n') 
+        });
+         //alert('SUCCESS!! :-)\n\n') 
         // console.log(JSON.stringify(this.SignupForm.value)); 
       
 
 }
+// Delete(){
+  
+//   let id=this.sservice.DeleteItem(id).subscribe(res=>{
+//     this.catg=res;
+//     console.log(this.catg);
+// },err=>{
+//   console.log(err);
+// });}
 onReset() {
     this.submitted = false;
     this.AddCategoryForm.reset();

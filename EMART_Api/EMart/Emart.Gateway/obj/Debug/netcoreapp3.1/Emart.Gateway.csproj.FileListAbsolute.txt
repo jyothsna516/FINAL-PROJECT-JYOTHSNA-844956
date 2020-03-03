@@ -25,5 +25,12 @@ D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.Gateway\bin\Debug\netcore
 D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.Gateway\bin\Debug\netcoreapp3.1\Ocelot.dll
 D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.Gateway\obj\Debug\netcoreapp3.1\Emart.Gateway.csproj.CopyComplete
 D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.Gateway\bin\Debug\netcoreapp3.1\ocelot.json
+D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.Gateway\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.Gateway\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.Gateway\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.Gateway\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.Gateway\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.Gateway\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.Gateway\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.Gateway\obj\Debug\netcoreapp3.1\Emart.Gateway.MvcApplicationPartsAssemblyInfo.cs
 D:\FINAL-PROJECT-Jyothsna-844956\EMART_Api\EMart\Emart.Gateway\obj\Debug\netcoreapp3.1\Emart.Gateway.MvcApplicationPartsAssemblyInfo.cache
