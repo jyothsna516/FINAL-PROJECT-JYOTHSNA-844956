@@ -16,4 +16,10 @@ url:string="https://localhost:44317/User/"
   public SellerRegister(seller:Seller):Observable<any>{
     return this.http.post<any>(this.url+'SRegister',JSON.stringify(seller),Requestheaders);
   }
-}
+  public BuyerLogin(uname:string,pwd:string):Observable<any>{
+    return this.http.get<any>(this.url+'blogin/'+uname+'/'+pwd,Requestheaders);}
+  
+  public SellerLogin(uname:string,pwd:string):Observable<any>{
+    return this.http.get<any>(this.url+'slogin/'+uname+'/'+pwd,Requestheaders);}
+  }
+

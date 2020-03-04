@@ -114,10 +114,13 @@
                         <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
                     </div>
                 
-                <div class="text-center">
-                    <button class="btn btn-primary mr-1">Edit</button>
+                <div class="text-center"> 
+                    <button (click)="Edit()" type="button" class="btnSubmit">Edit</button> 
+                
+    
                     <button class="btn btn-danger" type="reset" (click)="onReset()">Reset</button>
-                </div>
+                    </div>
+                
                 </form>
             </div>
         </div>
@@ -125,6 +128,7 @@
         </div>
         
     </div>
+
  <div class="container">
     <table class="table table-bordered">
         

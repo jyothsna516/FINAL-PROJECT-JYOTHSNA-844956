@@ -42,9 +42,9 @@ namespace Emart.AdminService.Repositories
             _context.Remove(res);
             _context.SaveChanges();
         }
-        public void DeleteSubCategory(string SubCategoryId)
+        public void DeleteSubCategory(string subcategoryId)
         {
-            Category res = _context.Category.Find(SubCategoryId);
+            Category res = _context.Category.Find(subcategoryId);
             _context.Remove(res);
             _context.SaveChanges();
         }

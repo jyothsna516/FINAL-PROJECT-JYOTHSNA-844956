@@ -39,9 +39,13 @@
                         <select formControlName="SubCategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryName.errors }">
                             <option value=""></option>
                             <option value="WomensClothes">WomensClothing</option>
+                            <option value="mensClothes">mensClothing</option>
                             <option value="mobiles">Mobiles</option>
-                            <option value="Accessories">Accessories</option>
-                            <option value="Grocery">Grocery</option>
+                            <option value="Tv">Tv</option>
+                            <option value="womenswatches">womenswatches</option>
+                            <option  value="menswatches">mensWatches</option>
+                            <option value="oil">oil</option>
+                            <option value="onions">Onions</option>
                         </select>
                         <div *ngIf="submitted && f. SubCategoryName.errors" class="invalid-feedback">
                             <div *ngIf="f.SubCategoryName.errors.required">subcategoryname is required</div>

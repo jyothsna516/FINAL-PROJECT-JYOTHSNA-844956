@@ -13,15 +13,15 @@ namespace EMart.UserService.Repositories
             _context = context;
                 
         }
-        public  string  BuyerLogin(string uname, string pwd)
+        public  Buyer BuyerLogin(string uname, string pwd)
         {
             var x = _context.Buyer.SingleOrDefault(e => e.Username == uname && e.Password == pwd);
                 if (x!=null) {
-                return "true";
-                
+                // token = new Token() { BuyerId = Buyer.BuyerId, token = GenerateJwtToken(username), msg = "Success" };
+                return x;
             }
                 else {
-                return "false";
+                return null;
             }
              
             }
@@ -34,11 +34,15 @@ namespace EMart.UserService.Repositories
 
         }
 
-        public string SellerLogin(string uname, string pwd)
+        public Seller SellerLogin(string uname, string pwd)
         {
             var y = _context.Seller.SingleOrDefault(e => e.Username == uname && e.Password == pwd);
-            if (y!= null) { return "true"; }
-            else { return "false"; }
+            if (y != null)
+            {
+                return y;
+            }
+            
+            else { return null; }
         }
 
         public void SellerRegister(Seller seller)

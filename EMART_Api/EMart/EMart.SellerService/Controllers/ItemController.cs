@@ -92,12 +92,12 @@ namespace EMart.SellerService.Controllers
 
         }
         [HttpGet]
-        [Route("GetSubCategory/{Cid}")]
-        public IActionResult GetSubCategory(string Cid)
+        [Route("GetSubCategory/{CategoryId}")]
+        public IActionResult GetSubCategory(string CategoryId)
         {
             try
             {
-                return Ok(_repo.GetSubCagegory(Cid));
+                return Ok(_repo.GetSubCagegory(CategoryId));
              //   return Ok();
 
             }

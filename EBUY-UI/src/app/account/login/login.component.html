@@ -1,31 +1,51 @@
 <div class="image">
-
 <div class="container"> 
     <div class="card bg-light mb-1" > 
         <div class="bg2">
         <!-- <form class = "form-horizontal" role = "form"> -->
         <h5 class="card-header text-center">User Login</h5>
          <div class="card-body">  
-    <!-- <div class="formgroup"><div class="form-group col-5"><h1>User Login</h1></div> -->
-    <div class="formgroup">
-        <div class="form-group col-5">
-           
-        <label for="Uname">UserName</label>
-       
-        <input type="text" [(ngModel)]="uname" class="form-control"><br>
-    </div></div>
-    <div class="form-group">
-        <div class="form-group col-5">
+             <form [formGroup]="login" (ngSubmit)="Validate()">
+    <!-- <div class="form-group col-5"><h1>User Login</h1></div>  -->
+    
+        <div class="form-group col-md-5 offset-4">
+            <label for="Uname">Username</label>
+            <input type="text" formControlName="username"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">id is required</div>
+              
+            </div>
+        </div>
+        <div class="form-group col-md-5 offset-4">
+            <label for="Pwd">Password</label>
+            <input type="text" formControlName="password"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.passworderrors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">id is required</div>
+              
+            </div>
+        </div>
+        <!-- <label for="Uname">UserName</label>
+        <input type="text" formControlName="username" [(ngModel)]="uname" class="form-control"><br>
+    </div> -->
+    <!-- <div class="form-group col-md-5 offset-4">
         <label for="Pwd">Password</label>
         <input type="password" [(ngModel)]="pwd" class="form-control">
-    </div></div>
+    </div> -->
+    <div class="form-check form-check-inline offset-4 ">
+        <input class="form-check-input" type="radio" formControlName="role" value="buyer"name="role">
+        <label class="form-check-label" for="inlineRadio1">Buyer</label>
+     </div>
+    <div class="form-check form-check-inline offset-4">
+        <input class="form-check-input" type="radio" formControlName="role" value="seller"name="role">
+        <label class="form-check-label" for="inlineRadio2">Seller</label>
+      </div>
     <!-- <div class="form-group">
         <div class="form-group col-5">
         <label for="sid">id of the user</label>
         <input type="text" [(ngModel)]="sid" class="form-control">
     </div></div> -->
     <div class="form-group">    
-        <button (click)="Login()" class="btn btn-primary">Login</button>
+        <button class="btn btn-primary">Login</button>
     </div>
     <!-- <div class="form-group">
         <a [routerLink]="['/register-buyer/register-buyer']" >SIGNUP Buyer</a>
@@ -44,9 +64,10 @@
                         <a class="nav-link btn-outline-secondary bg-dark" href="register-seller" ><b>SignUp Seller</b></a>
                         </li>
                         </ul>
-<div class="form-group">
+<!-- <div class="form-group">
     <label class="text-error">{{errmsg}}</label>
-</div>
+</div> -->
+</form>
 </div>
 </div>
 </div>

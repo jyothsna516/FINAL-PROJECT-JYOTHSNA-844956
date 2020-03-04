@@ -9,7 +9,7 @@
         <form [formGroup]="SignupForm" (ngSubmit)="onSubmit()">
             <div class="form-group col-md-5 offset-4">
                 <label for="buyerid">Id</label>
-                <input type="text" formControlName="bid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bid.errors }" />
+                <input type="text" formControlName="bid"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bid.errors }" />
                 <div *ngIf="submitted && f.bid.errors" class="invalid-feedback">
                     <div *ngIf="f.bid.errors.required">id is required</div>
                   

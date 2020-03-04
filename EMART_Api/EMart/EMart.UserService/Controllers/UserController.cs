@@ -28,17 +28,27 @@ namespace EMart.UserService.Controllers
       //  private readonly IUserRepository _repo;
        // private object configuration;
 
-        public  UserController(IUserRepository repo)
-        {
-            _repo = repo;
-        }
+       
         [HttpGet]
         [Route("blogin/{uname}/{pwd}")]
       public  IActionResult BuyerLogin(string uname, string pwd)
         {
+            Token token = null;
             try
             {
-                return Ok(_repo.BuyerLogin(uname,pwd));
+                Buyer buyer = _repo.BuyerLogin(uname, pwd);
+                if (buyer!= null)
+                {
+                    token = new Token() { BuyerId = buyer.BuyerId, token = GenerateJwtToken(uname), msg = "Success" };
+                }
+               
+                     else
+                    {
+                        token = new Token() { token = "", msg = "Unsuccess" };
+                    }
+                return Ok(token);
+
+                //return Ok(_repo.BuyerLogin(uname,pwd));
             }
             catch (Exception e)
             {
@@ -51,10 +61,23 @@ namespace EMart.UserService.Controllers
         [Route("slogin/{uname}/{pwd}")]
         public IActionResult SellerLogin(string uname, string pwd)
         {
+            Token token = null;
             try
             {
-                return Ok(_repo.SellerLogin(uname, pwd));
+                Seller seller = _repo.SellerLogin(uname, pwd);
+                if (seller != null)
+                {
+                    token = new Token() { SellerId = seller.SellerId, token = GenerateJwtToken(uname), msg = "Success" };
+                }
+
+                else
+                {
+                    token = new Token() { token = "", msg = "Unsuccess" };
+                }
+                return Ok(token);
+                //return Ok(_repo.BuyerLogin(uname,pwd));
             }
+            
             catch (Exception e)
             {
                 return NotFound(e.InnerException.Message);
@@ -95,7 +118,7 @@ namespace EMart.UserService.Controllers
 
         }
 
-        private Token GenerateJwtToken(string username)
+        private string GenerateJwtToken(string username)
         {
             var claims = new List<Claim>
             {
@@ -116,12 +139,12 @@ namespace EMart.UserService.Controllers
                 signingCredentials: credentials
             );
 
-            var response = new Token
-            {
-                username = username,
-                token = new JwtSecurityTokenHandler().WriteToken(token)
-            };
-            return response;
+            //var response = new Token
+            //{
+            //    username = username,
+            //    token = new JwtSecurityTokenHandler().WriteToken(token)
+            //};
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }

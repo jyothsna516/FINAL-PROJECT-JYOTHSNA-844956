@@ -37,35 +37,29 @@ namespace EMart.BuyerService.Models
             modelBuilder.Entity<Buyer>(entity =>
             {
                 entity.Property(e => e.BuyerId)
-                    .HasColumnName("Buyer_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Createddatetime)
-                    .HasColumnName("createddatetime")
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.Emailid)
                     .IsRequired()
-                    .HasColumnName("emailid")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Mobileno)
-                    .HasColumnName("mobileno")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Password)
                     .IsRequired()
-                    .HasColumnName("password")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Username)
                     .IsRequired()
-                    .HasColumnName("username")
                     .HasMaxLength(20)
                     .IsUnicode(false);
             });
@@ -73,19 +67,16 @@ namespace EMart.BuyerService.Models
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.Property(e => e.CategoryId)
-                    .HasColumnName("category_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.BreifDetails)
                     .IsRequired()
-                    .HasColumnName("breif_details")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.CategoryName)
                     .IsRequired()
-                    .HasColumnName("category_name")
                     .HasMaxLength(20)
                     .IsUnicode(false);
             });
@@ -126,44 +117,35 @@ namespace EMart.BuyerService.Models
                     .HasName("PK__Items__3FB403AC37C3A4C4");
 
                 entity.Property(e => e.ItemId)
-                    .HasColumnName("Item_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.CategoryId)
-                    .HasColumnName("category_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Description)
                     .IsRequired()
-                    .HasColumnName("description")
                     .HasMaxLength(40)
                     .IsUnicode(false);
 
                 entity.Property(e => e.ItemName)
                     .IsRequired()
-                    .HasColumnName("item_name")
+                    .HasColumnName("ItemName ")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Price).HasColumnName("price");
-
                 entity.Property(e => e.Remarks)
                     .IsRequired()
-                    .HasColumnName("remarks")
                     .HasMaxLength(30)
                     .IsUnicode(false);
 
                 entity.Property(e => e.SellerId)
-                    .HasColumnName("Seller_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
-                entity.Property(e => e.StockNumber).HasColumnName("stock_number");
-
                 entity.Property(e => e.SubcategoryId)
-                    .HasColumnName("subcategory_id")
+                    .HasColumnName(" SubcategoryId ")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
@@ -248,54 +230,46 @@ namespace EMart.BuyerService.Models
             modelBuilder.Entity<Seller>(entity =>
             {
                 entity.Property(e => e.SellerId)
-                    .HasColumnName("Seller_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.BriefAboutcompany)
                     .IsRequired()
-                    .HasColumnName("brief_aboutcompany")
                     .HasMaxLength(40)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Companyname)
                     .IsRequired()
-                    .HasColumnName("companyname")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.ContactNumber)
-                    .HasColumnName("contact_number")
+                    .HasColumnName(" ContactNumber")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Emailid)
                     .IsRequired()
-                    .HasColumnName("emailid")
                     .HasMaxLength(40)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Gstin)
                     .IsRequired()
-                    .HasColumnName("GSTIN")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Password)
                     .IsRequired()
-                    .HasColumnName("password")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.PostalAddress)
                     .IsRequired()
-                    .HasColumnName("postal_address")
                     .HasMaxLength(40)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Username)
                     .IsRequired()
-                    .HasColumnName("username")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
@@ -308,26 +282,20 @@ namespace EMart.BuyerService.Models
             modelBuilder.Entity<SubCategory>(entity =>
             {
                 entity.Property(e => e.SubcategoryId)
-                    .HasColumnName("subcategory_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.BreifDetails)
                     .IsRequired()
-                    .HasColumnName("breif_details")
                     .HasMaxLength(40)
                     .IsUnicode(false);
 
                 entity.Property(e => e.CategoryId)
-                    .HasColumnName("category_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Gst).HasColumnName("GST");
-
                 entity.Property(e => e.SubcategoryName)
                     .IsRequired()
-                    .HasColumnName("subcategory_name")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 

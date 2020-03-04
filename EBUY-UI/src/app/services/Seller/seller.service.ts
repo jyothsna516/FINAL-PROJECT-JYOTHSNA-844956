@@ -23,7 +23,7 @@ export class SellerService {
           return this.http.put<any>(this.url+'updateitem/',JSON.stringify(item),Requestheaders);
         }
         public ViewProfile(seller:Seller):Observable<any>{
-          return this.http.get<any>(this.url1+'GetProfile/');}
+          return this.http.get<any>(this.url1+'GetProfile');}
           public EditProfile(seller:Seller):Observable<any>{
             return this.http.get<any>(this.url1+'EditProfile/');
     

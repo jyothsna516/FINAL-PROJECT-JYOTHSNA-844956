@@ -26,9 +26,9 @@ export class AddItemsComponent implements OnInit {
 
   ngOnInit() {
       this.AddItemForm = this.formBuilder.group({
-          itemid: ['',[Validators.required]],
-          categoryid: ['',[Validators.required]],
-          subcategoryid: ['',[Validators.required]],
+         // itemid: ['',[Validators.required]],
+          CategoryId: ['',[Validators.required]],
+          SubcategoryId: ['',[Validators.required]],
           price: ['',[Validators.required]],
           stocknumber: ['',[Validators.required]],
           itemname:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
@@ -42,7 +42,7 @@ export class AddItemsComponent implements OnInit {
   }
   onGetSubCategory()
   {
-    let id1=this.AddItemForm.value["categoryid"];
+    let id1=this.AddItemForm.value["categoryId"];
     console.log(id1);
     this.sservice.GetSubCategory(id1).subscribe(res=>{
       this.subcategorylist=res;
@@ -58,9 +58,9 @@ export class AddItemsComponent implements OnInit {
 }
   Add() {
         this.item=new Items();
-        this.item.ItemId=this.AddItemForm.value["itemid"];
-        this.item.CategoryId=this.AddItemForm.value["categoryid"];
-        this.item.SubcategoryId=this.AddItemForm.value["subcategoryid"];
+        this.item.ItemId='I'+Math.floor(Math.random()*1000);
+        this.item.CategoryId=this.AddItemForm.value["CategoryId"];
+        this.item.SubcategoryId=this.AddItemForm.value["SubcategoryId"];
         this.item.Price=this.AddItemForm.value["price"];
         this.item.StockNumber=this.AddItemForm.value["stocknumber"];
         this.item.Price=this.AddItemForm.value["price"];

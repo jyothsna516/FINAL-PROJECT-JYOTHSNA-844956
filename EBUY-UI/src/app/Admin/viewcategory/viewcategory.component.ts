@@ -30,6 +30,7 @@ export class ViewcategoryComponent implements OnInit {
 
 }
 DeleteCategory(categoryId:string):void{
+  console.log(categoryId);
   this.cservice.DeleteCategory(categoryId).subscribe(res=>{
     console.log("record deleted");
     this.ViewCategory();

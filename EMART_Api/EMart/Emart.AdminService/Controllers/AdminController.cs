@@ -100,13 +100,13 @@ namespace Emart.AdminService.Controllers
             }
         }
         [HttpDelete]
-        [Route("DeleteSubCategory/{SubCategoryId}")]
-        public IActionResult DeleteSubCategory(string SubCategoryId)
+        [Route("DeleteSubCategory/{subcategoryId}")]
+        public IActionResult DeleteSubCategory(string subcategoryId)
         {
             try
             {
                 // _repo.ViewCategory();
-                _repo.DeleteCategory(SubCategoryId);
+                _repo.DeleteCategory(subcategoryId);
                 return Ok();
 
             }

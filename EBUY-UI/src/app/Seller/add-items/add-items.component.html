@@ -5,29 +5,29 @@
             <div class="bg2">
             <div class="card-body">
                 <form [formGroup]="AddItemForm" (ngSubmit)="onSubmit()">  
-                        <div class="form-group col-md-5 offset-4">
+                        <!-- <div class="form-group col-md-5 offset-4">
                             <label>ItemID</label>
                             <input type="text" formControlName="itemid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.itemid.errors }" />
                             <div *ngIf="submitted && f.itemid.errors" class="invalid-feedback">
                             <div *ngIf="f.itemid.errors.required">Item id is required</div> 
                             </div>        
-                        </div>
+                        </div> -->
                         <div class="form-group col-md-5 offset-4">
                             <label>CategoryName:</label>
-                            <select id="s1" formControlName="categoryid" (change)="onGetSubCategory()" class="form-control  input-line full-width" >
-                              <option *ngFor="let cat of categorylist" value="{{cat.categoryid}}">{{cat.categoryName}}</option>
+                            <select id="s1" formControlName="CategoryId" (change)="onGetSubCategory()" class="form-control  input-line full-width" >
+                              <option *ngFor="let cat of categorylist" value="{{cat.CategoryId}}">{{cat.categoryName}}</option>
                               </select>
-                            <div *ngIf="submitted && f.categoryid.errors" class="invalid-feedback">
-                              <div *ngIf="f.categoryid.errors.required">categoryname is required</div>
+                            <div *ngIf="submitted && f.CategoryId.errors" class="invalid-feedback">
+                              <div *ngIf="f.CategoryId.errors.required">categoryname is required</div>
                             </div>
                           </div>
                           <div class="form-group col-md-5 offset-4">
                             <label>SubcategoryName:</label>
-                            <select id="s2" formControlName="subcategoryid" class="form-control  input-line full-width" >
-                              <option *ngFor="let cat of subcategorylist" value="{{cat.subcategoryid}}">{{cat.subCategoryName}}</option>
+                            <select id="s2" formControlName="SubcategoryId" class="form-control  input-line full-width" >
+                              <option *ngFor="let cat of subcategorylist" value="{{cat.SubcategoryId}}">{{cat. SubcategoryName}}</option>
                               </select>
-                            <div *ngIf="submitted && f.subcategoryid.errors" class="invalid-feedback">
-                              <div *ngIf="f.subcategoryid.errors.required">Subcategoryname is required</div>
+                            <div *ngIf="submitted && f.SubcategoryId.errors" class="invalid-feedback">
+                              <div *ngIf="f.SubcategoryId.errors.required">Subcategoryname is required</div>
                             </div>
                           </div>
 

@@ -11,6 +11,7 @@ export class ViewProfileComponent implements OnInit {
   sellerform:FormGroup;
   list:Seller[];
 seller:Seller;
+submitted:boolean;
   constructor(private service:SellerService,private form:FormBuilder) { }
 
   ngOnInit() {
@@ -29,28 +30,61 @@ seller:Seller;
       acceptTerms: [false,Validators.requiredTrue]
 
   })}
-  myprofile()
-  {
-   let SellerId="S0001";
-  this.service.ViewProfile(this.seller).subscribe(res=>  
-   {
+  // myprofile()
+  // {
+  //  let sid="S0001";
+  // this.service.ViewProfile(sid).subscribe(res=>  
+  //  {
      
-     this.seller=res;
-     console.log(this.seller);
-     this.sellerform.patchValue({
-       id:this.seller.SellerId,
-       username:this.seller.Username,
-       emailid:this.seller.Emailid,
-       password:this.seller.Password,
-       briefaboutcompany:this.seller.BriefAboutcompany,
-       companyname:this.seller.Companyname,
-       postaladdress:this.seller.PostalAddress,
-       website:this.seller.Website,
-       GSTIN:this.seller.Gstin,
-       mobile:this.seller.ContactNumber,
+  //    this.seller=res;
+  //    console.log(this.seller);
+  //    this.sellerform.patchValue({
+  //      id:this.seller.SellerId,
+  //      username:this.seller.Username,
+  //      emailid:this.seller.Emailid,
+  //      password:this.seller.Password,
+  //      briefaboutcompany:this.seller.BriefAboutcompany,
+  //      companyname:this.seller.Companyname,
+  //      postaladdress:this.seller.PostalAddress,
+  //      website:this.seller.Website,
+  //      GSTIN:this.seller.Gstin,
+  //      mobile:this.seller.ContactNumber,
        
-     })
+  //    })
+  //   },
+  //   err=>{
+  //     console.log(err);
+  //   }
+  //   )}
+  //   Onsubmit(){
+  //     alert("validated")
+  //     this.submitted=true;
+  //     if(this.sellerform.valid){
+  //       this.myprofile();
+  //     }
+  //   }
+   
+  Edit()
+  {
+  
+    this.seller=new Seller();
+    this.seller.SellerId=this.sellerform.value["SellerId"],
+    this.seller.Username=this.sellerform.value["Username"],
+    this.seller.Emailid=this.sellerform.value["Emailid"],
+    this.seller.Password=this.sellerform.value["Password"],
+    this.seller.ContactNumber=this.sellerform.value["MobileNumber"],
+    this.seller.Companyname=this.sellerform.value["Companyname"],
+    this.seller.BriefAboutcompany=this.sellerform.value["BriefAboutcompany"],
+    this.seller.PostalAddress=this.sellerform.value["PostalAddress"],
+    this.seller.Website=this.sellerform.value["Website"],
+    this.seller.Gstin=this.sellerform.value["GSTIN"],
+    this.seller.ContactNumber=this.sellerform.value["mobile"],
+    this.service.EditProfile(this.seller).subscribe(res=>{console.log(this.seller),alert("updated succesfully")},
+    err=>{
+      console.log(err);
     })
   }
+  
+  }
 
-}
+

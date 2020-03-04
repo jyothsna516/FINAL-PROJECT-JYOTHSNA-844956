@@ -31,7 +31,8 @@ namespace EMart.BuyerService.Repositories
 
         public Buyer GetProfile(string bid)
         {
-            return _context.Buyer.Find(bid);
+            // return _context.Buyer.Find(bid);
+            return _context.Buyer.SingleOrDefault(e => e.BuyerId == bid);
         }
 
         public List<PurchaseHistoryTransactions> PurchaseHistoryTransactions(string bid)
