@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 import { Items } from 'src/app/Models/items';
-import { UserService } from 'src/app/Account/services/user.service';
+
 import { SellerService } from 'src/app/services/Seller/seller.service';
 import { Category } from 'src/app/Models/category';
 import { SubCategory } from 'src/app/Models/sub-category';
@@ -19,6 +19,8 @@ export class AddItemsComponent implements OnInit {
  item:Items;
  categorylist:Category[];
     subcategorylist:SubCategory[];
+    photo:string;
+selectedFile : File = null;
   constructor(private formBuilder: FormBuilder,private sservice:SellerService) { this.sservice.GetCategory().subscribe(res=>{
     this.categorylist=res;
     console.log(this.categorylist);
@@ -27,14 +29,15 @@ export class AddItemsComponent implements OnInit {
   ngOnInit() {
       this.AddItemForm = this.formBuilder.group({
          // itemid: ['',[Validators.required]],
-          CategoryId: ['',[Validators.required]],
-          SubcategoryId: ['',[Validators.required]],
-          price: ['',[Validators.required]],
+          categoryid: ['',[Validators.required]],
+          subcategoryid: ['',[Validators.required]],
+          price:['',[Validators.required]],
           stocknumber: ['',[Validators.required]],
           itemname:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
           description:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
-          remarks:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],    
-          //acceptTerms: [false, Validators.requiredTrue]
+          remarks:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]], 
+          // photo:['',[Validators.required]],   
+          
       });
   }
   get f(){
@@ -42,9 +45,9 @@ export class AddItemsComponent implements OnInit {
   }
   onGetSubCategory()
   {
-    let id1=this.AddItemForm.value["categoryId"];
-    console.log(id1);
-    this.sservice.GetSubCategory(id1).subscribe(res=>{
+    let categoryid=this.AddItemForm.value["Categoryid"];
+    console.log(categoryid);
+    this.sservice.GetSubCategory(categoryid).subscribe(res=>{
       this.subcategorylist=res;
       console.log(this.subcategorylist);
     })
@@ -58,15 +61,16 @@ export class AddItemsComponent implements OnInit {
 }
   Add() {
         this.item=new Items();
-        this.item.ItemId='I'+Math.floor(Math.random()*1000);
-        this.item.CategoryId=this.AddItemForm.value["CategoryId"];
-        this.item.SubcategoryId=this.AddItemForm.value["SubcategoryId"];
-        this.item.Price=this.AddItemForm.value["price"];
-        this.item.StockNumber=this.AddItemForm.value["stocknumber"];
-        this.item.Price=this.AddItemForm.value["price"];
-        this.item.ItemName=this.AddItemForm.value["itemname"];
-        this.item.Description=this.AddItemForm.value["description"];
-        this.item.Remarks=this.AddItemForm.value["remarks"];
+        this.item.itemId='I'+Math.floor(Math.random()*1000);
+        this.item.categoryid=this.AddItemForm.value["categoryid"];
+        this.item.subcategoryid=this.AddItemForm.value["subcategoryid"];
+        this.item.price=this.AddItemForm.value["price"];
+        this.item.stocknumber=this.AddItemForm.value["stocknumber"];
+       // this.item.price=this.AddItemForm.value["price"];
+        this.item.itemname=this.AddItemForm.value["itemname"];
+        this.item.description=this.AddItemForm.value["description"];
+        this.item.remarks=this.AddItemForm.value["remarks"];
+        this.item.photo=this.photo;
         // console.log(this.buyer);
         this.sservice.AddItem(this.item).subscribe(res=>{
           console.log('Added Items sucessfully')
@@ -76,6 +80,9 @@ export class AddItemsComponent implements OnInit {
         // alert('SUCCESS!! :-)\n\n') 
         // console.log(JSON.stringify(this.SignupForm.value)); 
       }
+    //   fileEvent(event){
+    //     this.photo = event.target.files[0].name;
+    // }
 
 
 onReset() {

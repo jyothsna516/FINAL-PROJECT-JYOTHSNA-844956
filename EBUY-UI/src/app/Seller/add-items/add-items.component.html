@@ -5,59 +5,32 @@
             <div class="bg2">
             <div class="card-body">
                 <form [formGroup]="AddItemForm" (ngSubmit)="onSubmit()">  
-                        <!-- <div class="form-group col-md-5 offset-4">
-                            <label>ItemID</label>
-                            <input type="text" formControlName="itemid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.itemid.errors }" />
-                            <div *ngIf="submitted && f.itemid.errors" class="invalid-feedback">
-                            <div *ngIf="f.itemid.errors.required">Item id is required</div> 
-                            </div>        
-                        </div> -->
                         <div class="form-group col-md-5 offset-4">
                             <label>CategoryName:</label>
-                            <select id="s1" formControlName="CategoryId" (change)="onGetSubCategory()" class="form-control  input-line full-width" >
-                              <option *ngFor="let cat of categorylist" value="{{cat.CategoryId}}">{{cat.categoryName}}</option>
+                            <select id="s1" formControlName="categoryid" (change)="onGetSubCategory()" class="form-control  input-line full-width" >
+                              <option *ngFor="let cat of categorylist" value={{cat.categoryId}}>{{cat.categoryName}}</option>
                               </select>
-                            <div *ngIf="submitted && f.CategoryId.errors" class="invalid-feedback">
-                              <div *ngIf="f.CategoryId.errors.required">categoryname is required</div>
+                            <div *ngIf="submitted && f.categoryid.errors" class="invalid-feedback">
+                              <div *ngIf="f.categoryid.errors.required">categoryname is required</div>
                             </div>
                           </div>
                           <div class="form-group col-md-5 offset-4">
                             <label>SubcategoryName:</label>
-                            <select id="s2" formControlName="SubcategoryId" class="form-control  input-line full-width" >
-                              <option *ngFor="let cat of subcategorylist" value="{{cat.SubcategoryId}}">{{cat. SubcategoryName}}</option>
+                            <select id="s2" formControlName="subcategoryid" class="form-control  input-line full-width" >
+                              <option *ngFor="let cat of subcategorylist" value={{cat.subCategoryId}}>{{cat.subCategoryName}}</option>
                               </select>
-                            <div *ngIf="submitted && f.SubcategoryId.errors" class="invalid-feedback">
-                              <div *ngIf="f.SubcategoryId.errors.required">Subcategoryname is required</div>
-                            </div>
-                          </div>
-
-                    
-<!--                     
-                        <div class="form-group col-md-5 offset-4">
-                            <label for="CategoryID">CategoryID</label>
-                            <input type="text" formControlName="categoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.categoryid.errors }" />
-                            <div *ngIf="submitted && f.categoryid.errors" class="invalid-feedback">
-                                <div *ngIf="f.categoryid.errors.required"> CategoryID is required</div>
-                            </div>
-                        </div>
-                    
-                        <div class="form-group col-md-5 offset-4">
-                            <label for="SubCategoryID">SubCategoryID</label>
-                            <input type="text" formControlName="subcategoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subcategoryid.errors }" />
                             <div *ngIf="submitted && f.subcategoryid.errors" class="invalid-feedback">
-                                <div *ngIf="f.subcategoryid.errors.required">SubCategoryID is required</div>
+                              <div *ngIf="f.subcategoryid.errors.required">Subcategoryname is required</div>
                             </div>
-                        </div> -->
-        
+                          </div>         
+         
                     <div class="form-group col-md-5 offset-4 ">
                         <label>Price</label>
                         <input type="number" formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
                         <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
-                            <div *ngIf="f.price.errors.required">Price is required</div>
-                            <!-- <div *ngIf="f.price.errors.email">Email must be a valid email address</div> -->
+                            <div *ngIf="f.price.errors.required">price is required</div>
                         </div>
-                    </div>
-                    
+                    </div>   
                     <div class="form-group col-md-5 offset-4">
                         <label>Item Name</label>
                         <input type="text" formControlName="itemname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.itemname.errors }" />
@@ -91,14 +64,12 @@
                             <div *ngIf="f.remarks.errors.pattern">Remarks Must be Valid Format</div>
                         </div>
                     </div> 
+                    <!-- <div class="form-group col-md-5 offset-4">
+                   <input type="file" formControlName="photo" name="photo"(change)="fileEvent($event)"/>
+                         
+                        </div> -->
 
-
-                    <!-- <div class="form-group form-check col-md-5 offset-5">
-                        <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
-                        <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
-                        <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
-                    </div> -->
-                
+                   
                 <div class="text-center">
                     <button class="btn btn-primary mr-1">Add</button>
                     <button class="btn btn-danger" type="reset" (click)="onReset()">Cancel</button>
@@ -108,5 +79,4 @@
         </div>
         </div>
         </div>
-        
-        
+  

@@ -1,2 +1,46 @@
-<p>search works!</p>
-<router-outlet></router-outlet>
+
+                     
+         
+            
+           
+            <div class="container">
+                <div class="col-md-3">  
+                    <div class="input-group add-on">
+                      <input class="form-control" placeholder="Search" type="search" [(ngModel)]="itemName">
+                        <button class="btn btn-default" type="submit"(click)="Search(itemName)"><i class="glyphicon glyphicon-search"></i></button>
+                      </div>
+                    </div>
+  <div class="card">
+     
+    <div class="text-center"><h2>Item Details</h2></div>
+    <div class="card-header">
+        <li *ngFor="let item of list">{{item.itemName}}</li>
+    </div>
+    <div class="card-body">
+        <table class="table table-border">
+             <tr>
+            <th>Price:</th>
+            <td>{{item.price}}</td>
+     </tr> 
+      <tr>
+     <th> Description:</th>
+      <td>{{item.description}}</td>
+      </tr>
+      <tr>
+      <th>Stock:</th>
+      <td>{{item.stock}}</td></tr>
+      <tr>
+     <th> Remarks:</th>
+      <td>{{item.remarks}}</td></tr>
+      </table>
+    </div> 
+    <div class="card-footer">
+        <div class="text-center">
+            <button class="btn btn-primary mr-1">Buy</button>
+            <button class="btn btn-success mr-1">Add to cart</button>
+        </div>
+    </div>
+  </div>
+  </div>
+  
+  

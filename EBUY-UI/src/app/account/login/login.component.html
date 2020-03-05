@@ -12,7 +12,7 @@
             <label for="Uname">Username</label>
             <input type="text" formControlName="username"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
             <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                <div *ngIf="f.username.errors.required">id is required</div>
+                <div *ngIf="f.username.errors.required">username is required</div>
               
             </div>
         </div>
@@ -20,7 +20,7 @@
             <label for="Pwd">Password</label>
             <input type="text" formControlName="password"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
             <div *ngIf="submitted && f.passworderrors" class="invalid-feedback">
-                <div *ngIf="f.password.errors.required">id is required</div>
+                <div *ngIf="f.password.errors.required">password is required</div>
               
             </div>
         </div>

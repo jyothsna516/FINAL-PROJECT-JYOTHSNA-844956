@@ -19,12 +19,12 @@ export class AddSubCategoryComponent implements OnInit {
 
   ngOnInit() {
       this.AddSubCategoryForm = this.formBuilder.group({
-          SubCategoryId: ['',[Validators.required]],
-          SubCategoryName: ['',[Validators.required]],
-          CategoryName:['',[Validators.required]],
-          CategoryId: ['',[Validators.required]],
-          BreifDetails:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]], 
-          Gst:['',[Validators.required]],
+          subcategoryid: ['',[Validators.required]],
+          subcategoryname: ['',[Validators.required]],
+          categoryname:['',[Validators.required]],
+          categoryid: ['',[Validators.required]],
+          breifdetails:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]], 
+          gst:['',[Validators.required]],
           acceptTerms: [false, Validators.requiredTrue]
       });
   }
@@ -44,12 +44,12 @@ export class AddSubCategoryComponent implements OnInit {
     //this.buyer=new Buyer(); 
     if (this.AddSubCategoryForm.valid) {
         this.scatg=new SubCategory();
-        this.scatg.CategoryId=this.AddSubCategoryForm.value["CategoryId"];
-        this.scatg.CategoryName=this.AddSubCategoryForm.value["CategoryName"];
-        this.scatg.SubcategoryId=this.AddSubCategoryForm.value["SubCategoryId"]
-        this.scatg.SubcategoryName=this.AddSubCategoryForm.value["SubCategoryName"];
-        this.scatg.BreifDetails=this.AddSubCategoryForm.value["BreifDetails"];  
-        this.scatg.Gst=this.AddSubCategoryForm.value["Gst"]; 
+        this.scatg.categoryid=this.AddSubCategoryForm.value["categoryid"];
+        this.scatg.categoryname=this.AddSubCategoryForm.value["categoryname"];
+        this.scatg.subcategoryid=this.AddSubCategoryForm.value["subcategoryid"]
+        this.scatg.subcategoryname=this.AddSubCategoryForm.value["subcategoryname"];
+        this.scatg.breifdetails=this.AddSubCategoryForm.value["breifdetails"];  
+        this.scatg.gst=this.AddSubCategoryForm.value["gst"]; 
         // console.log(this.buyer);
         this.sservice.AddSubCategory(this.scatg).subscribe(res=>{
           console.log('Added categories sucessfully')

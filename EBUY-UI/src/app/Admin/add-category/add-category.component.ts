@@ -17,9 +17,9 @@ export class AddCategoryComponent implements OnInit {
 
   ngOnInit() {
       this.AddCategoryForm = this.formBuilder.group({
-        CategoryId:['',[Validators.required]],
-         CategoryName: ['',[Validators.required]],
-          BreifDetails:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]], 
+        categoryid:['',[Validators.required]],
+         categoryname: ['',[Validators.required]],
+          breifdetails:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]], 
           acceptTerms: [false, Validators.requiredTrue]
       });
   }
@@ -38,9 +38,9 @@ export class AddCategoryComponent implements OnInit {
   {
     
         this.catg=new Category();
-        this.catg.categoryId=this.AddCategoryForm.value["CategoryId"];
-        this.catg.categoryName=this.AddCategoryForm.value["CategoryName"];
-        this.catg.breifDetails=this.AddCategoryForm.value["BreifDetails"];   
+        this.catg.categoryid=this.AddCategoryForm.value["categoryid"];
+        this.catg.categoryname=this.AddCategoryForm.value["categoryname"];
+        this.catg.breifdetails=this.AddCategoryForm.value["breifdetails"];   
         // console.log(this.buyer);
         this.sservice.AddCategory(this.catg).subscribe(res=>{
           console.log('Added categories sucessfully')

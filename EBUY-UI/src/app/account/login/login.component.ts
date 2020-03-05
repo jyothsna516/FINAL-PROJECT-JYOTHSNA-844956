@@ -60,14 +60,18 @@ public Validate()
     this.service.BuyerLogin(username,password).subscribe(res=>{
       console.log(res);
       this.token=res;
+       
 
-      if(this.token.msg=='Success'){
-          this.route.navigateByUrl('buyer');
-      }
-      else{
-        alert('Invalid Credentials');
-      }
+      if(this.token.msg=="Success")
+      {
+        console.log("sfds");
+        this.route.navigateByUrl('/buyer');
+    }
+    else{
+      alert('Invalid Credentials');
+    }
     });
+   
   }
 if(role=='seller')
 {
@@ -76,7 +80,7 @@ this.service.SellerLogin(username,password).subscribe(res=>{
   console.log(res)
   this.token=res;
   if(this.token.msg=="Success"){
-    this.route.navigateByUrl("seller")
+    this.route.navigateByUrl('seller');
   }
   else{
     alert('inavlid  Credentials');
@@ -86,14 +90,14 @@ this.service.SellerLogin(username,password).subscribe(res=>{
 }
 if(username=="Admin" && password=="admin")
 {
-  this.route.navigateByUrl("admin");
+  this.route.navigateByUrl('admin');
 }
 }
 Navigate()
 {
   switch(this.role){
     case "buyer":
-      this.route.navigateByUrl("buyer");
+      this.route.navigateByUrl('buyer');
       break;
       case "seller":
       this.route.navigateByUrl("seller");

@@ -6,11 +6,12 @@ import {Router} from'@angular/router';
   styleUrls: ['./seller-landingpage.component.css']
 })
 export class SellerLandingpageComponent implements OnInit {
-  uname:string
-  constructor(private route:Router) { if(sessionStorage.getItem("un")){
-    this.uname=sessionStorage.getItem("un");
-}
-else{this.route.navigateByUrl('login');}}
+  constructor(){}
+//   uname:string
+//   constructor(private route:Router) { if(sessionStorage.getItem("un")){
+//     this.uname=sessionStorage.getItem("un");
+// }
+// else{this.route.navigateByUrl('login');}}
 
   
   ngOnInit() {

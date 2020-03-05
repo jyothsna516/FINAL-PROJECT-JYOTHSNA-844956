@@ -41,6 +41,7 @@ public GetSubCategory(Cid:string):Observable<SubCategory[]>
   return this.http.get<SubCategory[]>(this.url+'GetSubCategory/'+Cid,Requestheaders);
 }
 
+
       // public Delete(item:Items):Observable<any>{
       //   return this.http.delete<any>(this.url+'Delete/'+id,JSON.stringify(item),Requestheaders);}
 

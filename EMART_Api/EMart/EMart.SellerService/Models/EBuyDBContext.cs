@@ -135,6 +135,11 @@ namespace EMart.SellerService.Models
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Photo)
+                    .HasColumnName("photo")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Remarks)
                     .IsRequired()
                     .HasMaxLength(30)

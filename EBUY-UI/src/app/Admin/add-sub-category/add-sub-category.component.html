@@ -7,9 +7,9 @@
             <form [formGroup]="AddSubCategoryForm" (ngSubmit)="onSubmit()">
                        <div class="form-group col-md-3 offset-4">
                         <label>CategoryID</label>
-                        <input type="text" formControlName="CategoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryId.errors }" />
-                        <div *ngIf="submitted && f.CategoryId.errors" class="invalid-feedback">
-                        <div *ngIf="f.CategoryId.errors.required">Category id is required</div> 
+                        <input type="text" formControlName="categoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.categoryid.errors }" />
+                        <div *ngIf="submitted && f.categoryid.errors" class="invalid-feedback">
+                        <div *ngIf="f.categoryid.errors.required">Category id is required</div> 
                         </div>        
                     </div>
                     <!-- <div class="form-group col-md-3 offset-4">
@@ -29,14 +29,14 @@
                     </div> -->
                     <div class="form-group col-md-3 offset-4">
                         <label>SubCategoryID</label>
-                        <input type="text" formControlName="SubCategoryId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryId.errors }" />
-                        <div *ngIf="submitted && f.SubCategoryId.errors" class="invalid-feedback">
-                        <div *ngIf="f.SubCategoryId.errors.required">SubCategory id is required</div> 
+                        <input type="text" formControlName="subcategoryid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subcategoryid.errors }" />
+                        <div *ngIf="submitted && f.subcategoryid.errors" class="invalid-feedback">
+                        <div *ngIf="f.subcategoryid.errors.required">SubCategory id is required</div> 
                         </div>        
                     </div> 
                     <div class="form-group col-md-5 offset-4">
                         <label>SubCategoryName:</label>
-                        <select formControlName="SubCategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SubCategoryName.errors }">
+                        <select formControlName="subcategoryname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subcategoryname.errors }">
                             <option value=""></option>
                             <option value="WomensClothes">WomensClothing</option>
                             <option value="mensClothes">mensClothing</option>
@@ -47,35 +47,35 @@
                             <option value="oil">oil</option>
                             <option value="onions">Onions</option>
                         </select>
-                        <div *ngIf="submitted && f. SubCategoryName.errors" class="invalid-feedback">
-                            <div *ngIf="f.SubCategoryName.errors.required">subcategoryname is required</div>
+                        <div *ngIf="submitted && f. subcategoryname.errors" class="invalid-feedback">
+                            <div *ngIf="f.subcategoryname.errors.required">subcategoryname is required</div>
                         </div>
                     </div>  
                     
                    
                     <div class="form-group col-md-5 offset-4">
                         <label>CategoryName:</label>
-                        <select formControlName="CategoryName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CategoryName.errors }">
-                            <option *ngFor="let cat of list" [value]="cat.cid">{{cat.categoryName}}</option>
+                        <select formControlName="categoryname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.categoryName.errors }">
+                            <option *ngFor="let cat of list" [value]="cat.cid">{{cat.categoryname}}</option>
                         </select>
-                        <div *ngIf="submitted && f.CategoryName.errors" class="invalid-feedback">
-                            <div *ngIf="f.CategoryName.errors.required">categoryname is required</div>
+                        <div *ngIf="submitted && f.categoryname.errors" class="invalid-feedback">
+                            <div *ngIf="f.categoryname.errors.required">categoryname is required</div>
                         </div>
                     </div>
                    
                     <div class="form-group col-md-3 offset-4">
                         <label>GST</label>
-                        <input type="number" formControlName="Gst" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Gst.errors }" />
-                        <div *ngIf="submitted && f.Gst.errors" class="invalid-feedback">
-                        <div *ngIf="f.Gst.errors.required">GST is required</div> 
+                        <input type="number" formControlName="gst" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gst.errors }" />
+                        <div *ngIf="submitted && f.gst.errors" class="invalid-feedback">
+                        <div *ngIf="f.gst.errors.required">GST is required</div> 
                         </div>        
                     </div>
                         <div class="form-group col-md-5 offset-4">
                             <label>BreifDetails</label>
-                            <input type="text" formControlName="BreifDetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.BreifDetails.errors }" />
-                            <div *ngIf="submitted && f.BreifDetails.errors" class="invalid-feedback">
-                            <div *ngIf="f.BreifDetails.errors.required">BreifDetails id is required</div> 
-                             <div *ngIf="f.BreifDetails.errors.pattern">Breif Details must be valid</div> 
+                            <input type="text" formControlName="breifdetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.breifdetails.errors }" />
+                            <div *ngIf="submitted && f.breifDetails.errors" class="invalid-feedback">
+                            <div *ngIf="f.breifDetails.errors.required">BreifDetails id is required</div> 
+                             <div *ngIf="f.breifDetails.errors.pattern">Breif Details must be valid</div> 
                             </div>        
                         </div>
                         <div class="form-group form-check col-md-5 offset-5">
