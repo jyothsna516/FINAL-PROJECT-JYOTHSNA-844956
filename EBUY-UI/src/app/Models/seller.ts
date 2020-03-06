@@ -1,5 +1,5 @@
 export class Seller {
-    public SellerId:string;
+    public sellerid:string;
     public  Username:string;
     public  Password:string;
     public  Companyname:string;

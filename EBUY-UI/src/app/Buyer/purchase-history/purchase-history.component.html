@@ -1,2 +1,53 @@
-<p>purchase-history works!</p>
-<router-outlet></router-outlet>
+<div class="container">
+    <div class="card bg-light mb-2" >
+        <h5 class="card-header text-center">Payment Process</h5>
+        <div class="bg2">
+        <div class="card-body">
+            <form [formGroup]="purchaseform" (ngSubmit)="onSubmit()">  
+                    <div class="form-group col-md-5 offset-4">   
+                                    <label >Number Of Items</label>
+                                    <input type="number" formControlName="numberOfItems" class="form-control" autofocus/>
+                                  </div>
+                                  <div class="form-group col-md-3 offset-4">
+                                    <label >Date</label>
+                                    <input type="date" formControlName="dateTime" class="form-control"/>
+                                  </div>
+                                <div class="form-group col-md-5 offset-4">
+                                    <label> PayMent Mode</label>
+                                    <select formControlName="transactionType">
+                                        <option value="-1">Choose payment method</option>
+                                        <option value="credit">Credit Card</option>
+                                        <option value="debit">Debit Card</option>
+                                        <option value="cod">Cash On Delivery</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-5 offset-4">
+                                    <label >Card Holders Name</label>
+                                    <input type="text" formControlName="name" class="form-control"/>
+                                  </div>
+                                  <div class="form-group col-md-5 offset-4">
+                                    <label >Card Number</label>
+                                    <input type="text" formControlName="cardNumber" class="form-control"/>
+                                  </div>
+                                  <div class="form-group col-md-5 offset-4">
+                                    <label >CVV</label>
+                                    <input type="number" formControlName="cvv" class="form-control" style="width: 30%;"/>
+                                  </div>
+                                  <div class="form-group col-md-5 offset-4">
+                                    <label >ExpiryDate</label>
+                                    <input type="date" formControlName="edate" class="form-control"/>
+                                  </div>
+                                  
+                                  <div class="form-group col-md-5 offset-4">
+                                    <label >Remarks</label>
+                                    <input type="text" formControlName="remarks" class="form-control"/>
+                                  </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-success">Purchase</button>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+    

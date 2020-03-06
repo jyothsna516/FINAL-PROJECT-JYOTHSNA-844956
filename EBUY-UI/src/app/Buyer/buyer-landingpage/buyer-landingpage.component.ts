@@ -8,17 +8,19 @@ import { BuyerService } from '../buyer.service';
   styleUrls: ['./buyer-landingpage.component.css']
 })
 export class BuyerLandingpageComponent implements OnInit {
-  list:Items[];
-  constructor(private service:BuyerService) {
-      this.service.GetAllItems().subscribe(res=>{
-        this.list=res;
-        console.log(this.list);
-      })
-   }
-
+  constructor(){}
+  // list:Items[];
+  // constructor(private service:BuyerService) {
+  //     this.service.GetAllItems().subscribe(res=>{
+  //       this.list=res;
+  //       console.log(this.list);
+  //     })
+  //  }
+// username:string;
+// password:string;
 
 //   uname:string
-//   constructor(private route:Router) { if(sessionStorage.getItem("un")){
+//   constructor(private route:Router) { if(sessionStorage.BuyerLogin("username")){
 //     this.uname=sessionStorage.getItem("un");
 // }
 // else{this.route.navigateByUrl('login');}}

@@ -28,7 +28,7 @@ selectedFile : File = null;
 
   ngOnInit() {
       this.AddItemForm = this.formBuilder.group({
-         // itemid: ['',[Validators.required]],
+          sellerid: ['',[Validators.required]],
           categoryid: ['',[Validators.required]],
           subcategoryid: ['',[Validators.required]],
           price:['',[Validators.required]],
@@ -36,7 +36,7 @@ selectedFile : File = null;
           itemname:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
           description:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
           remarks:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]], 
-          // photo:['',[Validators.required]],   
+          photo:['',[Validators.required]],   
           
       });
   }
@@ -45,7 +45,7 @@ selectedFile : File = null;
   }
   onGetSubCategory()
   {
-    let categoryid=this.AddItemForm.value["Categoryid"];
+    let categoryid=this.AddItemForm.value["categoryid"];
     console.log(categoryid);
     this.sservice.GetSubCategory(categoryid).subscribe(res=>{
       this.subcategorylist=res;
@@ -53,15 +53,17 @@ selectedFile : File = null;
     })
   }
   onSubmit() {
+    alert("hjkhk")
     this.submitted = true;  
     //this.buyer=new Buyer(); 
-    if (this.AddItemForm.valid) {
-      this.Add();
+   
+     // this.Add();
   }
-}
+
   Add() {
         this.item=new Items();
         this.item.itemId='I'+Math.floor(Math.random()*1000);
+        this.item.sellerid=this.AddItemForm.value["sellerid"];
         this.item.categoryid=this.AddItemForm.value["categoryid"];
         this.item.subcategoryid=this.AddItemForm.value["subcategoryid"];
         this.item.price=this.AddItemForm.value["price"];
@@ -71,7 +73,7 @@ selectedFile : File = null;
         this.item.description=this.AddItemForm.value["description"];
         this.item.remarks=this.AddItemForm.value["remarks"];
         this.item.photo=this.photo;
-        // console.log(this.buyer);
+        console.log(this.item);
         this.sservice.AddItem(this.item).subscribe(res=>{
           console.log('Added Items sucessfully')
         },err=>{
@@ -80,9 +82,9 @@ selectedFile : File = null;
         // alert('SUCCESS!! :-)\n\n') 
         // console.log(JSON.stringify(this.SignupForm.value)); 
       }
-    //   fileEvent(event){
-    //     this.photo = event.target.files[0].name;
-    // }
+      fileEvent(event){
+        this.photo = event.target.files[0].name;
+    }
 
 
 onReset() {

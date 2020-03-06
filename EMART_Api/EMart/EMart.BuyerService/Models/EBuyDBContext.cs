@@ -135,6 +135,11 @@ namespace EMart.BuyerService.Models
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Photo)
+                    .HasColumnName("photo")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Remarks)
                     .IsRequired()
                     .HasMaxLength(30)
@@ -174,21 +179,19 @@ namespace EMart.BuyerService.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.BuyerId)
-                    .HasColumnName("Buyer_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
-                entity.Property(e => e.DateTime)
-                    .HasColumnName("Date_time")
+                entity.Property(e => e.Datetime)
+                    .HasColumnName("datetime")
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.ItemId)
-                    .HasColumnName("Item_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
-                entity.Property(e => e.NumberOfItems).HasColumnName("Number_of_items");
+                entity.Property(e => e.Numberofitems).HasColumnName("numberofitems");
 
                 entity.Property(e => e.Remarks)
                     .IsRequired()
@@ -197,13 +200,12 @@ namespace EMart.BuyerService.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.SellerId)
-                    .HasColumnName("Seller_id")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
-                entity.Property(e => e.TransactionType)
+                entity.Property(e => e.Transactiontype)
                     .IsRequired()
-                    .HasColumnName("transaction_type")
+                    .HasColumnName("transactiontype")
                     .HasMaxLength(20)
                     .IsUnicode(false);
 

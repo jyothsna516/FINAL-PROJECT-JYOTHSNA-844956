@@ -16,9 +16,11 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
   }
-  Search(itemName:string){
-    this.service.Search(itemName).subscribe(res=>{
+  Search(itemname:string){
+    console.log("search");
+    this.service.Search(itemname).subscribe(res=>{
       this.list=res;
+      console.log(this.list);
       console.log("items searched suceesfully");}
     )
   }

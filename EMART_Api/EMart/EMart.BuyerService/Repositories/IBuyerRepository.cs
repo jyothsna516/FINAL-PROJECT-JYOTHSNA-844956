@@ -15,5 +15,6 @@ namespace EMart.BuyerService.Repositories
         List<PurchaseHistoryTransactions> PurchaseHistoryTransactions(string bid);
         List<Category> GetCategories();
         List<SubCategory> GetSubCategories(string cid);
+        List<Items> GetAllItems();
     }
 }

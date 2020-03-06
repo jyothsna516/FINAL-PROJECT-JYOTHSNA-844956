@@ -1,23 +1,27 @@
-
-                     
-         
-            
-           
+       <br>
             <div class="container">
-                <div class="col-md-3">  
+                <div class="col-md-5">  
                     <div class="input-group add-on">
-                      <input class="form-control" placeholder="Search" type="search" [(ngModel)]="itemName">
-                        <button class="btn btn-default" type="submit"(click)="Search(itemName)"><i class="glyphicon glyphicon-search"></i></button>
+                      <input class="form-control" placeholder="Search" type="search" [(ngModel)]="itemname">
+                        <button class="btn btn-default"type="submit"(click)="Search(itemname)"><button class="btn btn-primary mr-1">Search</button><i class="glyphicon glyphicon-search"></i></button>
                       </div>
                     </div>
-  <div class="card">
+  <!-- <div class="card"> -->
      
-    <div class="text-center"><h2>Item Details</h2></div>
-    <div class="card-header">
-        <li *ngFor="let item of list">{{item.itemName}}</li>
-    </div>
-    <div class="card-body">
-        <table class="table table-border">
+    <!-- <div class="text-center"><h2>Item Details</h2></div>
+    <div class="card-deck">
+    <div class="card-body"*ngFor="let item of list"> -->
+      <!-- <div class="container">
+        <div class="row offset-4">
+          
+        <table class="table table-border"class="text-center">
+          <li *ngFor="let item of list">
+            <img src="/assets/Images/{{item.image1}}" >
+          <tr>
+            <th>ItemName</th>
+            <td>{{item.itemName}}</td>
+           
+          </tr>
              <tr>
             <th>Price:</th>
             <td>{{item.price}}</td>
@@ -28,19 +32,48 @@
       </tr>
       <tr>
       <th>Stock:</th>
-      <td>{{item.stock}}</td></tr>
+      <td>{{item.stockNumber}}</td></tr>
       <tr>
      <th> Remarks:</th>
       <td>{{item.remarks}}</td></tr>
+      
+      </li>
       </table>
-    </div> 
-    <div class="card-footer">
-        <div class="text-center">
+
+        </div>
+      </div>
+   
+       
             <button class="btn btn-primary mr-1">Buy</button>
             <button class="btn btn-success mr-1">Add to cart</button>
-        </div>
-    </div>
-  </div>
-  </div>
+      
+             -->
+             <div class="container">
+              <div class="row offset-2">
+                <div class="card-deck ">
+                    <div class="card text-center" *ngFor="let item of list" style="width: 18rem;" >
+                    <img class="card-img-top" src="/assets/Images/{{item.photo}}" alt="no image is there to show"> 
+                        <h5 class="card-title">{{item.itemName}}</h5>
+                        <div class="card-body">
+                          <!-- ItemId:{{item.iid}}<br/>
+                          CategoryId:{{item.cid}}<br/>
+                          SubCategoryId:{{item.scid}}<br/>
+                          SellerId: {{item.sid}}<br/> -->
+                          Price: {{item.price}}<br/>
+                          Description:{{item.description}}<br/>
+                          Stock:{{item.stockNumber}}<br/>
+                          Remarks:{{item.remarks}} 
+                      </div>
+                      <div class="card-footer">
+                        <div class="text-center">
+                          <button class="btn btn-success mr-1" >Buy</button>
+                          <button class="btn btn-outline-info" >AddToCart</button>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+           
   
   

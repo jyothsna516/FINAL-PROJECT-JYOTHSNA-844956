@@ -39,7 +39,7 @@ seller:Seller;
        // display form values on success
       if (this.SignupForm.valid) {
         this.seller=new Seller();
-        this.seller.SellerId=this.SignupForm.value["SellerId"];
+        this.seller.sellerid=this.SignupForm.value["SellerId"];
         this.seller.Username=this.SignupForm.value["Username"];
         this.seller.Password=this.SignupForm.value["Password"];
         this.seller.Emailid=this.SignupForm.value["Emailid"];

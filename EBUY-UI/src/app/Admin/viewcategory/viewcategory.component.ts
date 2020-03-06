@@ -29,9 +29,9 @@ export class ViewcategoryComponent implements OnInit {
     },err=>{console.log(err);})
 
 }
-DeleteCategory(categoryId:string):void{
-  console.log(categoryId);
-  this.cservice.DeleteCategory(categoryId).subscribe(res=>{
+DeleteCategory(categoryid:string):void{
+  console.log(categoryid);
+  this.cservice.DeleteCategory(categoryid).subscribe(res=>{
     console.log("record deleted");
     this.ViewCategory();
   },err=>{console.log(err);})

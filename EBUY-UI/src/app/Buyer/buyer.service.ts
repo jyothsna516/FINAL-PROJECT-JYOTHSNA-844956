@@ -3,6 +3,7 @@ import{HttpClient,HttpHeaders} from'@angular/common/http';
 import {Observable} from 'rxjs';
 import { Buyer } from '../Models/buyer';
 import { Items } from '../Models/items';
+import { Purchasehistorytranscation } from '../Models/purchasehistorytranscation';
 const Requestheaders={headers:new HttpHeaders({'Content-Type':'application/json'})}
 @Injectable({
   providedIn: 'root'
@@ -25,13 +26,22 @@ public Editprofile(buyer:Buyer):Observable<any>
 {
   return this.http.put<any>(this.url+'Editprofile',JSON.stringify(buyer),Requestheaders);
 }
-public GetAllItems():Observable<any>{
-  return this.http.get<any>(this.url+'GetAllItems',Requestheaders);
-}
-public Search(itemName:string):Observable<any>
+// public GetAllItems():Observable<any>{
+//   return this.http.get<any>(this.url+'GetAllItems',Requestheaders);
+// }
+public Search(itemname:string):Observable<any>
 {
-  return this.http.get<any>(this.url+'Search/'+itemName);
+  return this.http.get<any>(this.url+'Search/'+itemname);
 }
+// public BuyItem(item:Purchasehistorytranscation):Observable<Purchasehistorytranscation[]>
+// {
+//   return this.http.post<>
+  //return this.http.post<Purchasehistorytranscation>(this.url+'BuyItem/',transactionhistory,Requestheaders);
+// }
+public GetAllItems():Observable<any>{
+  return this.http.get<any>(this.url+'getallitems',Requestheaders);
+}
+
 // public Myprofile(id:number):Observable<any>
 //  {
 //  return this.http.get<any>(this.url+'get'+'/'+id);

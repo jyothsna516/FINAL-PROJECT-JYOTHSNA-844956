@@ -65,6 +65,7 @@ public Validate()
       if(this.token.msg=="Success")
       {
         console.log("sfds");
+        
         this.route.navigateByUrl('/buyer');
     }
     else{

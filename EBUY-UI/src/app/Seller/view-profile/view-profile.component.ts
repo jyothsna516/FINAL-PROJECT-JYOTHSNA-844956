@@ -68,7 +68,7 @@ submitted:boolean;
   {
   
     this.seller=new Seller();
-    this.seller.SellerId=this.sellerform.value["SellerId"],
+    this.seller.sellerid=this.sellerform.value["SellerId"],
     this.seller.Username=this.sellerform.value["Username"],
     this.seller.Emailid=this.sellerform.value["Emailid"],
     this.seller.Password=this.sellerform.value["Password"],

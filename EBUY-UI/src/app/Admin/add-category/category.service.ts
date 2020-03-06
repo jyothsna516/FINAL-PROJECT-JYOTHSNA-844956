@@ -19,8 +19,8 @@ export class CategoryService {
           return this.http.get<any>(this.url+'ViewSubCategory',Requestheaders);}
          public DeleteCategory(categoryId:string):Observable<any>{
         return this.http.delete<any>(this.url+'DeleteCategory/'+categoryId,Requestheaders);}   
-        public DeleteSubCategory(subcategoryId:string):Observable<any>{
-          return this.http.delete<any>(this.url+'DeleteSubCategory/'+subcategoryId,Requestheaders);}    
+        public DeleteSubCategory(subcategoryid:string):Observable<any>{
+          return this.http.delete<any>(this.url+'DeleteSubCategory/'+subcategoryid,Requestheaders);}    
       public AddSubCategory(scatg:SubCategory):Observable<any>{
         return this.http.post<any>(this.url+'AddSubCategory',JSON.stringify(scatg),Requestheaders);}
         public Getcategory():Observable<Category[]>

@@ -31,6 +31,7 @@ export class ViewsubcategoryComponent implements OnInit {
 }
 DeleteSubCategory(subcategoryId:string):void{
   console.log(subcategoryId);
+  console.log("hjdshf");
   this.cservice.DeleteSubCategory(subcategoryId).subscribe(res=>{
     console.log("record deleted");
     this.ViewSubCategory();

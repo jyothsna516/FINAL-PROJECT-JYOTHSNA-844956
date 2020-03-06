@@ -125,6 +125,21 @@ namespace EMart.BuyerService.Controllers
                 return NotFound(e.Message);
             }
         }
+        [HttpGet]
+        [Route("getallitems")]
+        public IActionResult GetAllItems()
+        {
+            try
+            {
+                return Ok(_repo.GetAllItems());
+
+            }
+            catch(Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+
 
     }
 }

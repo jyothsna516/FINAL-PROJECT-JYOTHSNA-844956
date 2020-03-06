@@ -1,10 +1,80 @@
+<div class="bg">
+    <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+                <div class="col" id="navbarText">
+                    <ul class="nav row nav-pills ">
+                        <!-- <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Home</a> -->
+                        <li class="col-sm-4 nav-item text-center">
+                            <a class="nav-link btn-outline-secondary" href="#"><b>Home</b> </a>
+                        </li>
+                        <!-- <li class="col-sm-2 nav-item text-center">
+                            <a class="nav-link btn-outline-primary" href="registerbuyer">SignUp</a>
+                        </li> -->
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                              SignUp
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="nav-link btn-outline-secondary"
+                               class="dropdown-item" [routerLink]="['/register-buyer']">SignUpBuyer</a>
+                              <a class="dropdown-item" href="register-seller">SignUpSeller</a>
+                              
+                            </div>
+                          </div>
+    
+                        <li class="col-sm-2 nav-item text-center">
+                            <a class="nav-link btn-outline-secondary" href="#"><b>Login</b></a>
+                        </li>
+                       
+                        <li class="col-sm-2 nav-item text-center">
+                           <a class="nav-link btn-outline-secondary" href="contactus"><b>Contact</b></a>
+                        </li>
+    
+                    </ul>
+                    <router-outlet></router-outlet>
+                    <!--  <span class="navbar-text">
+                      Navbar text with an inline element
+                    </span> -->
+                    </div>
+                    </div>
+                    
+                </nav>   </div>      
+    
+    <div class="container">
+                    <div class="row">
+                        <nav class="col-md-2 d-none d-md-block sidebar">
+                            <div class="sidebar-sticky">                
+                                <ul class="nav flex-column">
+     
+                                <li class="nav-item my-2 text-center">
+                                    <a href="#" class="nav-link btn-outline-secondary"><b>Home</b></a>
+                                
+                                 
+                                    
+                                
+                                 <li class="nav-item my-2 text-center"> 
+                                     <a href="#" class="nav-link btn-outline-secondary"><b>Login</b></a> 
+                                
+                                <li class="nav-item my-2 text-center"> 
+                                     <a href="#" class="nav-link btn-outline-secondary"><b>Contact</b> </a>
+                                 </li>
+                            </ul>                         
+            
+                    
+                    </div> 
+                    </nav>
+                    </div>  
+                    </div>
+                <br>  
+
 <div class="image">
+    
 <div class="container"> 
     <div class="card bg-light mb-1" > 
         <div class="bg2">
         <!-- <form class = "form-horizontal" role = "form"> -->
         <h5 class="card-header text-center">User Login</h5>
-         <div class="card-body">  
+         <div class="card-body">
              <form [formGroup]="login" (ngSubmit)="Validate()">
     <!-- <div class="form-group col-5"><h1>User Login</h1></div>  -->
     
@@ -13,7 +83,7 @@
             <input type="text" formControlName="username"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
             <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                 <div *ngIf="f.username.errors.required">username is required</div>
-              
+     
             </div>
         </div>
         <div class="form-group col-md-5 offset-4">
@@ -33,18 +103,18 @@
     </div> -->
     <div class="form-check form-check-inline offset-4 ">
         <input class="form-check-input" type="radio" formControlName="role" value="buyer"name="role">
-        <label class="form-check-label" for="inlineRadio1">Buyer</label>
+        <label class="form-check-label" for="inlineRadio1"><b>Buyer</b></label>
      </div>
-    <div class="form-check form-check-inline offset-4">
+    <div class="form-check form-check-inline offset-1">
         <input class="form-check-input" type="radio" formControlName="role" value="seller"name="role">
-        <label class="form-check-label" for="inlineRadio2">Seller</label>
+        <label class="form-check-label" for="inlineRadio2"><b>Seller</b></label>
       </div>
     <!-- <div class="form-group">
         <div class="form-group col-5">
         <label for="sid">id of the user</label>
         <input type="text" [(ngModel)]="sid" class="form-control">
     </div></div> -->
-    <div class="form-group">    
+    <div class="form-group col-md-2 offset-4">    
         <button class="btn btn-primary">Login</button>
     </div>
     <!-- <div class="form-group">
@@ -58,7 +128,7 @@
                 <a [routerLink]="'register-seller/register-seller'" >SIGNUP Seller</a>
                 </div>  -->
                 <ul class="nav row nav-pills ">
-                    <li class="col-sm-3 nav-item text-center">
+                    <li class="col-sm-3 nav-item text-center offset-4">
                         <a class="nav-link btn-outline-secondary bg-dark" href="register-buyer"  ><b>SignUp Buyer</b></a></li>
                         <li class="col-sm-3 nav-item text-center">
                         <a class="nav-link btn-outline-secondary bg-dark" href="register-seller" ><b>SignUp Seller</b></a>

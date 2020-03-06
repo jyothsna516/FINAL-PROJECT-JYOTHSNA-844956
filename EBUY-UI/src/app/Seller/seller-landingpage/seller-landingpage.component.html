@@ -1,12 +1,74 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" /> -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+<marquee width="80%" direction="left" height="40px">
+    <h2>EMART</h2>
+    </marquee>
+<!-- <div class="text-center"><h2>EMART</h2></div> -->
+<!-- <div class="bg"> -->
+    <div class="image">
+    <div class="container-fluid">
+        <div class="bg">
+        <nav class="navbar navbar-expand-lg navbar-light">
+    
+            <div class="col" id="navbarText">
+                <ul class="nav row nav-pills ">
+    
+                    <li class="col-sm-2 nav-item text-center">
+                        <a class="nav-link btn-outline-secondary" href="#"><b>Home </b></a>
+                    </li>
+                    
+        <!-- <div class="topnav"> -->
+            <!-- <a class="active" href="#home">Home</a> -->
+        <!-- <li class="col-sm-2 nav-item text-center">
+            <a class="nav-link btn-outline-secondry" href="/seller/seller-landingpage" >SellerLandingPage</a>
+                <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a>
+    </li> -->
+    <li class="col-sm-2 nav-item text-center ">
+        <!-- <a class="nav-link btn-outline-primary" href="/seller/add-items" >Additems</a> -->
+            <a class="nav-link btn-outline-secondary" [routerLink]="['/seller/add-items']" ><b>AddItems</b></a>
+    </li>
+    <li class="col-sm-2 nav-item text-center">
+        <a class="nav-link btn-outline-secondary" [routerLink]="['/seller/view-items']" ><b>viewItems</b></a>
+        <!-- <a class="nav-link btn-outline-primary" href="/seller/viewitems" >ViewItems</a> -->
+            <!-- <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a> -->
+    </li>
+    <li class="col-sm-2 nav-item text-center">
+        <a class="nav-link btn-outline-secondary" href="/seller/viewprofile" ><b>viewprofile</b></a>
+            <!-- <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a> -->
+    </li>
+    <li class="col-sm-2 nav-item text-center">
+        <a class="btn-outline-secondary" href="/seller/viewreports" ><b>ViewReports</b></a>
+            <!-- <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a> -->
+    </li>
+    <li class="col-sm-2 nav-item text-center">
+        <a class="nav-link btn-outline-secondary" [routerLink]="['/seller/logout']" ><b>LogOut</b></a>
+        </li>
 
-<!-- </head>
-<body> -->
-<div class="image">
+</ul>
+</div></nav></div></div><router-outlet></router-outlet></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="image">
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light  bg-dark">
 
@@ -15,31 +77,35 @@
 
                 <li class="col-sm-1 nav-item text-center">
                     <a class="nav-link btn-outline-primary" href="#">Home </a>
-                </li>
+                </li> -->
                 
     <!-- <div class="topnav"> -->
         <!-- <a class="active" href="#home">Home</a> -->
-    <li class="col-sm-2 nav-item text-center">
-        <a class="nav-link btn-outline-primary" href="/seller/seller-landingpage" >SellerLandingPage</a>
+    <!-- <li class="col-sm-2 nav-item text-center">
+        <a class="nav-link btn-outline-primary" href="/seller/seller-landingpage" >SellerLandingPage</a> -->
             <!-- <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a> -->
-</li>
-<li class="col-sm-1 nav-item text-center ">
+<!-- </li> -->
+<!-- <li class="col-sm-1 nav-item text-center "> -->
     <!-- <a class="nav-link btn-outline-primary" href="/seller/add-items" >Additems</a> -->
-        <a class="btn-outline-primary" [routerLink]="['/seller/add-items']" >AddItems</a>
-</li>
+        <!-- <a class="btn-outline-primary" [routerLink]="['/seller/add-items']" >AddItems</a> -->
+<!-- </li>
 <li class="col-sm-2 nav-item text-center btn-outline-primary">
-    <a class="nav-link btn-outline-primary" [routerLink]="['/seller/view-items']" >viewItems</a>
+    <a class="nav-link btn-outline-primary" [routerLink]="['/seller/view-items']" >viewItems</a> -->
     <!-- <a class="nav-link btn-outline-primary" href="/seller/viewitems" >ViewItems</a> -->
         <!-- <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a> -->
-</li>
+<!-- </li>
 <li class="col-sm-2 nav-item text-center">
-    <a class="nav-link btn-outline-primary" href="/seller/viewprofile" >viewprofile</a>
+    <a class="nav-link btn-outline-primary" href="/seller/viewprofile" >viewprofile</a> -->
         <!-- <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a> -->
-</li>
+<!-- </li>
 <li class="col-sm-2 nav-item text-center">
-    <a class="nav-link btn-outline-primary" href="/seller/viewreports" >ViewReports</a>
+    <a class="nav-link btn-outline-primary" href="/seller/viewreports" >ViewReports</a> -->
         <!-- <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a> -->
-</li>
+<!-- </li> -->
+
+
+
+
 
      <!-- <div><a [routerLink]="['/buyer/buy-product']" >BuyProduct</a>
     </div>
@@ -50,16 +116,16 @@
     <div><a [routerLink]="['/buyer/viewbuyer-profile']" >ViewBuyerProfile</a>
     </div> -->
     <!-- <div><a [routerLink]="['/buyer/viewcart']" >ViewCart</a> -->
-       <li class="col-sm-1 nav-item text-center">
-        <input type="text" placeholder="Search.."></li>
+       <!-- <li class="col-sm-1 nav-item text-center"> -->
+        <!-- <input type="text" placeholder="Search.."></li> -->
     <!-- </div> -->
     
-    </ul>
+    <!-- </ul>
 </div> </nav>
-        </div> 
+        </div>  -->
         
         <router-outlet></router-outlet>
-        </div>
+        <!-- </div> -->
 
         <!-- <li class="col-sm-3 nav-item text-center">
             <a class="nav-link btn-outline-secondary bg-dark" href="register-buyer"  ><b>SignUp Buyer</b></a></li> -->

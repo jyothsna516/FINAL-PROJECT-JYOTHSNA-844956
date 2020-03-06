@@ -39,7 +39,7 @@ ViewProfile(){
     this.item=res;
     console.log("this.item");
   this.sellerregister.setValue({
-    SellerId:this.item.SellerId,
+    SellerId:this.item.sellerid,
     Username:this.item.Username,
     Companyname:this.item.Companyname,
     BriefAboutcompany:this.item.BriefAboutcompany,

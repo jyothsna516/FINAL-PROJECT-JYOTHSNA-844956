@@ -53,5 +53,9 @@ namespace EMart.BuyerService.Repositories
            // List<SubCategory> subcategory=_context.SubCategory.Where(e=>e.)
             return _context.SubCategory.ToList();
         }
+        public List<Items> GetAllItems()
+        {
+            return _context.Items.ToList();
+        }
     }
 }
