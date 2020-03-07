@@ -1,7 +1,7 @@
 export class Token {
    
     public  token :string;
-    public SellerId :string;
-    public BuyerId :string;
+    public sellerId :string;
+    public buyerId :string;
     public msg :string;
 }

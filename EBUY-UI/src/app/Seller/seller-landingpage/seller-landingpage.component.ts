@@ -6,7 +6,7 @@ import {Router} from'@angular/router';
   styleUrls: ['./seller-landingpage.component.css']
 })
 export class SellerLandingpageComponent implements OnInit {
-  constructor(){}
+  constructor(private route:Router){}
 //   uname:string
 //   constructor(private route:Router) { if(sessionStorage.getItem("un")){
 //     this.uname=sessionStorage.getItem("un");
@@ -16,5 +16,12 @@ export class SellerLandingpageComponent implements OnInit {
   
   ngOnInit() {
   }
+  public Logout()
+{
+  
+  sessionStorage.clear();
+  //this.route.navigate(['']);
+  this.route.navigateByUrl('#home')
+}
 
 }

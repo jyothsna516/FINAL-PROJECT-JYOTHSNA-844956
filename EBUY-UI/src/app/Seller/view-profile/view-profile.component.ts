@@ -2,89 +2,111 @@ import { Component, OnInit } from '@angular/core';
 import { SellerService } from 'src/app/services/Seller/seller.service';
 import { Seller } from 'src/app/Models/seller';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import { Token } from '@angular/compiler/src/ml_parser/lexer';
 @Component({
   selector: 'app-view-profile',
   templateUrl: './view-profile.component.html',
   styleUrls: ['./view-profile.component.css']
 })
 export class ViewProfileComponent implements OnInit {
-  sellerform:FormGroup;
-  list:Seller[];
-seller:Seller;
-submitted:boolean;
-  constructor(private service:SellerService,private form:FormBuilder) { }
+
+  Sellerform:FormGroup;
+  submitted:boolean=false;
+  item:Seller;
+  token:Token;
+  sellerid:string;
+  
+  constructor(private builder:FormBuilder,private service:SellerService)
+   { 
+
+    this.sellerid=(localStorage.getItem('sellerid')) ;
+    console.log(this.sellerid+" sellerid");
+    
+  }
+  
 
   ngOnInit() {
-    this.sellerform = this.form.group({
-      SellerId: ['', Validators.required],
-      Username:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
-      Companyname:['',[Validators.required,Validators.pattern('^[a-z]{3,20}$')]],
-      Password:['',[Validators.required,Validators.pattern('^[a-z]{7}[~!@#$%^&*()]$')]],
-     // spwd:['',[Validators.required,Validators.pattern('^[a-z]{7}[~!@#$%^&*()]$')]],
-      Emailid: ['', [Validators.required, Validators.email]],
-      ContactNumber:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
-      BriefAboutcompany:['',[Validators.required]],
-      PostalAddress:['',[Validators.required]],
-      Gstin:['',[Validators.required]],
-      Website:['',Validators.required],
-      acceptTerms: [false,Validators.requiredTrue]
+    this.Sellerform=this.builder.group({
+      sellerid:['',[Validators.required]],
+      username:['',[Validators.required,Validators.pattern("^[A-Z]{6,15}$")]],
+      //createdatetime:['',[Validators.required]],
+      mobileno:['',[Validators.required,Validators.pattern("^[6-9][0-9]{7}$")]],
+      Companyname:[''],
+      BriefAboutcompany:[''],
+      PostalAddress:[''],
+      Gstin:[''],
+      Website:[''],
+      //desig:['',[Validators.required]],
+      emailid:['',[Validators.required,Validators.email]],
+      password:['',[Validators.required,Validators.pattern("^(?=.*[A-Z]).{8,30}$")]]
+  });
+   this.myProfile();
+  }
 
-  })}
-  // myprofile()
-  // {
-  //  let sid="S0001";
-  // this.service.ViewProfile(sid).subscribe(res=>  
-  //  {
-     
-  //    this.seller=res;
-  //    console.log(this.seller);
-  //    this.sellerform.patchValue({
-  //      id:this.seller.SellerId,
-  //      username:this.seller.Username,
-  //      emailid:this.seller.Emailid,
-  //      password:this.seller.Password,
-  //      briefaboutcompany:this.seller.BriefAboutcompany,
-  //      companyname:this.seller.Companyname,
-  //      postaladdress:this.seller.PostalAddress,
-  //      website:this.seller.Website,
-  //      GSTIN:this.seller.Gstin,
-  //      mobile:this.seller.ContactNumber,
-       
-  //    })
-  //   },
-  //   err=>{
-  //     console.log(err);
-  //   }
-  //   )}
-  //   Onsubmit(){
-  //     alert("validated")
-  //     this.submitted=true;
-  //     if(this.sellerform.valid){
-  //       this.myprofile();
-  //     }
-  //   }
+  myProfile()
+  {
    
+  this.service.ViewProfile(this.sellerid).subscribe(res=>  
+   {
+     
+     this.item=res;
+     console.log(this.item);
+      this.Sellerform.patchValue({
+       sellerid:this.item.sellerid,
+       username:this.item.Username,
+       emailid:this.item.Emailid,
+       password:this.item.Password,
+       //createddatetime:this.item.Createddatetime,
+       mobileno:this.item.ContactNumber,
+       website:this.item.Website,
+       Gstin:this.item.Gstin,
+       BriefAboutcompany:this.item.BriefAboutcompany,
+
+      })
+    })
+
+    }
+    
+  //  get f(){
+  //  return  this.Sellerform.controls;
+  //  }
+    
+
   Edit()
   {
   
-    this.seller=new Seller();
-    this.seller.sellerid=this.sellerform.value["SellerId"],
-    this.seller.Username=this.sellerform.value["Username"],
-    this.seller.Emailid=this.sellerform.value["Emailid"],
-    this.seller.Password=this.sellerform.value["Password"],
-    this.seller.ContactNumber=this.sellerform.value["MobileNumber"],
-    this.seller.Companyname=this.sellerform.value["Companyname"],
-    this.seller.BriefAboutcompany=this.sellerform.value["BriefAboutcompany"],
-    this.seller.PostalAddress=this.sellerform.value["PostalAddress"],
-    this.seller.Website=this.sellerform.value["Website"],
-    this.seller.Gstin=this.sellerform.value["GSTIN"],
-    this.seller.ContactNumber=this.sellerform.value["mobile"],
-    this.service.EditProfile(this.seller).subscribe(res=>{console.log(this.seller),alert("updated succesfully")},
-    err=>{
+    this.item=new Seller();
+    this.item.sellerid=this.Sellerform.value[" buyerid"],
+    this.item.Username=this.Sellerform.value["username"],
+    this.item.Emailid=this.Sellerform.value["emailid"],
+    this.item.Password=this.Sellerform.value["password"],
+    this.item.ContactNumber=this.Sellerform.value["mobileno"],
+    this.item.Website=this.Sellerform.value["website"],
+    this.item.Gstin=this.Sellerform.value["Gstin"],
+    this.item.BriefAboutcompany=this.Sellerform.value["BreifAboutCompany"],
+
+     this.service.EditProfile(this.item).subscribe(res=>{console.log(this.item),alert("updated succesfully"),this.myProfile()},
+     err=>{
       console.log(err);
     })
   }
+ 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  }
-
-

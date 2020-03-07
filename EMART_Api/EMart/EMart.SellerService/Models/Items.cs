@@ -23,7 +23,6 @@ namespace EMart.SellerService.Models
 
         public virtual Category Category { get; set; }
         public virtual Seller Seller { get; set; }
-        public virtual SubCategory Subcategory { get; set; }
         public virtual ICollection<PurchaseHistoryTransactions> PurchaseHistoryTransactions { get; set; }
     }
 }

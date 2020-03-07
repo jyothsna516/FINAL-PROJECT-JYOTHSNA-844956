@@ -8,7 +8,7 @@ import { BuyerService } from '../buyer.service';
   styleUrls: ['./buyer-landingpage.component.css']
 })
 export class BuyerLandingpageComponent implements OnInit {
-  constructor(){}
+  constructor(private route:Router){}
   // list:Items[];
   // constructor(private service:BuyerService) {
   //     this.service.GetAllItems().subscribe(res=>{
@@ -27,4 +27,11 @@ export class BuyerLandingpageComponent implements OnInit {
 
   ngOnInit() {
   }
+  public Logout()
+{
+  
+  sessionStorage.clear();
+  //this.route.navigate(['']);
+  this.route.navigateByUrl('#home')
+}
   }

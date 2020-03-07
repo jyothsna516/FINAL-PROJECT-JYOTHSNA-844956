@@ -57,5 +57,20 @@ namespace EMart.BuyerService.Repositories
         {
             return _context.Items.ToList();
         }
+        public void AddToCart(Cart cart)
+        {
+            _context.Add(cart);
+            _context.SaveChanges();
+        }
+        public List<Cart> GetCartItems()
+        {
+            return _context.Cart.ToList();
+        }
+        public void DeleteCartItems(string Cartid)
+        {
+            Cart cart = _context.Cart.Find(Cartid);
+            _context.Cart.Remove(cart);
+            _context.SaveChanges();
+        }
     }
 }

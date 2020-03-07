@@ -1,6 +1,6 @@
 export class Purchasehistorytranscation {
     public phtid:string;
-    public itemid:string;
+    public itemId:string;
     public  buyerid:string;
     public sellerid:string;
     public trancationtype:string;

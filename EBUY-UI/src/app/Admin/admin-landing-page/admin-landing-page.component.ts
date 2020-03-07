@@ -6,7 +6,7 @@ import {Router} from'@angular/router';
   styleUrls: ['./admin-landing-page.component.css']
 })
 export class AdminLandingPageComponent implements OnInit {
-constructor(){}
+constructor(private route:Router){}
 //   uname:string
 //   constructor(private route:Router) { if(sessionStorage.getItem("un")){
 //     this.uname=sessionStorage.getItem("un");
@@ -15,5 +15,12 @@ constructor(){}
 
   ngOnInit() {
   }
+  public Logout()
+{
+  
+  sessionStorage.clear();
+  //this.route.navigate(['']);
+  this.route.navigateByUrl('#home')
+}
 
 }

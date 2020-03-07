@@ -1,2 +1,70 @@
-<p>view-cart works!</p>
-<router-outlet></router-outlet>
+
+    
+<div>
+	<table>
+    				<thead>
+						<tr>
+							<th style="width:50%">Product</th>
+							<th style="width:10%">Price</th>
+							<th style="width:8%">Quantity</th>
+							<th style="width:22%">Subtotal</th>
+							<th style="width:10%"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div>
+									<div><img alt="..."></div>
+									<div>
+										<h4>{{item.itemname}}</h4>
+										<p>{{item.description}}</p>
+									</div>
+								</div>
+							</td>
+							<td>{{item.price}}</td>
+							<td>
+								<input type="number" value="1">
+							</td>
+							<td></td>
+							<td>
+								
+								<button><i></i></button>								
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td><strong>Total 1.99</strong></td>
+						</tr>
+						<tr>
+							<td><a href="#0.4_"><i></i> Continue Shopping</a></td>
+							<td colspan="2"></td>
+							<td><strong>Total $150.00</strong></td>
+							<td><a href="https://www.paypal.com/webapps/hermes?token=5EY097812P7754247&amp;useraction=commit&amp;mfid=1546377013907_cf1dec6830d7" target="_blank">Checkout <i></i></a></td>
+						</tr>
+					</tfoot>
+				</table>
+</div>
+
+<div>
+	<div>
+	  <div style="width:250px">
+		<img alt="Card image cap">
+		<h5 style="color:whitesmoke">{{item.itemname}}</h5>
+		<div style="color:whitesmoke">
+		  ItemId:{{item.iid}}<br>
+		  CategoryId:{{item.cid}}<br>
+		  SubCategoryId:{{item.scid}}<br>
+		  SellerId: {{item.sid}}<br>
+		  Price: {{item.price}}<br>
+		  Description:{{item.<wbr>description}}<br>
+		  Remarks:{{item.remarks}}   
+			<br>
+			 <br>
+			<button type="button">Buy Now</button>  
+		  </div>
+		  </div>
+	</div>
+  </div>
+

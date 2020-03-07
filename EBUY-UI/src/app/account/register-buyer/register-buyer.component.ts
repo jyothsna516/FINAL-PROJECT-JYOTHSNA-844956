@@ -36,12 +36,12 @@ export class RegisterBuyerComponent implements OnInit {
         //this.buyer=new Buyer(); 
         if (this.SignupForm.valid) {
             this.buyer=new Buyer();
-            this.buyer.BuyerId=this.SignupForm.value["bid"];
-            this.buyer.Username=this.SignupForm.value["bname"];
-            this.buyer.Password=this.SignupForm.value["pwd"];
-            this.buyer.Emailid=this.SignupForm.value["emailid"];
-            this.buyer.Mobileno=this.SignupForm.value["mobileno"];
-            this.buyer.Createddatetime=this.SignupForm.value["createddatetime"];
+            this.buyer.buyerid=this.SignupForm.value["bid"];
+            this.buyer.username=this.SignupForm.value["bname"];
+            this.buyer.password=this.SignupForm.value["pwd"];
+            this.buyer.emailid=this.SignupForm.value["emailid"];
+            this.buyer.mobileno=this.SignupForm.value["mobileno"];
+            this.buyer.createddatetime=this.SignupForm.value["createddatetime"];
             // console.log(this.buyer);
             this.uservice.BuyerRegister(this.buyer).subscribe(res=>{
               console.log('buyer registered sucessfully')

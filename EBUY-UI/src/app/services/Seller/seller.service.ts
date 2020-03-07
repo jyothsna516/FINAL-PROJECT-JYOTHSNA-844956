@@ -22,12 +22,14 @@ export class SellerService {
         public UpdateItem(item:Items):Observable<any>{
           return this.http.put<any>(this.url+'updateitem/',JSON.stringify(item),Requestheaders);
         }
-        public ViewProfile(seller:Seller):Observable<any>{
-          return this.http.get<any>(this.url1+'GetProfile');}
-          public EditProfile(seller:Seller):Observable<any>{
-            return this.http.get<any>(this.url1+'EditProfile/');
+        public ViewProfile(id:string):Observable<any>{
+          return this.http.get<any>(this.url1+'GetProfile/'+id);
+        }
+          public EditProfile(seller:Seller):Observable<Seller>{
+            return this.http.get<Seller>(this.url1+'EditProfile/');
     
 }
+
 public Deleteitem(Iid:string):Observable<Items>
   {
     return this.http.delete<Items>(this.url+'Delete/'+Iid);

@@ -1,79 +1,127 @@
-<form [formGroup]="Buyerform" (ngSubmit)="Onsubmit()">
+<form [formGroup]="Buyerform" >
     <div class="container register-form" id="form" style="float: right;margin-top:90px;margin-right:130px;">
-        <div class="form">
-            <div class="note">
-                <p>Register Here</p>
-            </div>
+        <div class="Buyerform">
             
-            <div class="form-content"  style="border-color: white;">
-                <div class="row">
-                    
-                    <div class="col-md-6">
+                <div class="card">
+             <div clasd="col-md-6 offset-4" > <h2>SignUp</h2></div>
+            
+            
+            
+                
+                    <div class="col-md-6 offset-4">
                         <div class="form-group">
-    
-    <input type="text" formControlName="id" class="form-control" placeholder="BuyerID *" [ngClass]="{ 'is-invalid': submitted && f.BuyerId.errors }" />
-    <div *ngIf="submitted && f.BuyerId.errors" class="invalid-feedback">
-    <div *ngIf="f.BuyerId.errors.required">id is required</div>
-    <div *ngIf="f.BuyerId.errors.pattern">Enter valid id ex:B445</div>
+    <label>BuyerId</label>
+    <input type="text" formControlName="buyerid" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.buyerid.errors }" />
+    <div *ngIf="submitted && f.buyerid.errors" class="invalid-feedback">
+    <div *ngIf="f.buyerid.errors.required">id is required</div>
+    <div *ngIf="f.buyerid.errors.pattern">Enter valid id ex:B445</div>
     </div>
     </div>
     <div class="form-group">
-    <input type="text" formControlName="username" class="form-control" placeholder="Your Name *" value="" [ngClass]="{ 'is-invalid': submitted && f.Username.errors }"/>
-    <div *ngIf="submitted && f.Username.errors" class="invalid-feedback">
-    <div *ngIf="f.Username.errors.required">First Name is required</div>
-    <div *ngIf="f.Username.errors.pattern">Enter only Alphabets</div>
+        <label>username</label>
+    <input type="text" formControlName="username" class="form-control"  value="" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"/>
+    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+    <div *ngIf="f.username.errors.required">username is required</div>
+    <div *ngIf="f.username.errors.pattern">Enter only Alphabets</div>
     </div>
     
     </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 offset-4">
     <div class="form-group">
-    
-    <input type="password" formControlName="password" class="form-control" placeholder="Your password *" value="" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }"/>
-    <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
-    <div *ngIf="f.Password.errors.required">First Name is required</div>
-    <div *ngIf="f.Password.errors.pattern">Enter only Alphabets</div>
+    <label>Password</label>
+    <input type="password" formControlName="password" class="form-control"  value="" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+    <div *ngIf="f.password.errors.required">password is required</div>
+    <div *ngIf="f.password.errors.pattern">password must be valid</div>
     </div>
     </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 offset-4">
     <div class="form-group">
-    <input type="email" formControlName="email" class="form-control" placeholder="Your email *" value="" [ngClass]="{ 'is-invalid': submitted && f.Emailid.errors }"/>
-    <div *ngIf="submitted && f.Emailid.errors" class="invalid-feedback">
-    <div *ngIf="f.Emailid.errors.required">First Name is required</div>
-    <div *ngIf="f.Emailid.errors.pattern">Enter only Alphabets</div>
-    </div>
-    </div>
-    
-    </div>
-    <div class="col-md-6">
-    <div class="form-group">
-    <input type="text" formControlName="mobilenumber" class="form-control" placeholder="Your Mobile Number*" value="" [ngClass]="{ 'is-invalid': submitted && f.MobileNumber.errors }"/>
-    <div *ngIf="submitted && f.MobileNumber.errors" class="invalid-feedback">
-    <div *ngIf="f.MobileNumber.errors.required">First Name is required</div>
-    <div *ngIf="f.MobileNumber.errors.pattern">Enter only Alphabets</div>
+        <label>Emailid</label>
+    <input type="email" formControlName="emailid" class="form-control"  value="" [ngClass]="{ 'is-invalid': submitted && f.emailid.errors }"/>
+    <div *ngIf="submitted && f.emailid.errors" class="invalid-feedback">
+    <div *ngIf="f.emailid.errors.required">Emailid is required</div>
+    <!-- <div *ngIf="f.Emailid.errors.pattern"></div> -->
     </div>
     </div>
     
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 offset-4">
     <div class="form-group">
-    <input type="datetime" formControlName="createdatetime" class="form-control" placeholder="Your Mobile Number*" value="" [ngClass]="{ 'is-invalid': submitted && f.Createddatetime.errors }"/>
+        <label>mobilenumber</label>
+    <input type="text" formControlName="mobileno" class="form-control" value="" [ngClass]="{ 'is-invalid': submitted && f.mobileno.errors }"/>
+    <div *ngIf="submitted && f.Mobileno.errors" class="invalid-feedback">
+    <div *ngIf="f.mobileno.errors.required">mobilenumber is required</div>
+    <div *ngIf="f.mobileno.errors.pattern">mobilenumber must be valid</div>
+    </div>
+    </div>
+    
+    </div>
+    <div class="col-md-6 offset-4">
+    <div class="form-group">
+    <input type="datetime" formControlName="createdatetime" class="form-control"  value="" [ngClass]="{ 'is-invalid': submitted && f.createddatetime.errors }"/>
     <div *ngIf="submitted && f.Createddatetime.errors" class="invalid-feedback">
-    <div *ngIf="f.Createddatetime.errors.required">First Name is required</div>
-    <div *ngIf="f.Createddatetime.errors.pattern">Enter only Alphabets</div>
+    <div *ngIf="f.createddatetime.errors.required">datetime  is required</div>
+    <div *ngIf="f.createddatetime.errors.pattern">datetime must be valid</div>
     </div>
     </div>
     
     </div>
     <div class="text-center">
-    <button (click)="Edit()" type="button" class="btnSubmit">Edit</button> 
-
+        <button type="button" class="btn btn-primary" data-toggle="modal" (click)="ViewProfile()" data-target="#exampleModalCenter">EditProfile</button>
+                        
+    </div>
+            <!-- <button class="btn btn-primary mr-1"  (click)="Edit()">Edit</button> -->
+            </div>
     </div>
     </div>
-    </div>
-    </div>
-    </div>
+    
+    
+    
 </form>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+    <form [formGroup]="Buyerform"> 
+    <div class="form-group">
+    <label>UserName</label>
+    <input type="text" formControlName="username"  class="form-control"/>
+    </div>
+   
+    <div class="form-group">
+    <label>Password</label>
+    <input type="text" formControlName="password"  class="form-control"/>
+    </div>
+    <div class="form-group">
+    <label>Mobile</label>
+    <input type="text" formControlName="mobileno"  class="form-control"/>
+    </div>
+    <div class="form-group">
+    <label>EmailID</label>
+    <input type="text" formControlName="emailid"  class="form-control"/>
+    </div>
+    <!-- <div class="form-group">
+    <label>CompanyName</label>
+    <input type="text" formControlName="companyname" class="form-control"/>
+    </div> -->
+   
+    </form>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary" (click)="Edit()">Save changes</button>
+    </div>
+    </div>
+    </div>
+    </div> 
 
     

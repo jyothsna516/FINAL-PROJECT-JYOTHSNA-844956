@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 import { Buyer } from 'src/app/Models/buyer';
 import { BuyerService } from '../buyer.service';
+import { Token } from '@angular/compiler/src/ml_parser/lexer';
 @Component({
   selector: 'app-viewbuyer-profile',
   templateUrl: './viewbuyer-profile.component.html',
@@ -12,65 +13,74 @@ export class ViewbuyerProfileComponent implements OnInit {
   Buyerform:FormGroup;
   submitted:boolean=false;
   item:Buyer;
-  constructor(private form:FormBuilder,private service:BuyerService) {
-    this.ViewProfile();
-   }
+  token: Token;
+  buyerid:string;
+  constructor(private builder:FormBuilder,private service:BuyerService)
+   { 
+
+    this.buyerid=(localStorage.getItem('buyerid')) ;
+    console.log(this.buyerid+" buyerid");
+    
+  }
+  
 
   ngOnInit() {
-    this.Buyerform=this.form.group({
-      id:['',[Validators.required]],
+    this.Buyerform=this.builder.group({
+      buyerid:['',[Validators.required]],
       username:['',[Validators.required,Validators.pattern("^[A-Z]{6,15}$")]],
       createdatetime:['',[Validators.required]],
-      mobilenumber:['',[Validators.required,Validators.pattern("^[6-9][0-9]{7}$")]],
+      mobileno:['',[Validators.required,Validators.pattern("^[6-9][0-9]{7}$")]],
       //desig:['',[Validators.required]],
-      email:['',[Validators.required,Validators.email]],
+      emailid:['',[Validators.required,Validators.email]],
       password:['',[Validators.required,Validators.pattern("^(?=.*[A-Z]).{8,30}$")]]
   });
+   this.ViewProfile();
   }
-ViewProfile(){
-  let bid="I0001";
-  this.service.GetProfile(bid).subscribe(res=>{this.item=res;
-  console.log(this.item)
-  this.Buyerform.patchValue({
-    buyerId:this.item.BuyerId,
-    username:this.item.Username,
-    emailid:this.item.Emailid,
-    Createddatetime:this.item.Createddatetime,
-    password:this.item.Password,
-    mobileno:this.item.Mobileno
 
-  })
-},
-  err=>{
-    console.log(err);
-  }
-  )}
-  Onsubmit(){
-    alert("validated")
-    this.submitted=true;
-    if(this.Buyerform.valid){
-      this.ViewProfile();
+  ViewProfile()
+  {
+   
+  this.service.GetProfile(this.buyerid).subscribe(res=>  
+   {
+     
+     this.item=res;
+     console.log(this.item);
+      this.Buyerform.patchValue({
+       buyerid:this.item.buyerid,
+       username:this.item.username,
+       emailid:this.item.emailid,
+       password:this.item.password,
+       createddatetime:this.item.createddatetime,
+       mobileno:this.item.mobileno
+      })
+    })
+
     }
-  }
- 
+    
+   get f(){
+   return  this.Buyerform.controls;
+   }
+    
+
   Edit()
   {
   
     this.item=new Buyer();
-    this.item.BuyerId=this.Buyerform.value["BuyerId"],
-    this.item.Username=this.Buyerform.value["Username"],
-    this.item.Emailid=this.Buyerform.value["Email"],
-    this.item.Password=this.Buyerform.value["Password"],
-    this.item.Mobileno=this.Buyerform.value["MobileNumber"],
-    this.item.Createddatetime=new Date(this.Buyerform.value["Createddatetime"])
-    this.service.Editprofile(this.item).subscribe(res=>{console.log(this.item),alert("updated succesfully")},
-    err=>{
+    this.item.buyerid=this.Buyerform.value[" buyerid"],
+    this.item.username=this.Buyerform.value["username"],
+    this.item.emailid=this.Buyerform.value["emailid"],
+    this.item.password=this.Buyerform.value["password"],
+    this.item.mobileno=this.Buyerform.value["mobileno"],
+    this.item.createddatetime=new Date(this.Buyerform.value["createddatetime"])
+     this.service.EditProfile(this.item).subscribe(res=>{console.log(this.item),alert("updated succesfully"),this.ViewProfile()},
+     err=>{
       console.log(err);
     })
   }
  
 
 }
+
 
 
 

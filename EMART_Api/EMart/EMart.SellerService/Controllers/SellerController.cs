@@ -19,12 +19,12 @@ namespace EMart.SellerService.Controllers
             _repo = repo;
         }
         [HttpGet]
-        [Route("GetProfile")]
-        public IActionResult GetProfile(Seller seller)
+        [Route("GetProfile/{id}")]
+        public IActionResult GetProfile(Seller id)
         {
             try
             {
-                return Ok(_repo.GetProfile(seller));
+                return Ok(_repo.GetProfile(id));
             }
             catch(Exception e)
             {

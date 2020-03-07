@@ -37,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditprofileComponent } from './Buyer/editprofile/editprofile.component';
 import { ViewcategoryComponent } from './Admin/viewcategory/viewcategory.component';
 import { ViewsubcategoryComponent } from './Admin/viewsubcategory/viewsubcategory.component';
+import { AddcartComponent } from './Buyer/addcart/addcart.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { ViewsubcategoryComponent } from './Admin/viewsubcategory/viewsubcategor
     EditprofileComponent,
     ViewcategoryComponent,
     ViewsubcategoryComponent,
+    AddcartComponent,
   
   ],
   imports: [

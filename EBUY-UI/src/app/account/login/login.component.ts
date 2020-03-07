@@ -65,7 +65,9 @@ public Validate()
       if(this.token.msg=="Success")
       {
         console.log("sfds");
-        
+        console.log(this.token.buyerId);
+        localStorage.setItem('buyerid',this.token.buyerId);
+        console.log(localStorage.getItem('buyerid'));
         this.route.navigateByUrl('/buyer');
     }
     else{
@@ -81,6 +83,9 @@ this.service.SellerLogin(username,password).subscribe(res=>{
   console.log(res)
   this.token=res;
   if(this.token.msg=="Success"){
+    console.log(this.token.sellerId);
+    localStorage.setItem('sellerid',this.token.sellerId);
+    console.log(localStorage.getItem('sellerid'));
     this.route.navigateByUrl('seller');
   }
   else{
