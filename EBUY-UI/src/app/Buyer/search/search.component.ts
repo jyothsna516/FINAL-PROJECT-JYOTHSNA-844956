@@ -18,6 +18,8 @@ export class SearchComponent implements OnInit {
   constructor(private route:Router,private service:BuyerService) { }
 
   ngOnInit() {
+    
+   // alert("validations failed");
   }
   Search(itemname:string){
     console.log("search");
@@ -42,25 +44,23 @@ export class SearchComponent implements OnInit {
 localStorage.setItem('item',JSON.stringify(item));
 this.route.navigateByUrl('/buyer/buyproduct')
 }
-AddtoCart(item2:Items){
-  console.log(item2);
-this.it=item2;
-console.log(this.it);
-console.log(this.it.itemname);
+AddtoCart(item:Items){
+  console.log(item);
+// console.log(this.it);
+// console.log(this.it.itemname);
   let bid=localStorage.getItem('buyerid');
  this.cart=new Cart();
- this.cart.cartid='cartid'+Math.round(Math.random()*1000);
- this.cart.itemId=this.it.itemId;
- this.cart.itemName=this.it.itemname;
- //console.log(this.item2.itemname);
- this.cart.categoryid=this.it.categoryid;
- this.cart.subcategoryid=this.it.subcategoryid;
- this.cart.sellerid=this.it.sellerid;
- this.cart. stocknumber=this.it.stocknumber;
- this.cart.price=this.it.price;
- this.cart.description=this.it.description;
- this.cart.remarks=this.it.remarks;
- this.cart.photo=this.it.photo;
+ this.cart.id='cartid'+Math.round(Math.random()*1000);
+ this.cart.itemId=item.itemId;
+ this.cart.itemname=item.itemName;
+ this.cart.categoryId=item.categoryId;
+ this.cart.subcategoryid=item.subcategoryId;
+ this.cart.sellerId=item.sellerId;
+ this.cart. stockNumber=item.stockNumber;
+ this.cart.price=item.price;
+ this.cart.description=item.description;
+ this.cart.remarks=item.remarks;
+ this.cart.img=item.photo;
  console.log(this.cart);
  this.service.AddtoCart(this.cart).subscribe(res=>{
    console.log("Record added To Cart");

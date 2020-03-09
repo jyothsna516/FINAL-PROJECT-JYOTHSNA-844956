@@ -15,6 +15,10 @@ namespace Emart.AdminService.Repositories
         void DeleteCategory(string categoryId);
         void DeleteSubCategory(string subcategoryId);
         List<Category> GetCategory();
+        void EditCategory(Category category);
+        void EditSubCategory(SubCategory subcategory);
+        Category GetCatById(string categoryId);
+        SubCategory GetScatById(string subcategoryId);
 
         // Category ViewCategory(Category catid);
         //  SubCategory  ViewSubCategory(SubCategory scatid);

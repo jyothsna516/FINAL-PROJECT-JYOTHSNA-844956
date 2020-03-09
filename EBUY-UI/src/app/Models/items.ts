@@ -1,12 +1,12 @@
 export class Items {
     public itemId:string;
-    public categoryid:string;
-    public subcategoryid:string;
+    public categoryId:string;
+    public subcategoryId:string;
     public price:number;
-    public itemname:string;
+    public itemName:string;
     public description:string;
-    public stocknumber:number;
+    public stockNumber:number;
     public remarks:string;
-    public sellerid:string;
+    public sellerId:string;
     public photo:string;
 }

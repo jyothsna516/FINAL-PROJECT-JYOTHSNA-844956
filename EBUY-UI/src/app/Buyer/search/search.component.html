@@ -48,7 +48,7 @@
             <button class="btn btn-success mr-1">Add to cart</button>
       
              -->
-             <div class="container">
+             <div *ngFor="let item of list">             <div class="container">
               <div class="row offset-2">
                 <div class="card-deck ">
                     <div class="card text-center" *ngFor="let item of list" style="width: 18rem;" >
@@ -74,6 +74,8 @@
                   </div>
                   </div>
                   </div>
+                </div>
+
            
   
   

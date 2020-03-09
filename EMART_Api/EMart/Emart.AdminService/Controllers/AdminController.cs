@@ -57,8 +57,8 @@ namespace Emart.AdminService.Controllers
             try
             {
                 // _repo.ViewCategory();
-                return Ok( _repo.ViewCategory());
-             //   return Ok();
+                return Ok(_repo.ViewCategory());
+                //   return Ok();
 
             }
             catch (Exception e)
@@ -82,7 +82,7 @@ namespace Emart.AdminService.Controllers
             {
                 return NotFound(e.Message);
             }
-    }
+        }
         [HttpDelete]
         [Route("DeleteCategory/{categoryId}")]
         public IActionResult DeleteCategory(string categoryId)
@@ -91,7 +91,7 @@ namespace Emart.AdminService.Controllers
             {
                 // _repo.ViewCategory();
                 _repo.DeleteCategory(categoryId);
-                 return Ok();
+                return Ok();
 
             }
             catch (Exception e)
@@ -128,11 +128,70 @@ namespace Emart.AdminService.Controllers
                 return NotFound(e.Message);
             }
         }
+        [HttpPut]
+        [Route("updatecategory")]
+        public IActionResult EditCategory(Category category)
+        {
+            try
+            {
+                _repo.EditCategory(category);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpPut]
+        [Route("updatesubcategory")]
+        public IActionResult EditSubCategory(SubCategory subcategory)
+        {
+            try
+            {
+                _repo.EditSubCategory(subcategory);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+
+
+        [HttpGet]
+        [Route("getcbyid/{cid}")]
+        public IActionResult GetCatById(string cid)
+        {
+            try
+            {
+                _repo.GetCatById(cid);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+
+        }
+        [HttpGet]
+        [Route("getsbyid/{cid}")]
+        public IActionResult GetScatById(string scid)
+        {
+            try
+            {
+                _repo.GetScatById(scid);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+
+        }
+
+
 
     }
-
-
-
 }
 
 

@@ -16,6 +16,7 @@ namespace EMart.SellerService.Models
         }
 
         public virtual DbSet<Buyer> Buyer { get; set; }
+        public virtual DbSet<Cart> Cart { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Discount> Discount { get; set; }
         public virtual DbSet<Items> Items { get; set; }
@@ -62,6 +63,74 @@ namespace EMart.SellerService.Models
                     .IsRequired()
                     .HasMaxLength(20)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Cart>(entity =>
+            {
+                entity.Property(e => e.Id)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.CategoryId)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Img)
+                    .HasColumnName("img")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ItemId)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ItemName)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Price)
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Remarks)
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SellerId)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.StockNumber)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SubcategoryId)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.Category)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.CategoryId)
+                    .HasConstraintName("FK__Cart__CategoryId__5CD6CB2B");
+
+                entity.HasOne(d => d.Item)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.ItemId)
+                    .HasConstraintName("FK__Cart__ItemId__5FB337D6");
+
+                entity.HasOne(d => d.Seller)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.SellerId)
+                    .HasConstraintName("FK__Cart__SellerId__5EBF139D");
+
+                entity.HasOne(d => d.Subcategory)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.SubcategoryId)
+                    .HasConstraintName("FK__Cart__Subcategor__5DCAEF64");
             });
 
             modelBuilder.Entity<Category>(entity =>

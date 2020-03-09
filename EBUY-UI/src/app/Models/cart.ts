@@ -1,14 +1,14 @@
 export class Cart {
     public itemId:string;
-    public categoryid:string;
+    public categoryId:string;
     public subcategoryid:string;
     public price:number;
-    public itemName:string;
+    public itemname:string;
     public  description:string;
-      public stocknumber:number;
-     public cartid:string;
+      public stockNumber:number;
+     public id:string;
       public remarks:string;
-      public  sellerid:string;
-      public photo:string;
+      public  sellerId:string;
+      public img:string;
       
 }

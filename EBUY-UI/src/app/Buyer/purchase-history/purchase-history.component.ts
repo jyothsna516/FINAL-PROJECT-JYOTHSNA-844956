@@ -36,7 +36,7 @@ export class PurchaseHistoryComponent implements OnInit {
     this.pth=new Purchasehistorytranscation();
     this.pth.phtid='T'+Math.round(Math.random()*999);
     this.pth.buyerid=localStorage.getItem('buyerid');
-    this.pth.sellerid=this.item.sellerid;
+    this.pth.sellerid=this.item.sellerId;
     this.pth.noofitems=this.purchaseform.value["numberofitems"];
     this.pth.itemId=this.item.itemId;
     this.pth.trancationtype=this.purchaseform.value["transactiontype"]

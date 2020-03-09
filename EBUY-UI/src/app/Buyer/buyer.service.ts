@@ -47,7 +47,7 @@ public GetAllItems():Observable<any>{
   return this.http.get<any>(this.url+'getallitems',Requestheaders);
 }
 public AddtoCart(cart:Cart):Observable<any>{
-  return this.http.post<any>(this.url+'Addtocart',cart,Requestheaders);
+  return this.http.post<any>(this.url+'Addtocart',cart);
 }
 public GetCartItems():Observable<any>
 {

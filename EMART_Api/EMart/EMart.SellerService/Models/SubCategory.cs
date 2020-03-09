@@ -5,6 +5,11 @@ namespace EMart.SellerService.Models
 {
     public partial class SubCategory
     {
+        public SubCategory()
+        {
+            Cart = new HashSet<Cart>();
+        }
+
         public string SubcategoryId { get; set; }
         public string SubcategoryName { get; set; }
         public string CategoryId { get; set; }
@@ -12,5 +17,6 @@ namespace EMart.SellerService.Models
         public int Gst { get; set; }
 
         public virtual Category Category { get; set; }
+        public virtual ICollection<Cart> Cart { get; set; }
     }
 }
