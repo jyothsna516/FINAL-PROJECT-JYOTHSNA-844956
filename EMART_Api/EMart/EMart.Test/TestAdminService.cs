@@ -22,7 +22,7 @@ namespace EMart.Test
         {
             _repo.AddCategory(new Category()
             {
-                CategoryId = "C0009",
+                CategoryId = "C0010",
                 CategoryName = "Furniture",
                 BreifDetails = "resonableprice",
             });
@@ -36,9 +36,9 @@ namespace EMart.Test
         {
             _repo.AddSubCategory(new SubCategory()
             {
-                SubcategoryId = "Sc07",
+                SubcategoryId = "Sc08",
                 SubcategoryName = "dinnning table",
-                CategoryId = "C0009",
+                CategoryId = "C0010",
                 BreifDetails = "somanymodels",
                 Gst =44,
             });
@@ -49,18 +49,19 @@ namespace EMart.Test
         [Description("deleting products based on category")]
         public void DeleteCategory()
         {
-            _repo.DeleteCategory("C0009");
-            var result = _repo.GetCatById("C0009");
+            _repo.DeleteCategory("C0010");
+            var result = _repo.GetCatById("C0010");
             Assert.Null(result);
         }
         [Test]
         [Description("deleting products based on subcategory")]
         public void DeleteSubCategory()
         {
-            _repo.DeleteSubCategory("sc07");
-            var result = _repo.GetScatById("sc07");
+            _repo.DeleteSubCategory("sc02");
+            var result = _repo.GetScatById("sc02");
             Assert.Null(result);
         }
+        [Test]
         public void EditCategory()
         {
             Category  category =_repo.GetCatById("C0003");
@@ -70,6 +71,7 @@ namespace EMart.Test
             Assert.AreSame(category, item1);
 
         }
+        [Test]
         public void EditSubCategory()
         {
             SubCategory scategory = _repo.GetScatById("sc03");
@@ -79,6 +81,7 @@ namespace EMart.Test
             Assert.AreSame(scategory, item1);
 
         }
+
 
     }
 }

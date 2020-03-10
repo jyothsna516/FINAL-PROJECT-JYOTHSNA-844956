@@ -72,24 +72,24 @@ export class ViewProfileComponent implements OnInit {
   //  }
     
 
-  Edit()
-  {
+  // Edit()
+  // {
   
-    this.item=new Seller();
-    this.item.sellerid=this.Sellerform.value[" buyerid"],
-    this.item.Username=this.Sellerform.value["username"],
-    this.item.Emailid=this.Sellerform.value["emailid"],
-    this.item.Password=this.Sellerform.value["password"],
-    this.item.ContactNumber=this.Sellerform.value["mobileno"],
-    this.item.Website=this.Sellerform.value["website"],
-    this.item.Gstin=this.Sellerform.value["Gstin"],
-    this.item.BriefAboutcompany=this.Sellerform.value["BreifAboutCompany"],
+  //   this.item=new Seller();
+  //   this.item.sellerid=this.Sellerform.value[" buyerid"],
+  //   this.item.Username=this.Sellerform.value["username"],
+  //   this.item.Emailid=this.Sellerform.value["emailid"],
+  //   this.item.Password=this.Sellerform.value["password"],
+  //   this.item.ContactNumber=this.Sellerform.value["mobileno"],
+  //   this.item.Website=this.Sellerform.value["website"],
+  //   this.item.Gstin=this.Sellerform.value["Gstin"],
+  //   this.item.BriefAboutcompany=this.Sellerform.value["BreifAboutCompany"],
 
-     this.service.EditProfile(this.item).subscribe(res=>{console.log(this.item),alert("updated succesfully"),this.myProfile()},
-     err=>{
-      console.log(err);
-    })
-  }
+  //    this.service.EditProfile(this.item).subscribe(res=>{console.log(this.item),alert("updated succesfully"),this.myProfile()},
+  //    err=>{
+  //     console.log(err);
+  //   })
+  // }
  
 
 }

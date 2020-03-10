@@ -7,22 +7,28 @@ using NUnit.Framework;
 namespace EMart.Test
 {
     [TestFixture]
-   public class TestSellerService
+    public class TestSellerService
     {
         SellerRepository _repo;
         [SetUp]
-       
+
         public void SetUp()
         {
-            _repo = new SellerRepository(new EMart.SellerService.Models.EBuyDBContext());
+            _repo = new SellerRepository(new EBuyDBContext());
         }
         [Test]
-        [Description("get profile of the seller based on id")]
-        public void GetProfile()
+        [Description("Test View/Edit Profile")]
+        public void TestUpdateProfile()
         {
-           // var result =_repo.GetProfile()
-           // Assert.IsNotNull(result);
+            Seller seller = _repo.GetProfile("S0006");
+            seller.ContactNumber = "9889489899";
+            _repo.EditProfile(seller);
+            Seller seller1 = _repo.GetProfile("S0006");
+            Assert.AreSame(seller, seller1);
         }
 
     }
 }
+
+    
+

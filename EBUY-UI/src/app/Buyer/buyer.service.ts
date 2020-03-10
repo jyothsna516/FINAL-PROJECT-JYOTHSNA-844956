@@ -12,7 +12,7 @@ const Requestheaders={headers:new HttpHeaders({'Content-Type':'application/json'
 export class BuyerService {
 //constructor(){}
   //constructor(private http:HttpClient) { }
-   url:string="https://localhost:44317/Buyer/"
+   url:string="http://localhost:51050/Buyer/"
    constructor(private http:HttpClient) { }
     public UpdateDetails(buyer:Buyer):Observable<any>{
      

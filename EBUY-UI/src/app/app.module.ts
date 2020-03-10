@@ -27,8 +27,8 @@ import { AddCategoryComponent } from './Admin/add-category/add-category.componen
 import { AddSubCategoryComponent } from './Admin/add-sub-category/add-sub-category.component';
 import { DailyReportsComponent } from './Admin/daily-reports/daily-reports.component';
 import { LoginComponent } from './Account/login/login.component';
-import { RegisterSellerComponent } from './Account/register-seller/register-seller.component';
-import { RegisterBuyerComponent } from './Account/register-buyer/register-buyer.component';
+// import { RegisterSellerComponent } from './Account/register-seller/register-seller.component';
+// import { RegisterBuyerComponent } from './Account/register-buyer/register-buyer.component';
 import { ViewProfileComponent } from './Seller/view-profile/view-profile.component';
 import { HomeComponent } from './account/home/home.component';
 import { ContactComponent } from './account/contact/contact.component';
@@ -38,6 +38,9 @@ import { EditprofileComponent } from './Buyer/editprofile/editprofile.component'
 import { ViewcategoryComponent } from './Admin/viewcategory/viewcategory.component';
 import { ViewsubcategoryComponent } from './Admin/viewsubcategory/viewsubcategory.component';
 import { AddcartComponent } from './Buyer/addcart/addcart.component';
+import { RegisterSellerComponent } from './Account/register-seller/register-seller.component';
+import { RegisterBuyerComponent } from './account/registerbuyer/registerbuyer.component';
+
 
 @NgModule({
   declarations: [
@@ -65,8 +68,8 @@ import { AddcartComponent } from './Buyer/addcart/addcart.component';
     AddSubCategoryComponent,
     DailyReportsComponent,
     LoginComponent,
-    RegisterSellerComponent,
-    RegisterBuyerComponent,
+   RegisterSellerComponent,
+   RegisterBuyerComponent,
     HomeComponent,
     ContactComponent,
     EditprofileComponent,

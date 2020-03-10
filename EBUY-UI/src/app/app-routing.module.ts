@@ -16,15 +16,18 @@ import { BlockUnBlockSellerComponent } from './Admin/block-un-block-seller/block
 import { AddCategoryComponent } from './Admin/add-category/add-category.component';
 import { AddSubCategoryComponent } from './Admin/add-sub-category/add-sub-category.component';
 import { DailyReportsComponent } from './Admin/daily-reports/daily-reports.component';
-import { LoginComponent } from './Account/login/login.component';
-import { RegisterSellerComponent } from './Account/register-seller/register-seller.component';
-import { RegisterBuyerComponent } from './Account/register-buyer/register-buyer.component';
+
+
+
 import { ViewbuyerProfileComponent } from './Buyer/viewbuyer-profile/viewbuyer-profile.component';
 import { HomeComponent } from './account/home/home.component';
 import { ContactComponent } from './account/contact/contact.component';
 import { ViewcategoryComponent } from './Admin/viewcategory/viewcategory.component';
 import { ViewsubcategoryComponent } from './Admin/viewsubcategory/viewsubcategory.component';
 import { EditprofileComponent } from './Buyer/editprofile/editprofile.component';
+import { RegisterBuyerComponent } from './account/registerbuyer/registerbuyer.component';
+import { RegisterSellerComponent } from './Account/register-seller/register-seller.component';
+import { LoginComponent } from './Account/login/login.component';
 
 
 
@@ -41,10 +44,14 @@ path:'blockunblockbuyer',component:BlockUnBlockBuyerComponent},{path:'blockunblo
 {path:'add-category',component:AddCategoryComponent},{path:'view-category',component:ViewcategoryComponent},{path:'view-subcategory',component:ViewsubcategoryComponent},
 {path:'add-sub-category',component:AddSubCategoryComponent},{path:'dailyreports',component:DailyReportsComponent}]},
 
-{path:'login',component:LoginComponent,},{path:'register-seller',component:RegisterSellerComponent},
-{path:'register-buyer',component:RegisterBuyerComponent},{path:'home',component:HomeComponent},
-{path:'register-buyer',component:RegisterBuyerComponent},{path:'contactus',component:ContactComponent},{path:'',redirectTo:'login',pathMatch:'full'}
-];
+
+{path:'home',component:HomeComponent,children:[
+  {path:'login',component:LoginComponent},
+{path:'register-seller',component:RegisterSellerComponent},
+{path:'register-buyer',component:RegisterBuyerComponent},
+{path:'contactus',component:ContactComponent}]},
+{path:'',component:HomeComponent}]
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

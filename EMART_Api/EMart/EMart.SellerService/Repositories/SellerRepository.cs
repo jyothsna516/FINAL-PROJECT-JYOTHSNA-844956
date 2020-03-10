@@ -20,7 +20,7 @@ namespace EMart.SellerService.Repositories
 
         }
 
-        public Seller GetProfile(Seller id)
+        public Seller GetProfile(string id)
         {
             return _context.Seller.Find(id);
            

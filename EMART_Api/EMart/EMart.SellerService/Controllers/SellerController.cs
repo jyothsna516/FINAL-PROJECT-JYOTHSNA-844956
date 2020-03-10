@@ -20,7 +20,7 @@ namespace EMart.SellerService.Controllers
         }
         [HttpGet]
         [Route("GetProfile/{id}")]
-        public IActionResult GetProfile(Seller id)
+        public IActionResult GetProfile(string id)
         {
             try
             {

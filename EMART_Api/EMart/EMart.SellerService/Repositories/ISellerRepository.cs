@@ -9,7 +9,7 @@ namespace EMart.SellerService.Repositories
     {
         
         void EditProfile(Seller seller);
-        Seller GetProfile(Seller id);
+        Seller GetProfile(string id);
         
 
     }

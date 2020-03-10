@@ -17,18 +17,18 @@
                         </button>
                         <div class="dropdown-menu">
                             <a class="nav-link btn-outline-secondary"
-                           class="dropdown-item" [routerLink]="['/register-buyer']">SignUpBuyer</a>
-                          <a class="dropdown-item" href="register-seller">SignUpSeller</a>
+                           class="dropdown-item" [routerLink]="['home/register-buyer']">SignUpBuyer</a>
+                          <a class="dropdown-item" [routerLink]="['home/register-seller']">SignUpSeller</a>
                           
                         </div>
                       </div>
 
                     <li class="col-sm-2 nav-item text-center">
-                        <a class="nav-link btn-outline-secondary" href="#"><b>Login</b></a>
+                        <a class="nav-link btn-outline-secondary" [routerLink]="['/home/login']"><b>Login</b></a>
                     </li>
                    
                     <li class="col-sm-2 nav-item text-center">
-                       <a class="nav-link btn-outline-secondary" href="contactus"><b>Contact</b></a>
+                       <a class="nav-link btn-outline-secondary"[routerLink]="['/home/contactus']"><b>Contact</b></a>
                     </li>
                     <li class="col-sm-2 nav-item text-center">
                         <a class="nav-link btn-outline-secondary" href="logout"><b>Logout</b></a>

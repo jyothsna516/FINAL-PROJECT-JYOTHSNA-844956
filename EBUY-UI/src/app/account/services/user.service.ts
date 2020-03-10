@@ -8,7 +8,7 @@ const Requestheaders={headers:new HttpHeaders({'Content-Type':'application/json'
   providedIn: 'root'
 })
 export class UserService {
-url:string="https://localhost:44317/User/"
+url:string="http://localhost:51050/User/"
   constructor(private http:HttpClient) { }
   public BuyerRegister(buyer:Buyer):Observable<any>{
     return this.http.post<any>(this.url+'BRegister',JSON.stringify(buyer),Requestheaders);}

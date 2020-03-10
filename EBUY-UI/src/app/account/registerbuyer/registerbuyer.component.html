@@ -1,0 +1,175 @@
+<!-- <div class="bg">
+    <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+                <div class="col" id="navbarText">
+                    <ul class="nav row nav-pills ">
+                      
+                        <li class="col-sm-4 nav-item text-center">
+                            <a class="nav-link btn-outline-secondary" href="#"><b>Home</b> </a>
+                        </li>
+                        
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                              SignUp
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="nav-link btn-outline-secondary"
+                               class="dropdown-item" [routerLink]="['/register-buyer']">SignUpBuyer</a>
+                              <a class="dropdown-item" href="register-seller">SignUpSeller</a>
+                              
+                            </div>
+                          </div>
+    
+                        <li class="col-sm-2 nav-item text-center">
+                            <a class="nav-link btn-outline-secondary" href="#"><b>Login</b></a>
+                        </li>
+                       
+                        <li class="col-sm-2 nav-item text-center">
+                           <a class="nav-link btn-outline-secondary" href="contactus"><b>Contact</b></a>
+                        </li>
+    
+                    </ul>
+                    <router-outlet></router-outlet>
+                   
+                    </div>
+                    </div>
+                    
+                </nav>   </div>      
+    
+    <div class="container">
+                    <div class="row">
+                        <nav class="col-md-2 d-none d-md-block sidebar">
+                            <div class="sidebar-sticky">                
+                                <ul class="nav flex-column">
+     
+                                <li class="nav-item my-2 text-center">
+                                    <a href="#" class="nav-link btn-outline-secondary"><b>Home</b></a>
+                                
+                                 
+                                    
+                                
+                                 <li class="nav-item my-2 text-center"> 
+                                     <a href="#" class="nav-link btn-outline-secondary"><b>Login</b></a> 
+                                
+                                <li class="nav-item my-2 text-center"> 
+                                     <a href="#" class="nav-link btn-outline-secondary"><b>Contact</b> </a>
+                                 </li>
+                            </ul>                         
+            
+                    
+                    </div> 
+                    </nav>
+                    </div>  
+                    </div>
+                <br>   -->
+
+
+
+
+
+<div class ="image">
+<div class="container">
+<div class="card bg-light mb-3 "> 
+    <div class="bg2">
+    <!-- <form class = "form-horizontal" role = "form"> -->
+    <h5 class="card-header text-center">Signup-Buyer</h5>
+     <div class="card-body"> 
+        
+        <form [formGroup]="SignupForm" (ngSubmit)="onSubmit()">
+            <div class="form-group col-md-5 offset-4">
+                <label for="buyerid">Id</label>
+                <input type="text" formControlName="bid"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bid.errors }" />
+                <div *ngIf="submitted && f.bid.errors" class="invalid-feedback">
+                    <div *ngIf="f.bid.errors.required">id is required</div>
+                  
+                </div>
+            </div>
+                <div class="form-group col-md-5 offset-4">
+                    <label for="username">Username</label>
+                    <input type="text" formControlName="bname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bname.errors }" />
+                    <div *ngIf="submitted && f.bname.errors" class="invalid-feedback">
+                        <div *ngIf="f.bname.errors.required">Username is required</div>
+                        <div *ngIf="f.bname.errors.pattern">Username must be valid</div>
+                    </div>
+                </div>
+            
+                <div class="form-group col-md-5 offset-4">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="pwd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pwd.errors }" />
+                    <div *ngIf="submitted && f.pwd.errors" class="invalid-feedback">
+                        <div *ngIf="f.pwd.errors.required">Password is required</div>
+                        <div *ngIf="f.pwd.errors.pattern">password must contain[a-z] any 1 special character should contain</div>
+                    </div>
+                </div>
+
+            <div class="form-group col-md-5 offset-4 ">
+                <label>Email</label>
+                <input type="text" formControlName="emailid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emailid.errors }" />
+                <div *ngIf="submitted && f.emailid.errors" class="invalid-feedback">
+                    <div *ngIf="f.emailid.errors.required">Email is required</div>
+                    <div *ngIf="f.emailid.errors.email">Email must be a valid email address</div>
+                </div>
+            </div>
+            
+            <div class="form-group col-md-5 offset-4">
+                <label>Mobile</label>
+                <input type="text" formControlName="mobileno" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobileno.errors }" />
+                <div *ngIf="submitted && f.mobileno.errors" class="invalid-feedback">
+                    <div *ngIf="f.mobileno.errors.required">Mobile no is required</div>
+                    <div *ngIf="f.mobileno.errors.pattern">Mobile no Must be Valid</div>
+                </div>
+            </div>
+            
+            <div class="form-group col-md-5 offset-4">
+                <label>DateTime</label>
+                <input type="date" formControlName="createddatetime" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.createddatetime.errors }" />
+                <div *ngIf="submitted && f.createddatetime.errors" class="invalid-feedback">
+                    <div *ngIf="f.createddatetime.errors.required">Date is required</div>
+                    <div *ngIf="f.createddatetime.errors.pattern">Date Must be Valid Format</div>
+                </div>
+            </div>    
+            <div class="form-group form-check col-md-5 offset-5">
+                <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+                <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+            </div>
+        
+        <div class="text-center">
+            <button class="btn btn-primary mr-1">Signup</button>
+            <button class="btn btn-danger" type="reset" (click)="onReset()">Reset</button>
+        </div>
+        </form>
+        
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+        
+
+
+
+<router-outlet></router-outlet>
+
+

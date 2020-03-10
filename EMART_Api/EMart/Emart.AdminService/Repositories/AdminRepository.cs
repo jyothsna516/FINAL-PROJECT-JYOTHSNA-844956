@@ -73,6 +73,10 @@ namespace Emart.AdminService.Repositories
             return _context.SubCategory.Find(subcategoryId);
 
         }
+       
+
+
+       
 
 
     }

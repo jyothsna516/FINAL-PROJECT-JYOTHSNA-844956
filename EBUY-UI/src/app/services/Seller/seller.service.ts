@@ -25,10 +25,10 @@ export class SellerService {
         public ViewProfile(id:string):Observable<any>{
           return this.http.get<any>(this.url1+'GetProfile/'+id);
         }
-          public EditProfile(seller:Seller):Observable<Seller>{
-            return this.http.get<Seller>(this.url1+'EditProfile/');
+//           public EditProfile(seller:Seller):Observable<Seller>{
+//             return this.http.get<Seller>(this.url1+'EditProfile/');
     
-}
+// }
 
 public Deleteitem(Iid:string):Observable<Items>
   {

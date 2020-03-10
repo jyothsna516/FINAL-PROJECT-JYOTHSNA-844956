@@ -21,15 +21,15 @@ namespace EMart.Test
         {
             _repo.BuyItem(new PurchaseHistoryTransactions()
             {
-                Id = "C01",
-                SellerId = "S0002",
+                Id = "T0002",
+                SellerId = "S0001",
                 BuyerId="I0004",
                 Transactiontype = "debit",
                 Numberofitems = 4,
                 Datetime=DateTime.Now,
                  Remarks="no",
            TranscationStatus="oncart",
-                ItemId = "I009",
+                ItemId = "I431",
             }); ; 
             var result = _repo.PurchaseHistoryTransactions("I0004");
             Assert.NotNull(result);
