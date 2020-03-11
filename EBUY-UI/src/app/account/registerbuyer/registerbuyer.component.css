@@ -1,15 +1,11 @@
 .image{
-  background-image: url('D:\FINAL-PROJECT-Jyothsna-844956\EBUY-UI\src\assets\Images\bg.jpg');
-  
+       background-image: url('src\assets\Images\bg.jpg');
       position: static; 
       top: 0; 
-      left: 0; 
-        
+      left: 0;      
       /* Preserve aspet ratio */
       min-width: 100%;
       min-height: 800px;
-    
-  
   background-repeat: no-repeat;
   background-size: cover; 
 }
@@ -19,10 +15,6 @@
 .bg{
   background-color: #80ced6;
 }
-
-
-
-
 .sidebar {
 position: fixed;
 top: 0;

@@ -16,7 +16,7 @@
                         <div class="form-group col-md-5 offset-4">
                             <label>CategoryName:</label>
                             <select id="s1" formControlName="categoryid" (change)="onGetSubCategory()" class="form-control  input-line full-width" >
-                              <option *ngFor="let cat of categorylist" value={{cat.categoryId}}>{{cat.categoryName}}</option>
+                              <option *ngFor="let cat of categorylist" value={{cat.categoryid}}>{{cat.categoryName}}</option>
                               </select>
                             <div *ngIf="submitted && f.categoryid.errors" class="invalid-feedback">
                               <div *ngIf="f.categoryid.errors.required">categoryname is required</div>
@@ -25,7 +25,7 @@
                           <div class="form-group col-md-5 offset-4">
                             <label>SubcategoryName:</label>
                             <select id="s2" formControlName="subcategoryid" class="form-control  input-line full-width" >
-                              <option *ngFor="let cat of subcategorylist" value={{cat.subcategoryId}}>{{cat.subcategoryName}}</option>
+                              <option *ngFor="let cat of subcategorylist" value={{cat.subcategoryId}}>{{cat.subcategoryname}}</option>
                               </select>
                             <div *ngIf="submitted && f.subcategoryid.errors" class="invalid-feedback">
                               <div *ngIf="f.subcategoryid.errors.required">Subcategoryname is required</div>
@@ -87,4 +87,7 @@
         </div>
         </div>
         </div>
+        <router-outlet></router-outlet>
+        
+        
   

@@ -26,7 +26,7 @@ import { BlockUnBlockSellerComponent } from './Admin/block-un-block-seller/block
 import { AddCategoryComponent } from './Admin/add-category/add-category.component';
 import { AddSubCategoryComponent } from './Admin/add-sub-category/add-sub-category.component';
 import { DailyReportsComponent } from './Admin/daily-reports/daily-reports.component';
-import { LoginComponent } from './Account/login/login.component';
+//import { LoginComponent } from './Account/login/login.component';
 // import { RegisterSellerComponent } from './Account/register-seller/register-seller.component';
 // import { RegisterBuyerComponent } from './Account/register-buyer/register-buyer.component';
 import { ViewProfileComponent } from './Seller/view-profile/view-profile.component';
@@ -38,8 +38,10 @@ import { EditprofileComponent } from './Buyer/editprofile/editprofile.component'
 import { ViewcategoryComponent } from './Admin/viewcategory/viewcategory.component';
 import { ViewsubcategoryComponent } from './Admin/viewsubcategory/viewsubcategory.component';
 import { AddcartComponent } from './Buyer/addcart/addcart.component';
-import { RegisterSellerComponent } from './Account/register-seller/register-seller.component';
+//import { RegisterSellerComponent } from './Account/registerseller/register-seller.component';
 import { RegisterBuyerComponent } from './account/registerbuyer/registerbuyer.component';
+import { RegisterSellerComponent } from './account/register-seller/registerseller.component';
+import { LoginComponent } from './account/login/login.component';
 
 
 @NgModule({
@@ -68,6 +70,7 @@ import { RegisterBuyerComponent } from './account/registerbuyer/registerbuyer.co
     AddSubCategoryComponent,
     DailyReportsComponent,
     LoginComponent,
+    //LoginComponent,
    RegisterSellerComponent,
    RegisterBuyerComponent,
     HomeComponent,

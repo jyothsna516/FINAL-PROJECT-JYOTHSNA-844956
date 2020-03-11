@@ -42,7 +42,6 @@ export class ViewbuyerProfileComponent implements OnInit {
    
   this.service.GetProfile(this.buyerid).subscribe(res=>  
    {
-     
      this.item=res;
      console.log(this.item);
       this.Buyerform.patchValue({
@@ -50,7 +49,7 @@ export class ViewbuyerProfileComponent implements OnInit {
        username:this.item.username,
        emailid:this.item.emailid,
        password:this.item.password,
-       createddatetime:this.item.createddatetime,
+      //  createddatetime:this.item.createddatetime,
        mobileno:this.item.mobileno
       })
     })
@@ -71,7 +70,7 @@ export class ViewbuyerProfileComponent implements OnInit {
     this.item.emailid=this.Buyerform.value["emailid"],
     this.item.password=this.Buyerform.value["password"],
     this.item.mobileno=this.Buyerform.value["mobileno"],
-    this.item.createddatetime=new Date(this.Buyerform.value["createddatetime"])
+    // this.item.createddatetime=new Date(this.Buyerform.value["createddatetime"])
      this.service.EditProfile(this.item).subscribe(res=>{console.log(this.item),alert("updated succesfully"),this.ViewProfile()},
      err=>{
       console.log(err);

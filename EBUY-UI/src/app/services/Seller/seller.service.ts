@@ -10,8 +10,8 @@ const Requestheaders={headers:new HttpHeaders({'Content-Type':'application/json'
   providedIn: 'root'
 })
 export class SellerService {
-  url:string="https://localhost:44317/Item/"
-  url1:string="https://localhost:44317/Seller/"
+  url:string="http://localhost:51050/Item/"
+  url1:string="http://localhost:51050/Seller/"
   constructor(private http:HttpClient) { }
     public AddItem(item:Items):Observable<any>{
       return this.http.post<any>(this.url+'Additem',JSON.stringify(item),Requestheaders);}

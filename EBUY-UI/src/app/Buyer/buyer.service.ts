@@ -36,7 +36,7 @@ public BuyItem(item:Items):Observable<any>{
 }
 public EditProfile(buyer:Buyer):Observable<Buyer>
 {
-  return this.http.put<Buyer>(this.url+'EditProfile',buyer);
+  return this.http.put<Buyer>(this.url+'EditProfile',buyer,Requestheaders);
 }
 // public BuyItem(item:Purchasehistorytranscation):Observable<Purchasehistorytranscation[]>
 // {
@@ -47,7 +47,7 @@ public GetAllItems():Observable<any>{
   return this.http.get<any>(this.url+'getallitems',Requestheaders);
 }
 public AddtoCart(cart:Cart):Observable<any>{
-  return this.http.post<any>(this.url+'Addtocart',cart);
+  return this.http.post<any>(this.url+'Addtocart',cart,Requestheaders);
 }
 public GetCartItems():Observable<any>
 {

@@ -29,12 +29,9 @@ item:Items;
 constructor(private formbuilder:FormBuilder,private service:BuyerService,private route:Router) { }
 
 ngOnInit()
-  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-  //Add 'implements OnInit' to the class.
-  
 {
 console.log("gjhj")
-  this.item=JSON.parse(JSON.stringify(localStorage.getItem('buyerid'))); 
+  this.item=JSON.parse(JSON.stringify(localStorage.getItem('item'))); 
 console.log(this.item);
 console.log(this.item.itemId);
 this.transForm=this.formbuilder.group({

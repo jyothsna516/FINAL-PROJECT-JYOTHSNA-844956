@@ -26,8 +26,9 @@ import { ViewcategoryComponent } from './Admin/viewcategory/viewcategory.compone
 import { ViewsubcategoryComponent } from './Admin/viewsubcategory/viewsubcategory.component';
 import { EditprofileComponent } from './Buyer/editprofile/editprofile.component';
 import { RegisterBuyerComponent } from './account/registerbuyer/registerbuyer.component';
-import { RegisterSellerComponent } from './Account/register-seller/register-seller.component';
-import { LoginComponent } from './Account/login/login.component';
+
+import { LoginComponent } from './account/login/login.component';
+import { RegisterSellerComponent } from './account/register-seller/registerseller.component';
 
 
 
@@ -45,11 +46,11 @@ path:'blockunblockbuyer',component:BlockUnBlockBuyerComponent},{path:'blockunblo
 {path:'add-sub-category',component:AddSubCategoryComponent},{path:'dailyreports',component:DailyReportsComponent}]},
 
 
-{path:'home',component:HomeComponent,children:[
-  {path:'login',component:LoginComponent},
+{path:'home',component:HomeComponent},
+ {path:'login',component:LoginComponent} ,
 {path:'register-seller',component:RegisterSellerComponent},
 {path:'register-buyer',component:RegisterBuyerComponent},
-{path:'contactus',component:ContactComponent}]},
+{path:'contactus',component:ContactComponent},
 {path:'',component:HomeComponent}]
 
 @NgModule({

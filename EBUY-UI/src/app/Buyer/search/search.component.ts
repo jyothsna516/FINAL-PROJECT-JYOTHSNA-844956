@@ -42,6 +42,7 @@ export class SearchComponent implements OnInit {
   console.log("hello")
 //console.log(item);
 localStorage.setItem('item',JSON.stringify(item));
+console.log(localStorage.getItem('item'));
 this.route.navigateByUrl('/buyer/buyproduct')
 }
 AddtoCart(item:Items){
@@ -52,9 +53,9 @@ AddtoCart(item:Items){
  this.cart=new Cart();
  this.cart.id='cartid'+Math.round(Math.random()*1000);
  this.cart.itemId=item.itemId;
- this.cart.itemname=item.itemName;
+ this.cart.itemName=item.itemName;
  this.cart.categoryId=item.categoryId;
- this.cart.subcategoryid=item.subcategoryId;
+ this.cart.subcategoryId=item.subcategoryId;
  this.cart.sellerId=item.sellerId;
  this.cart. stockNumber=item.stockNumber;
  this.cart.price=item.price;

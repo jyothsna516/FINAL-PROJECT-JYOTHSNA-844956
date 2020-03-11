@@ -1,9 +1,9 @@
 export class Cart {
     public itemId:string;
     public categoryId:string;
-    public subcategoryid:string;
+    public subcategoryId:string;
     public price:number;
-    public itemname:string;
+    public itemName:string;
     public  description:string;
       public stockNumber:number;
      public id:string;

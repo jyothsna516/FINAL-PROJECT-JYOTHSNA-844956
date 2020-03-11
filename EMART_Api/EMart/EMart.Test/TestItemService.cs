@@ -33,7 +33,7 @@ namespace EMart.Test
                 SellerId = "S0002",
                 Photo = "image3.jpg"
             });
-            var result = _repo.GetItem("I0016");
+            var result = _repo.GetItem("I0017");
             Assert.Null(result);
         }
 
