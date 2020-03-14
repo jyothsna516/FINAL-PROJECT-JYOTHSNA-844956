@@ -1,0 +1,75 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace C:\Program Files (x86)\Jenkins\workspace\EmartUI
+No credentials specified
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/jyothsna516/FINAL-PROJECT-JYOTHSNA-844956 # timeout=10
+Fetching upstream changes from https://github.com/jyothsna516/FINAL-PROJECT-JYOTHSNA-844956
+ > git.exe --version # timeout=10
+ > git.exe fetch --tags --force --progress -- https://github.com/jyothsna516/FINAL-PROJECT-JYOTHSNA-844956 +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision aa426bb3d2e7dcb929101605de3cfe9ffc136cf5 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f aa426bb3d2e7dcb929101605de3cfe9ffc136cf5 # timeout=10
+Commit message: "ASinitial49"
+ > git.exe rev-list --no-walk 21d48594f20b44a9b55684217e23ace69fcb250b # timeout=10
+[EmartUI] $ cmd /c call C:\Windows\TEMP\jenkins5534605166215066869.bat
+
+C:\Program Files (x86)\Jenkins\workspace\EmartUI>CD EMART-UI 
+The system cannot find the path specified.
+
+C:\Program Files (x86)\Jenkins\workspace\EmartUI>npm install 
+npm WARN saveError ENOENT: no such file or directory, open 'C:\Program Files (x86)\Jenkins\workspace\EmartUI\package.json'
+npm WARN enoent ENOENT: no such file or directory, open 'C:\Program Files (x86)\Jenkins\workspace\EmartUI\package.json'
+npm WARN EmartUI No description
+npm WARN EmartUI No repository field.
+npm WARN EmartUI No README data
+npm WARN EmartUI No license field.
+
+up to date in 0.574s
+found 0 vulnerabilities
+
+[EmartUI] $ cmd /c call C:\Windows\TEMP\jenkins2137852167274230433.bat
+
+C:\Program Files (x86)\Jenkins\workspace\EmartUI>CD EBUY-UI 
+
+C:\Program Files (x86)\Jenkins\workspace\EmartUI\EBUY-UI>npm run ng -- build  
+
+> ebuy-ui@0.0.0 ng C:\Program Files (x86)\Jenkins\workspace\EmartUI\EBUY-UI
+> ng "build"
+
+Generating ES5 bundles for differential loading...
+ES5 bundle generation complete.
+
+chunk {polyfills} polyfills-es2015.js, polyfills-es2015.js.map (polyfills) 268 kB [initial] [rendered]
+chunk {runtime} runtime-es2015.js, runtime-es2015.js.map (runtime) 6.16 kB [entry] [rendered]
+chunk {runtime} runtime-es5.js, runtime-es5.js.map (runtime) 6.16 kB [entry] [rendered]
+chunk {styles} styles-es2015.js, styles-es2015.js.map (styles) 871 kB [initial] [rendered]
+chunk {styles} styles-es5.js, styles-es5.js.map (styles) 872 kB [initial] [rendered]
+chunk {main} main-es2015.js, main-es2015.js.map (main) 321 kB [initial] [rendered]
+chunk {main} main-es5.js, main-es5.js.map (main) 352 kB [initial] [rendered]
+chunk {polyfills-es5} polyfills-es5.js, polyfills-es5.js.map (polyfills-es5) 706 kB [initial] [rendered]
+chunk {vendor} vendor-es2015.js, vendor-es2015.js.map (vendor) 4.11 MB [initial] [rendered]
+chunk {vendor} vendor-es5.js, vendor-es5.js.map (vendor) 4.98 MB [initial] [rendered]
+Date: 2020-03-14T05:58:17.371Z - Hash: d6be370d6526c35a1788 - Time: 37373ms
+
+WARNING in ./src/app/Account/services/user.service.ts
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* C:\Program Files (x86)\Jenkins\workspace\EmartUI\EBUY-UI\node_modules\@ngtools\webpack\src\index.js!C:\Program Files (x86)\Jenkins\workspace\EmartUI\EBUY-UI\src\app\Account\services\user.service.ts
+    Used by 2 module(s), i. e.
+    C:\Program Files (x86)\Jenkins\workspace\EmartUI\EBUY-UI\node_modules\@ngtools\webpack\src\index.js!C:\Program Files (x86)\Jenkins\workspace\EmartUI\EBUY-UI\src\app\app.module.ts
+* C:\Program Files (x86)\Jenkins\workspace\EmartUI\EBUY-UI\node_modules\@ngtools\webpack\src\index.js!C:\Program Files (x86)\Jenkins\workspace\EmartUI\EBUY-UI\src\app\account\services\user.service.ts
+    Used by 6 module(s), i. e.
+    C:\Program Files (x86)\Jenkins\workspace\EmartUI\EBUY-UI\node_modules\@ngtools\webpack\src\index.js!C:\Program Files (x86)\Jenkins\workspace\EmartUI\EBUY-UI\src\app\account\login\login.component.ts
+ @ ./src/app/Account/services/user.service.ts
+ @ ./src/app/app.module.ts
+ @ ./src/main.ts
+ @ multi ./src/main.ts
+[EmartUI] $ cmd /c call C:\Windows\TEMP\jenkins394539421040756309.bat
+
+C:\Program Files (x86)\Jenkins\workspace\EmartUI>exit 0 
+Finished: SUCCESS
