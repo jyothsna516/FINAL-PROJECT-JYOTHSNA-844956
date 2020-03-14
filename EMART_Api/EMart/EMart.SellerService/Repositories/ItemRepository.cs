@@ -21,8 +21,8 @@ namespace EMart.SellerService.Repositories
 
         public void Deleteitem(string itemid)
         {
-            Items item = _context.Items.Find(itemid);
-            _context.Remove(itemid);
+            Items item = _context.Items.SingleOrDefault(e=>e.ItemId==itemid);
+            _context.Remove(item);
             _context.SaveChanges();
         }
 

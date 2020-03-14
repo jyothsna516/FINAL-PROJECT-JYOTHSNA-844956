@@ -1,6 +1,6 @@
 
 export class Buyer {
-   public buyerid:string;
+   public buyerId:string;
     public username:string;
     public password:string;
    public  emailid:string;

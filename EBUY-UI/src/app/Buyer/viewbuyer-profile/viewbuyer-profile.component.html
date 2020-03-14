@@ -3,7 +3,7 @@
         <div class="Buyerform">
             
                 <div class="card">
-             <div clasd="col-md-6 offset-4" > <h2>SignUp</h2></div>
+             <div class="col-md-6 offset-4" > <h2>SignUp</h2></div>
             
             
             
@@ -62,14 +62,14 @@
     <div class="col-md-6 offset-4">
     <div class="form-group">
         <label>createddatetime</label>
-    <input type="datetime" formControlName="createdatetime" class="form-control"  value="" [ngClass]="{ 'is-invalid': submitted && f.createddatetime.errors }"/>
-    <div *ngIf="submitted && f.Createddatetime.errors" class="invalid-feedback">
+    <input type="datetime" formControlName="createddatetime" class="form-control"  value="" [ngClass]="{ 'is-invalid': submitted && f.createddatetime.errors }"/>
+    <div *ngIf="submitted && f.createddatetime.errors" class="invalid-feedback">
     <div *ngIf="f.createddatetime.errors.required">datetime  is required</div>
     <div *ngIf="f.createddatetime.errors.pattern">datetime must be valid</div>
     </div>
-    </div>
+    </div> 
     
-    </div>
+    </div> 
     <div class="text-center">
         <button type="button" class="btn btn-primary" data-toggle="modal" (click)="ViewProfile()" data-target="#exampleModalCenter">EditProfile</button>
                         
@@ -94,6 +94,10 @@
     <div class="modal-body">
     <form [formGroup]="Buyerform"> 
     <div class="form-group">
+        <label>BUYERID</label>
+        <input type="text" formControlName="buyerid"  class="form-control"/>
+    </div>
+    <div class="form-group">
     <label>UserName</label>
     <input type="text" formControlName="username"  class="form-control"/>
     </div>
@@ -105,6 +109,10 @@
     <div class="form-group">
     <label>Mobile</label>
     <input type="text" formControlName="mobileno"  class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>datetime</label>
+        <input type="text" formControlName="createddatetime"  class="form-control"/>
     </div>
     <div class="form-group">
     <label>EmailID</label>

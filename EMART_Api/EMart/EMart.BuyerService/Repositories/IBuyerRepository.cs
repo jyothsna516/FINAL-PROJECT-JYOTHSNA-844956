@@ -17,7 +17,8 @@ namespace EMart.BuyerService.Repositories
         List<SubCategory> GetSubCategories(string cid);
         List<Items> GetAllItems();
         void AddToCart(Cart cart);
-        List<Cart> GetCartItems();
+       List<Cart> GetCartItems(string bid);
         void DeleteCartItems(string cartid);
+        Cart GetCartId(string cartid);
     }
 }

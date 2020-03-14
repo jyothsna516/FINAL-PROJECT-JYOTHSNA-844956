@@ -21,7 +21,7 @@ namespace EMart.Test
         {
             _repo.BuyItem(new PurchaseHistoryTransactions()
             {
-                Id = "T0002",
+                Id = "T0004",
                 SellerId = "S0001",
                 BuyerId="I0004",
                 Transactiontype = "debit",
@@ -63,7 +63,7 @@ namespace EMart.Test
         public void TestUpdateProfile()
         {
             Buyer buyer = _repo.GetProfile("I0001");
-            buyer.Mobileno = "9666666889";
+            buyer.Mobileno = "9666666888";
             _repo.EditProfile(buyer);
             Buyer buyer1 = _repo.GetProfile("I0001");
             Assert.AreSame(buyer, buyer1);

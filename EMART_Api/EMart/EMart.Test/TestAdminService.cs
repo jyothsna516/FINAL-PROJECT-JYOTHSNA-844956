@@ -22,7 +22,7 @@ namespace EMart.Test
         {
             _repo.AddCategory(new Category()
             {
-                CategoryId = "C0010",
+                CategoryId = "C0011",
                 CategoryName = "Furniture",
                 BreifDetails = "resonableprice",
             });
@@ -36,9 +36,9 @@ namespace EMart.Test
         {
             _repo.AddSubCategory(new SubCategory()
             {
-                SubcategoryId = "Sc08",
+                SubcategoryId = "Sc07",
                 SubcategoryName = "dinnning table",
-                CategoryId = "C0010",
+                CategoryId = "C0011",
                 BreifDetails = "somanymodels",
                 Gst =44,
             });
@@ -49,23 +49,23 @@ namespace EMart.Test
         [Description("deleting products based on category")]
         public void DeleteCategory()
         {
-            _repo.DeleteCategory("C0010");
-            var result = _repo.GetCatById("C0010");
+            _repo.DeleteCategory("C0011");
+            var result = _repo.GetCatById("C0011");
             Assert.Null(result);
         }
         [Test]
         [Description("deleting products based on subcategory")]
         public void DeleteSubCategory()
         {
-            _repo.DeleteSubCategory("sc02");
-            var result = _repo.GetScatById("sc02");
+            _repo.DeleteSubCategory("sc03");
+            var result = _repo.GetScatById("sc03");
             Assert.Null(result);
         }
         [Test]
         public void EditCategory()
         {
             Category  category =_repo.GetCatById("C0003");
-               category.CategoryName="electronics";
+               category.CategoryName="electronicss";
             _repo.EditCategory(category);
             Category item1 = _repo.GetCatById("C0003");
             Assert.AreSame(category, item1);
@@ -75,7 +75,7 @@ namespace EMart.Test
         public void EditSubCategory()
         {
             SubCategory scategory = _repo.GetScatById("sc03");
-            scategory.SubcategoryName = "mensclothing";
+            scategory.SubcategoryName = "mensclothes";
             _repo.EditSubCategory(scategory);
            SubCategory item1 = _repo.GetScatById("sc03");
             Assert.AreSame(scategory, item1);

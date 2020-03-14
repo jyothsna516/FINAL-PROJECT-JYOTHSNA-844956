@@ -27,12 +27,12 @@ public GetProfile(bid:string):Observable<Buyer>
 // public GetAllItems():Observable<any>{
 //   return this.http.get<any>(this.url+'GetAllItems',Requestheaders);
 // }
-public Search(itemname:string):Observable<any>
+public Search(itemName:string):Observable<any>
 {
-  return this.http.get<any>(this.url+'Search/'+itemname);
+  return this.http.get<any>(this.url+'Search/'+itemName);
 }
-public BuyItem(item:Items):Observable<any>{
-  return this.http.post<any>(this.url+'BuyItem',JSON.stringify(item),Requestheaders);
+public BuyItem(item:Purchasehistorytranscation):Observable<any>{
+  return this.http.post<any>(this.url+'BuyItem',item,Requestheaders);
 }
 public EditProfile(buyer:Buyer):Observable<Buyer>
 {
@@ -40,36 +40,34 @@ public EditProfile(buyer:Buyer):Observable<Buyer>
 }
 // public BuyItem(item:Purchasehistorytranscation):Observable<Purchasehistorytranscation[]>
 // {
-//   return this.http.post<>
-  //return this.http.post<Purchasehistorytranscation>(this.url+'BuyItem/',transactionhistory,Requestheaders);
+ 
+//   return this.http.post<Purchasehistorytranscation>(this.url+'BuyItem',item,Requestheaders);
 // }
 public GetAllItems():Observable<any>{
   return this.http.get<any>(this.url+'getallitems',Requestheaders);
 }
 public AddtoCart(cart:Cart):Observable<any>{
-  return this.http.post<any>(this.url+'Addtocart',cart,Requestheaders);
+  return this.http.post<any>(this.url+'Addtocart',cart);
 }
-public GetCartItems():Observable<any>
+public GetCartItems(bid:string):Observable<any>
 {
-  return this.http.get<any>(this.url+'Getcartitems',Requestheaders);
+  return this.http.get<any>(this.url+'Getcartitems/'+bid,Requestheaders);
 }
-public RemoveCartItem(Cartid:string):Observable<Cart>
+public RemoveCartItem(id:string):Observable<Cart>
 {
-  return this.http.delete<Cart>(this.url+'Removeitem/'+Cartid,Requestheaders);
+  return this.http.delete<Cart>(this.url+'Removeitem/'+id,Requestheaders);
+}
+public  GetcartByid(bid:string):Observable<Cart>{
+  return this.http.get<Cart>(this.url+'GetCartId/'+bid,Requestheaders);
+}
+public GetCount(Bid:string):Observable<any>
+{
+  console.log(Requestheaders);
+  return this.http.get<any>(this.url+'Getcount/'+Bid,Requestheaders);
 }
 
-// public Myprofile(id:number):Observable<any>
-//  {
-//  return this.http.get<any>(this.url+'get'+'/'+id);
-//  }
-//  edit(item:Buyer):Observable<any>
-//  {
-//  return this.http.put<any>(this.url+'Edit',item);
-//  }
-}
-  //     return this.http.post<any>(this.url+'Additem',JSON.stringify(item),Requestheaders);}
-  //     public ViewItem(id:string):Observable<Items>{
-  //       return this.http.get<Items>(this.url+'GetAll/'+id,Requestheaders);
 
+}
+ 
 
 

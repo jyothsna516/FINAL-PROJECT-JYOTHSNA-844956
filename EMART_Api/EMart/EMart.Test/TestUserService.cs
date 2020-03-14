@@ -21,15 +21,15 @@ namespace EMart.Test
         {
             _repo.BuyerRegister(new Buyer()
             {
-                BuyerId = "I0009",
-                Username = "Renukak",
-                Password = "renu545",
+                BuyerId = "I0012",
+                Username = "Renukako",
+                Password = "renu575",
                 Emailid = "renu@gmail.com",
                 Mobileno = "7854759871",
                 Createddatetime = DateTime.Now
 
             });
-            var result =_repo.BuyerLogin("Renukak","renu545");
+            var result =_repo.BuyerLogin("Renukako","renu575");
             Assert.NotNull(result);
         }
         [Test]
@@ -38,11 +38,11 @@ namespace EMart.Test
         {
             _repo.SellerRegister(new Seller()
             {
-                SellerId = "S0006",
+                SellerId = "S007",
 
                 Username = "Renukak",
 
-                Password = "renu123",
+                Password = "renu1234",
 
                 Companyname = "renuka textiles",
 
@@ -58,7 +58,7 @@ namespace EMart.Test
 
                 BriefAboutcompany = "superquality"
             });
-            var result = _repo.SellerLogin("Renukak", "renu123");
+            var result = _repo.SellerLogin("Renukak", "renu1234");
             Assert.NotNull(result);
         }
 

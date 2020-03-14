@@ -71,6 +71,10 @@ namespace EMart.UserService.Models
                     .HasMaxLength(10)
                     .IsUnicode(false);
 
+                entity.Property(e => e.BuyerId)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.CategoryId)
                     .HasMaxLength(20)
                     .IsUnicode(false);
@@ -209,12 +213,20 @@ namespace EMart.UserService.Models
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Price)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Remarks)
                     .IsRequired()
                     .HasMaxLength(30)
                     .IsUnicode(false);
 
                 entity.Property(e => e.SellerId)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.StockNumber)
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
@@ -286,6 +298,7 @@ namespace EMart.UserService.Models
                 entity.HasOne(d => d.Item)
                     .WithMany(p => p.PurchaseHistoryTransactions)
                     .HasForeignKey(d => d.ItemId)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__purchase___Item___1FCDBCEB");
 
                 entity.HasOne(d => d.Seller)

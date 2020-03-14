@@ -51,7 +51,7 @@
                         <div class="form-group col-md-5 offset-4">
                             <label>BreifDetails</label>
                             <textarea type="text" formControlName="breifdetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.breifdetails.errors }"></textarea>
-                            <div *ngIf="submitted && f.BreifDetails.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.breifdetails.errors" class="invalid-feedback">
                             <div *ngIf="f.breifdetails.errors.required">BreifDetails is required</div> 
                              <div *ngIf="f.breifdetails.errors.pattern">Breif Details must be valid</div> 
                             </div>        

@@ -8,7 +8,16 @@ import { BuyerService } from '../buyer.service';
   styleUrls: ['./buyer-landingpage.component.css']
 })
 export class BuyerLandingpageComponent implements OnInit {
-  constructor(private route:Router){}
+  constructor(private route:Router){
+    if(localStorage.getItem('buyerid'))
+    {
+
+    }
+    else{
+      this.route.navigateByUrl('login')
+    }
+   }
+  
   // list:Items[];
   // constructor(private service:BuyerService) {
   //     this.service.GetAllItems().subscribe(res=>{

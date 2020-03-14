@@ -1,6 +1,6 @@
 
     
-<div>
+<!-- <div>
 	<table>
     				<thead>
 						<tr>
@@ -45,9 +45,9 @@
 						</tr>
 					</tfoot>
 				</table>
-</div>
+</div> -->
 
-<div>
+<!-- <div>
 	<div>
 	  <div style="width:250px">
 		<img alt="Card image cap">
@@ -66,5 +66,41 @@
 		  </div>
 		  </div>
 	</div>
-  </div>
+  </div> -->
+
+<div class="container">
+	<div class="card">
+		<h1>View Cart</h1>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let item of cartlist">
+          <div class="card">
+            <h5 class="card-title">{{item.itemname}}</h5>
+             <img class="card-img " id="i1" src="assets/images/{{item.image}}" alt="Card image cap"> 
+              <div class="card-body" >
+<!-- 				
+				id: {{item.id}}
+itemId: "I431"
+itemName: "longtop"
+categoryId: "C0006"
+subcategoryId: "Sc04"
+stockNumber: "67"
+price: "2132345"
+description: "no"
+remarks -->
+                Price: {{item.price}}<br/>
+                  Description:{{item.description}}<br/>
+                    
+            </div>
+            <div class="card-footer">
+              <div class="text-center">
+                <!-- <button class="btn btn-primary mr-1" (click)="Buy(item)" >Buy </button> -->
+                <button class="btn btn-danger mr-1" (click)="Delete(item.id)">Delete</button>
+            </div>
+            </div>     
+          </div>
+          <br>
+        </div>
+      </div>
+	</div>
+	</div>
 

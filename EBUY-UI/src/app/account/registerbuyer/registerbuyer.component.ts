@@ -36,7 +36,7 @@ export class RegisterBuyerComponent implements OnInit {
         //this.buyer=new Buyer(); 
         if (this.SignupForm.valid) {
             this.buyer=new Buyer();
-            this.buyer.buyerid=this.SignupForm.value["bid"];
+            this.buyer.buyerId=this.SignupForm.value["bid"];
             this.buyer.username=this.SignupForm.value["bname"];
             this.buyer.password=this.SignupForm.value["pwd"];
             this.buyer.emailid=this.SignupForm.value["emailid"];

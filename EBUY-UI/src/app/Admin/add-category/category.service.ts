@@ -9,7 +9,7 @@ const Requestheaders={headers:new HttpHeaders({'Content-Type':'application/json'
 })
 export class CategoryService {
 
-  url:string="https://localhost:44317/Admin/"
+  url:string="http://localhost:51050/Admin/"
   constructor(private http:HttpClient) { }
     public AddCategory(catg:Category):Observable<any>{
       return this.http.post<any>(this.url+'AddCategory',JSON.stringify(catg),Requestheaders);}

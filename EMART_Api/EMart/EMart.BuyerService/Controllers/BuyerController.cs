@@ -154,12 +154,12 @@ namespace EMart.BuyerService.Controllers
             }
         }
         [HttpGet]
-        [Route("Getcartitems")]
-        public IActionResult GetCartItems()
+        [Route("Getcartitems/{bid}")]
+        public IActionResult GetCartItems(string bid)
         {
             try
             {
-                return Ok(_repo.GetCartItems());
+                return Ok(_repo.GetCartItems(bid));
             }
             catch (Exception e)
             {
@@ -174,6 +174,19 @@ namespace EMart.BuyerService.Controllers
             {
                 _repo.DeleteCartItems(Cartid);
                 return Ok();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.InnerException.Message);
+            }
+        }
+        [HttpGet]
+        [Route("GetCartId/{bid}")]
+        public IActionResult GetCartById(string cartid)
+        {
+            try
+            {
+                return Ok(_repo.GetCartId(cartid));
             }
             catch (Exception e)
             {

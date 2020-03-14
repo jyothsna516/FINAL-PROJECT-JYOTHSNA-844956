@@ -30,21 +30,22 @@
         <!-- <a class="nav-link btn-outline-primary" href="/seller/viewitems" >ViewItems</a> -->
             <!-- <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a> -->
     </li>
-    <li class="col-sm-2 nav-item text-center">
+    <!-- <li class="col-sm-2 nav-item text-center">
         <a class="nav-link btn-outline-secondary" href="/seller/viewprofile" ><b>viewprofile</b></a>
+           
+    </li> -->
+    <!-- <li class="col-sm-2 nav-item text-center">
+        <a class="btn-outline-secondary" href="/seller/viewreports" ><b>ViewReports</b></a> -->
             <!-- <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a> -->
-    </li>
-    <li class="col-sm-2 nav-item text-center">
-        <a class="btn-outline-secondary" href="/seller/viewreports" ><b>ViewReports</b></a>
-            <!-- <a [routerLink]="['/buyer/buyer-landingpage']" >BuyerLandingPage</a> -->
-    </li>
+    <!-- </li> -->
     <li class="col-sm-2 nav-item text-center">
         <button class="btn-btn-primary mr-1" (click)="Logout()"><b>logout</b></button>   
         </li>
 
 </ul>
 </div></nav></div>
-</div></div>
+</div><router-outlet></router-outlet>
+</div>
 
 
 
@@ -127,7 +128,7 @@
 </div> </nav>
         </div>  -->
         
-        <router-outlet></router-outlet>
+      
         <!-- </div> -->
 
         <!-- <li class="col-sm-3 nav-item text-center">

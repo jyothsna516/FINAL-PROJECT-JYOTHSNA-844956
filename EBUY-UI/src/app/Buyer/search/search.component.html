@@ -1,9 +1,11 @@
        <br>
+       <!-- <form [formGroup]="searchform"> -->
             <div class="container">
                 <div class="col-md-5">  
                     <div class="input-group add-on">
-                      <input class="form-control" placeholder="Search" type="search" [(ngModel)]="itemname">
-                        <button class="btn btn-default"type="submit"(click)="Search(itemname)"><button class="btn btn-primary mr-1">Search</button><i class="glyphicon glyphicon-search"></i></button>
+                      <input class="form-control" placeholder="Search" type="search" [(ngModel)]="itemName">
+                        <button class="btn btn-default"type="submit"(click)="Search(itemName)">
+                          <button class="btn btn-primary mr-1">Search</button><i class="glyphicon glyphicon-search"></i></button>
                       </div>
                     </div>
   <!-- <div class="card"> -->
@@ -55,10 +57,10 @@
                     <img class="card-img-top" src="/assets/Images/{{item.photo}}" alt="no image is there to show"> 
                         <h5 class="card-title">{{item.itemName}}</h5>
                         <div class="card-body">
-                          <!-- ItemId:{{item.iid}}<br/>
-                          CategoryId:{{item.cid}}<br/>
-                          SubCategoryId:{{item.scid}}<br/>
-                          SellerId: {{item.sid}}<br/> -->
+                          <!-- ItemId:{{item.itemId}}<br/>
+                          CategoryId:{{item.categoryId}}<br/>
+                          SubCategoryId:{{item.subcategoryId}}<br/>
+                          SellerId: {{item.sellerId}}<br/> -->
                           Price: {{item.price}}<br/>
                           Description:{{item.description}}<br/>
                           Stock:{{item.stockNumber}}<br/>
@@ -75,7 +77,9 @@
                   </div>
                   </div>
                 </div>
-
+                </div>
+                <!-- </form> -->
+             
            
   
   

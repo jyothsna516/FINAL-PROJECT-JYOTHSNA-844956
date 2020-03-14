@@ -47,7 +47,7 @@
                             <option value="oil">oil</option>
                             <option value="onions">Onions</option>
                         </select>
-                        <div *ngIf="submitted && f. subcategoryname.errors" class="invalid-feedback">
+                        <div *ngIf="submitted && f.subcategoryname.errors" class="invalid-feedback">
                             <div *ngIf="f.subcategoryname.errors.required">subcategoryname is required</div>
                         </div>
                     </div>  
@@ -56,7 +56,7 @@
                     <div class="form-group col-md-5 offset-4">
                         <label>CategoryName:</label>
                         <select formControlName="categoryname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.categoryName.errors }">
-                            <option *ngFor="let cat of list" [value]="cat.cid">{{cat.categoryname}}</option>
+                            <option *ngFor="let cat of list" [value]="cat.cid">{{cat.categoryName}}</option>
                         </select>
                         <div *ngIf="submitted && f.categoryname.errors" class="invalid-feedback">
                             <div *ngIf="f.categoryname.errors.required">categoryname is required</div>

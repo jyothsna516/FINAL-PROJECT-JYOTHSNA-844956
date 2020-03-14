@@ -16,6 +16,7 @@ namespace EMart.UserService.Models
         public string StockNumber { get; set; }
         public string Remarks { get; set; }
         public string Img { get; set; }
+        public string BuyerId { get; set; }
 
         public virtual Category Category { get; set; }
         public virtual Items Item { get; set; }

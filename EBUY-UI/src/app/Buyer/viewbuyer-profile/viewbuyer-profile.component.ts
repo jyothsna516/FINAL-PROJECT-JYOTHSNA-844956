@@ -28,7 +28,7 @@ export class ViewbuyerProfileComponent implements OnInit {
     this.Buyerform=this.builder.group({
       buyerid:['',[Validators.required]],
       username:['',[Validators.required,Validators.pattern("^[A-Z]{6,15}$")]],
-      createdatetime:['',[Validators.required]],
+      createddatetime:['',[Validators.required]],
       mobileno:['',[Validators.required,Validators.pattern("^[6-9][0-9]{7}$")]],
       //desig:['',[Validators.required]],
       emailid:['',[Validators.required,Validators.email]],
@@ -45,11 +45,11 @@ export class ViewbuyerProfileComponent implements OnInit {
      this.item=res;
      console.log(this.item);
       this.Buyerform.patchValue({
-       buyerid:this.item.buyerid,
+      buyerid:this.item.buyerId,
        username:this.item.username,
        emailid:this.item.emailid,
        password:this.item.password,
-      //  createddatetime:this.item.createddatetime,
+      createddatetime:this.item.createddatetime,
        mobileno:this.item.mobileno
       })
     })
@@ -65,13 +65,16 @@ export class ViewbuyerProfileComponent implements OnInit {
   {
   
     this.item=new Buyer();
-    this.item.buyerid=this.Buyerform.value[" buyerid"],
+    this.item.buyerId=this.Buyerform.value["buyerid"],
     this.item.username=this.Buyerform.value["username"],
     this.item.emailid=this.Buyerform.value["emailid"],
     this.item.password=this.Buyerform.value["password"],
     this.item.mobileno=this.Buyerform.value["mobileno"],
-    // this.item.createddatetime=new Date(this.Buyerform.value["createddatetime"])
-     this.service.EditProfile(this.item).subscribe(res=>{console.log(this.item),alert("updated succesfully"),this.ViewProfile()},
+   // console.log(this.item);
+     this.item.createddatetime=this.Buyerform.value["createddatetime"];
+     console.log(this.item);
+     this.service.EditProfile(this.item).subscribe(res=>
+      {console.log(this.item),alert("updated succesfully"),this.ViewProfile()},
      err=>{
       console.log(err);
     })

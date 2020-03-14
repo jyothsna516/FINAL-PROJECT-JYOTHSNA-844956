@@ -62,15 +62,21 @@ namespace EMart.BuyerService.Repositories
             _context.Add(cart);
             _context.SaveChanges();
         }
-        public List<Cart> GetCartItems()
+        public List<Cart> GetCartItems(string bid)
         {
-            return _context.Cart.ToList();
+            //return _context.Cart.Add
+
+            return _context.Cart.Where(e => e.BuyerId == bid).ToList();
         }
         public void DeleteCartItems(string Cartid)
         {
             Cart cart = _context.Cart.Find(Cartid);
             _context.Cart.Remove(cart);
             _context.SaveChanges();
+        }
+        public Cart GetCartId(string cartid)
+        {
+            return _context.Cart.Find(cartid);
         }
     }
 }

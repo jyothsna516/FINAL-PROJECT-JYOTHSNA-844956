@@ -25,7 +25,9 @@ export class PurchaseHistoryComponent implements OnInit {
     name:[''],
     datetime:[''],
     numberofitems:[''],
-    remarks:['']
+    remarks:[''],
+    status:['']
+  
   })
   this.item=JSON.parse(localStorage.getItem('item'));
   console.log(this.item);
@@ -36,24 +38,21 @@ export class PurchaseHistoryComponent implements OnInit {
     this.pth=new Purchasehistorytranscation();
     this.pth.phtid='T'+Math.round(Math.random()*999);
     this.pth.buyerid=localStorage.getItem('buyerid');
-    this.pth.sellerid=this.item.sellerId;
-    this.pth.noofitems=this.purchaseform.value["numberofitems"];
+    this.pth.sellerId=this.item.sellerId;
+    this.pth.numberofitems=this.purchaseform.value["numberofitems"];
     this.pth.itemId=this.item.itemId;
-    this.pth.trancationtype=this.purchaseform.value["transactiontype"]
-       this.pth.datetime=this.purchaseform.value["datetime"];
-       this.pth.remarks=this.purchaseform.value["remarks"];
+    this.pth.trancationtype=this.purchaseform.value["transactiontype"];
+    this.pth.transcationstatus=this.purchaseform.value["status"];
+    this.pth.datetime=this.purchaseform.value["datetime"];
+   this.pth.remarks=this.purchaseform.value["remarks"];
        console.log(this.pth);
-      //  this.service.BuyItem(this.pth).subscribe(res=>{
+  // this.service.BuyItem(this.pth).subscribe(res=>{
          console.log("Purchase was Sucessfull");
          alert('Purchase Done Successfully');
       //  })
   
+  //})
   }
-  Purchase(){
-    
-  }
-    
-  
-  }
+}
   
 

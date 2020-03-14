@@ -25,10 +25,10 @@ namespace EMart.Test
                 ItemId = "I0017",
                 CategoryId = "C0006",
                 SubcategoryId = "SC05",
-                Price = 755,
+                Price = "755",
                 ItemName = "ghgfhh",
                 Description = "nices",
-                StockNumber = 746,
+                StockNumber = "746",
                 Remarks = "no",
                 SellerId = "S0002",
                 Photo = "image3.jpg"
@@ -41,18 +41,17 @@ namespace EMart.Test
         [Description("test delete item ")]
         public void TestDeleteItem()
         {
-            _repo.Deleteitem("I0012");
-            var result = _repo.GetItem("I0012");
+            _repo.Deleteitem("I0009");
+            var result = _repo.GetItem("I0009");
             Assert.Null(result);
 
         }
-
         [Test]
         [Description("test update item")]
         public void TestUpdateItem()
         {
            Items item = _repo.GetItem("I488");
-            item.ItemName = "dress";
+            item.ItemName = "dfg";
             _repo.UpdateItem(item);
             Items item1 = _repo.GetItem("I488");
             Assert.AreSame(item, item1);

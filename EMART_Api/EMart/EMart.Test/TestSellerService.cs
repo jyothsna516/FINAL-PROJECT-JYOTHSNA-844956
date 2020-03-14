@@ -20,10 +20,10 @@ namespace EMart.Test
         [Description("Test View/Edit Profile")]
         public void TestUpdateProfile()
         {
-            Seller seller = _repo.GetProfile("S0006");
+            Seller seller = _repo.GetProfile("S0001");
             seller.ContactNumber = "9889489899";
             _repo.EditProfile(seller);
-            Seller seller1 = _repo.GetProfile("S0006");
+            Seller seller1 = _repo.GetProfile("S0001");
             Assert.AreSame(seller, seller1);
         }
 
